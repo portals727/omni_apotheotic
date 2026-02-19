@@ -1,0 +1,213 @@
+Emails
+
+FCC
+Outreach@fcc.gov	
+fccinfo@fcc.gov	
+consumer@fcc.gov	
+ICFSINFO@fcc.gov	
+FCCOPCenter@fcc.gov	
+
+DOJ	FISA (DOJ)
+Criminal.Division@usdoj.gov	nsd.public@usdoj.gov
+usama.handle@usdoj.gov
+
+FDA/HHS
+ombuds@oc.fda.gov,
+DICE@fda.hhs.gov,
+CDRHDeviceAllegations@fda.hhs.gov,
+MedWatch@fda.hhs.gov	
+
+Health Canada
+hcinfo.infosc@canada.ca
+meddev-matmed@hc-sc.gc.ca
+mdpr-rppm@hc-sc.gc.ca
+
+AB Health Minister
+health.minister@gov.ab.ca
+
+Digital Services Act (DSA Microsoft)	Office of the Information and Privacy Commissioner for Alberta (OIPC)
+
+DigitalServicesAct@microsoft.com	generalinfo@oipc.ab.ca
+Canada (Privacy Gov).gov.ca 
+info@priv.gc.ca
+
+FTC	CRIU (Compliance Response Inspection Unit
+FOIA@ftc.gov	
+complaints@priv.gc.ca	
+FOIA@ftc.gov	
+opa@ftc.gov	
+complaints@priv.gc.ca	
+webmaster@ftc.gov	
+secretary@ftc.gov
+
+CRTC
+crtc@crtc.gc.ca
+
+NSIRA
+info@nsira-ossnr.gc.ca
+
+HHS/OCR	CISA		
+OCRComplaint@hhs.gov	
+Central@cisa.dhs.gov		
+ics-cert@cisa.dhs.gov		
+ics-cert@hq.dhs.gov		
+report@cisa.gov		
+vulnerability_info@cisa.dhs.gov		
+central@mail.cisa.dhs.gov
+
+CRTC
+engagement@crtc.gc.ca
+
+ENISA (EU)	
+press@enisa.europa.eu	
+cert@enisa.europa.eu
+
+Diabetes (Open Source)
+OPENAPS: dana@openaps.org
+info@enisa.europa.eu	
+TidePool: support@tidepool.org
+XDrip+: contact@xdrip.i
+AndroidAPS: donations@androidaps.org
+Open Insulin: contact@openinsulin.org
+Nightscout: support@nightscout.pro
+
+External Relations (CSIS):	
+ExternalRelations@csis.org	
+
+RCMP
+RCMP.Cyber@rcmp-grc.gc.ca,
+tips@rcmp-grc.gc.ca
+
+Dexcom G7 Class Action Lawyers 
+info@bgandg.com
+
+info@rosenlegal.com
+jcleveland@rosenlegal.com
+
+balexander@rosenlegal.com
+slee@lchb.com
+
+investorinfo@lchb.com
+Firm	Lawyer/Contact	
+
+Wilshire Law Firm
+info@wilshirelawfirm.com
+
+Wilshire Law Firm	contact@wilshirelawfirm.com
+
+Cowper Law LLP	Moze Cowper	mcowper@cowperlaw.com
+
+Bleichmar Fonti & Auld LLP	Ross Shikowitz	ross@bfalaw.com
+
+Portnoy Law Firm	Lesley F. Portnoy	info@portnoylaw.com
+
+Bronstein, Gewirtz & Grossman, LLC	General Contact	info@bgandg.com
+
+The Rosen Law Firm	General Contact	info@rosenlegal.com
+
+The Rosen Law Firm	Joshua Cleveland	jcleveland@rosenlegal.com
+
+The Rosen Law Firm	Brian B. Alexander	balexander@rosenlegal.com
+
+Lieff Cabraser Heimann & Bernstein, LLP	Sharon Lee	slee@lchb.com
+
+Investor Info	
+investorinfo@lchb.com
+
+
+Master (Emails)
+Outreach@fcc.gov 
+fccinfo@fcc.gov,
+consumer@fcc.gov,
+ICFSINFO@fcc.gov, FCCOPCenter@fcc.gov,
+DigitalServicesAct@microsoft.com
+
+Criminal.Division@usdoj.gov,
+CCIPS@usdoj.gov,nsd.public@usdoj.gov,
+ombuds@oc.fda.gov,DICE@fda.hhs.gov,CDRHDeviceAllegations@fda.hhs.gov,
+media@cse-cst.gc.ca,
+cyberincident@cyber.gc.ca,
+contact@cyber.gc.ca,
+education@cyber.gc.ca,
+ExternalRelations@csis.org,
+info@priv.gc.ca,FOIA@ftc.gov,
+opa@ftc.gov,
+complaints@priv.gc.ca,
+webmaster@ftc.gov,
+secretary@ftc.gov,criu-ufrc@hc-sc.gc.ca,
+hcinfo.infosc@canada.ca,
+info@nsira-ossnr.gc.ca,
+engagement@crtc.gc.ca, 
+crtc@crtc.gc.ca,
+Central@cisa.dhs.gov,
+ics-cert@cisa.dhs.gov,
+Enforcement_Tips@sec.gov, whistleblower@sec.gov,
+OCRComplaint@hhs.gov,
+meddev-matmed@hc-sc.gc.ca,
+ics-cert@hq.dhs.gov,
+OCI.Intake@fda.hhs.gov,
+MedWatch@fda.hhs.gov,
+report@cisa.gov,
+vulnerability_info@cisa.dhs.gov,
+central@mail.cisa.dhs.gov,
+mdpr-rppm@hc-sc.gc.ca,
+cert@enisa.europa.eu,
+usama.handle@usdoj.gov,
+dana@openaps.org,
+support@tidepool.org,
+contact@xdrip.io,
+support@nightscout.pro,
+donations@androidaps.org,
+contact@openinsulin.org,
+health.minister@gov.ab.ca,
+info@wilshirelawfirm.com,
+contact@wilshirelawfirm.com,
+mcowper@cowperlaw.com,
+ross@bfalaw.com,
+info@portnoylaw.com,
+info@bgandg.com,
+info@rosenlegal.com,
+jcleveland@rosenlegal.com,
+balexander@rosenlegal.com,
+slee@lchb.com,
+investorinfo@lchb.com
+
+Master Emails	Master Emails
+Outreach@fcc.gov,
+Enforcement_Tips@sec.gov,
+fccinfo@fcc.gov,
+whistleblower@sec.gov,
+consumer@fcc.gov	,
+OCRComplaint@hhs.gov,
+ICFSINFO@fcc.gov	,
+meddev-matmed@hc-sc.gc.ca,
+FCCOPCenter@fcc.gov,
+ics-cert@hq.dhs.gov,
+DigitalServicesAct@microsoft.com,
+OCI.Intake@fda.hhs.gov
+Criminal.Division@usdoj.gov	MedWatch@fda.hhs.gov
+CCIPS@usdoj.gov	report@cisa.gov
+nsd.public@usdoj.gov	vulnerability_info@cisa.dhs.gov
+ombuds@oc.fda.gov	central@mail.cisa.dhs.gov
+DICE@fda.hhs.gov	mdpr-rppm@hc-sc.gc.ca
+CDRHDeviceAllegations@fda.hhs.gov	cert@enisa.europa.eu
+media@cse-cst.gc.ca	usama.handle@usdoj.gov
+cyberincident@cyber.gc.ca	dana@openaps.org
+contact@cyber.gc.ca	support@tidepool.org
+education@cyber.gc.ca	contact@xdrip.io
+ExternalRelations@csis.org	support@nightscout.pro
+info@priv.gc.ca	donations@androidaps.org
+FOIA@ftc.gov	contact@openinsulin.org
+opa@ftc.gov	health.minister@gov.ab.ca
+complaints@priv.gc.ca	info@wilshirelawfirm.com
+webmaster@ftc.gov	contact@wilshirelawfirm.com
+secretary@ftc.gov	mcowper@cowperlaw.com
+criu-ufrc@hc-sc.gc.ca	ross@bfalaw.com
+hcinfo.infosc@canada.ca	info@portnoylaw.com
+info@nsira-ossnr.gc.ca	info@bgandg.com
+engagement@crtc.gc.ca	info@rosenlegal.com
+crtc@crtc.gc.ca	jcleveland@rosenlegal.com
+Central@cisa.dhs.gov	balexander@rosenlegal.com
+ics-cert@cisa.dhs.gov	slee@lchb.com
+	investorinfo@lchb.com
+
