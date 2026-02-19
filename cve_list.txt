@@ -1,0 +1,44 @@
+CVE-2025-55241
+description: Entra ID actor token manipulation for tenant hijack/DNS poisoning.
+CVE-2025-43343
+description: Memory handling flaw; malicious web content crashes process.
+CVE-2025-43342
+description: Correctness issue; malicious web content crashes process.
+CVE-2025-43362
+description: Checks flaw; app monitors keystrokes without permission.
+CVE-2025-43359
+description: Logic error; UDP socket binds to all interfaces.
+CVE-2024-7997
+description: Buffer overflow in ESP-IDF SPI slave HD mode allowing arbitrary code execution.
+CVE-2025-59287
+description: WSUS RCE enabling cross-tenant abuse.
+CVE-2025-7395
+description: Certificate verification error in wolfSSL allowing improper domain validation with Apple-native checks.
+CVE-2025-43368
+description: Use-after-free; malicious web content crashes Safari.
+CVE-2025-43358
+description: Permissions flaw; shortcut bypasses sandbox.
+CVE-2025-43300
+description: Out-of-bounds write in ImageIO; malicious image leads to memory corruption.
+CVE-2025-21293
+description: Windows Elevation of Privilege via legacy Graph API.
+CVE-2020-10627
+description: Omnipod RF lacks auth; intercept/modify insulin delivery.
+CVE-2025-43344
+description: Out-of-bounds access in Apple Neural Engine.
+CVE-2025-43372
+description: Input validation flaw; malicious media causes termination/corruption.
+CVE-2025-43356
+description: Cache handling flaw; website accesses sensors without consent.
+CVE-2025-43400
+description: Out-of-bounds write in Core Text; malicious font leads to corruption.
+CVE-2025-43346
+description: Out-of-bounds access; malicious media causes corruption.
+CVE-2025-43272
+description: Memory handling issue in WebKit.
+CVE-2025-43317
+description: Permissions issue in AppleMobileFileIntegrity (location tied).
+CVE-2025-43354
+description: Logging issue in Bluetooth (location tied).
+CVE-2025-43303
+description: Logging issue in Bluetooth (location tied).

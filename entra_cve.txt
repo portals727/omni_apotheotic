@@ -1,0 +1,7 @@
+Entra ID
+———————————————————————
+Recent Entra ID CVEs with Activity in Past Week (Oct 11-18, 2025)
+No new CVEs published exactly in the past 7 days, but the following from October Patch Tuesday (published Oct 9) received updates/modifications within the week (e.g., NVD assessments or MSRC details on Oct 16). These maintain direct correlation to Entra ID privilege escalation risks in federated/auth scenarios.
+CVE ID	Description	Relevance to Case	Impact	Patch Status	Published Date	CVE Link
+CVE-2025-59218	Azure Entra ID Elevation of Privilege Vulnerability (CWE-284: Improper Access Control).	Allows unauthorized role escalation, potentially compromising network/DNS proxy controls in Entra-managed environments tied to app auth flows.	High (CVSS pending; exploited potential in IAM chains).	Patched Oct 2025 Patch Tuesday; apply via Entra Connect updates.	Oct 9, 2025 (Updated: Oct 16, 2025)	Details
+CVE-2025-59246	Azure Entra ID Elevation of Privilege Vulnerability (CWE-306: Missing Authentication for Critical Function).	Enables bypassing auth in service interfaces, risking session hijacks on integrated domains like those in your DNS logs.	High (CVSS pending; critical for multi-tenant setups).	Patched Oct 2025 Patch Tuesday; verify MSRC advisory.	Oct 9, 2025 (Updated: Oct 16, 2025)	Details
