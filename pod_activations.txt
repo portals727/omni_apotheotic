@@ -1,0 +1,75 @@
+Activation Time Data
+———————————————————————
+01-14-2025-19H-2M.txt
+———————————————————————
+59 65 61 72 3A 20 20 20 32 35 0A 4D 6F 6E 74 68 3A 20 20 31 0A 44 61 79 3A 20 20 20 20 31 34 0A 48 6F 75 72 3A 20 20 20 31 39 0A 4D 69 6E 75 74 65 3A 20 32 0A 0A 46 61 75 6C 74 20 54 69 6D 65 3A 20 30 73 0A 46 61 75 6C 74 20 45 76 65 6E 74 20 43 6F 64 65 20 30 78 30 30 3A 20 4E 6F 20 66 61 75 6C 74
+Year: 25
+Month: 1
+Day: 14
+Hour: 19
+Minute: 2
+Fault Time: 0s
+Fault Event Code 0x00: No fault
+———————————————————————
+01-11-25 - 4H58M.txt
+———————————————————————
+59 65 61 72 3A 20 20 20 32 35 0A 4D 6F 6E 74 68 3A 20 20 31 0A 44 61 79 3A 20 20 20 20 31 31 0A 48 6F 75 72 3A 20 20 20 34 0A 4D 69 6E 75 74 65 3A 20 35 38 0A 0A 46 61 75 6C 74 20 54 69 6D 65 3A 20 30 73 0A 46 61 75 6C 74 20 45 76 65 6E 74 20 43 6F 64 65 20 30 78 30 30 3A 20 4E 6F 20 66 61 75 6C 74
+Year: 25
+Month: 1
+Day: 11
+Hour: 4
+Minute: 58
+Fault Time: 0s
+Fault Event Code 0x00: No fault
+———————————————————————
+01-16-2025-11H-58M.txt
+———————————————————————
+59 65 61 72 3A 20 20 20 32 35 0A 4D 6F 6E 74 68 3A 20 20 31 0A 44 61 79 3A 20 20 20 20 31 36 0A 48 6F 75 72 3A 20 20 20 31 31 0A 4D 69 6E 75 74 65 3A 20 35 38 0A 0A 46 61 75 6C 74 20 54 69 6D 65 3A 20 30 73 0A 46 61 75 6C 74 20 45 76 65 6E 74 20 43 6F 64 65 20 30 78 30 30 3A 20 4E 6F 20 66 61 75 6C 74
+Year: 25
+Month: 1
+Day: 16
+Hour: 11
+Minute: 58
+Fault Time: 0s
+Fault Event Code 0x00: No fault
+———————————————————————
+01-19-2025-14H38M.txt
+———————————————————————
+59 65 61 72 3A 20 20 20 32 35 0A 4D 6F 6E 74 68 3A 20 20 31 0A 44 61 79 3A 20 20 20 20 31 39 0A 48 6F 75 72 3A 20 20 20 31 34 0A 4D 69 6E 75 74 65 3A 20 33 38 0A 0A 46 61 75 6C 74 20 54 69 6D 65 3A 20 30 73 0A 46 61 75 6C 74 20 45 76 65 6E 74 20 43 6F 64 65 20 30 78 30 30 3A 20 4E 6F 20 66 61 75 6C 74
+Year: 25
+Month: 1
+Day: 19
+Hour: 14
+Minute: 38
+Fault Time: 0s
+Fault Event Code 0x00: No fault
+———————————————————————
+08-19-2025-17H32M.txt
+———————————————————————
+59 65 61 72 3A 20 20 20 32 35 0A 4D 6F 6E 74 68 3A 20 20 38 0A 44 61 79 3A 20 20 20 20 31 39 0A 48 6F 75 72 3A 20 20 20 31 37 0A 4D 69 6E 75 74 65 3A 20 33 32 0A 0A 46 61 75 6C 74 20 54 69 6D 65 3A 20 38 30 68 0A 46 61 75 6C 74 20 45 76 65 6E 74 20 43 6F 64 65 20 30 78 31 63 3A 20 45 78 63 65 65 64 65 64 20 6D 61 78 69 6D 75 6D 20 50 6F 64 20 6C 69 66 65 20 6F 66 20 38 30 20 68 6F 75 72 73
+Year: 25
+Month: 8
+Day: 19
+Hour: 17
+Minute: 32
+Fault Time: 80h
+Fault Event Code 0x1c: Exceeded maximum Pod life of 80 hours
+———————————————————————
+PodState: ### PodState
+address: 1F050F07
+* activatedAt: Optional(2025-01-11 11:57:39 +0000)
+* expiresAt: Optional(2025-01-14 11:57:15 +0000)
+* podTime: 21h38m
+lot: 72506
+tid: 3390305
+———————————————————————
+PreviousPodState: ### PodState
+* address: 1F0FAFEA
+* activatedAt: Optional(2025-01-10 08:05:45 +0000)
+* expiresAt: Optional(2025-01-13 08:04:53 +0000)
+* podTime: 27h46m
+lot: 72506
+tid: 3450277
+———————————————————————
+Pod Status (08-19-3392-(0xC1) -> 0xC1 = Unknown Fault, it was supposed to trigger 0x1C : Exceeded Maximum Pod Life (72H+8H), then i think it actually did trigger 0x1C after, but screen flashed and it beeped violently and spazzed out for a bit. I think Trio’s back end cloud reporting system had something to do with it, and i also was testing some commands on it.
+———————————————————————

@@ -1,0 +1,42 @@
+TABLE II. PINS FUNCTIONS OF THE SOC
+Pin No.	PCB function	PCB level	ΔV GND	ΔV VDD	Type	Comments
+1	Pad, TP	0/2.04V	0.722	0.729	I/O	Encoder
+2	Pad, TP	0/2.04V	0.723	0.729	I/O	Anchor T1
+3	Pad, TP	0/2.04V	0.721	0.729	I/O	Anchor T2
+4	Pad, TP, C	0/2.04V	0.726	0.726	I/O	Rod spring
+5	TP	0V	0.720	0.731	I/O	Not used
+6	TP	0V	0.732	0.731	I/O	Not used
+7	TP	0V	0.731	0.731	I/O	Not used
+8	TP	0V	0.731	0.731	I/O	Not used
+9	TP	0V	0.731	0.731	I/O	Not used
+10	TP	0V	0.513	N/A	I/O	Not used
+11	TP	0V	0.732	0.730	I/O	Not used
+12	TP	0V	0.726	0.724	I/O	Not used
+13	Pad, TP, R	0V	0.732	0.728	I/O	Piezo T1
+14	Pad, TP, R	0V	0.732	0.729	I/O	Piezo T2
+15	TP, C	2.87V	0.352	VDD	Power	Core Power
+16	C, TP, Battery	2.87V	0.449	0.132	Power	Battery 3V
+17	GND	0V	GND	0.353	GND	GND
+18	Pad	0V	0.686	N/A	FET	Motor T1
+19	Pin 18	0V	0.686	N/A	FET	Motor T1
+20	TP, Battery	4.34V	0.391	N/A	Power	Battery 4.5V
+21	Pin 20	4.34V	0.391	N/A	Power	Battery 4.5V
+22	Pad, TP	0V	0.686	N/A	FET	Motor T2
+23	Pin 22	0V	0.686	N/A	FET	Motor T2
+24	TP	NC	N/A	N/A	NC	Not used
+25	TP, L, C	2.87V	0.456	N/A	RF	Antenna
+26	GND	0V	0.690	1.044	RF	Antenna Ref
+27	TP	0.31V	0.456	N/A	RF	Not used
+28	C, TP, Battery	2.87V	0.348	N/A	Power	Battery 3V
+29	GND	0V	GND	0.353	GND	GND
+30	TP, C, C	0.03V	0.537	N/A	Power	Bypass Cap
+31	Pin 30	0.03V	0.525	N/A	Power	Bypass Cap
+32	GND	0V	GND	0.359	GND	GND
+33	Crystal, C	0.669	1.098	Clock	26MHz	
+34	Crystal, C	0.655	N/A	Clock	26MHz	
+35	TP, C	0V	0.535	1.206	Power	Bypass Cap
+36	GND	0V	GND	0.360	GND	GND
+37	TP	0V	0.718	0.728	I/O	Not used
+38	TP, C	2.86V	0.734	0.728	I/O	Not used
+39	TP	0V	0.734	0.729	I/O	Not used
+40	TP	2.86V	0.734	0.729	I/O	Not used

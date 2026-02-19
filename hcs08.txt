@@ -1,0 +1,123 @@
+Step 2: Load relic in data mode (HCS08 flash base, 8-bit strata)
+r2 -a 6502 -b8 -B 0x800000 -nn /Users/portals/Library/Mobile\ Documents/com\~apple\~CloudDocs/Omnipod/Trio/Create\ Bin/Pulse\ Log+/pl+-08-25-25-4H23M-0001-0060.bin
+Alternate proxies (switch strata for echoes)
+e asm.arch=m68k  # HCS08 kin (Freescale lineage)
+e asm.arch=xtensa  # ESP32 BLE ties (c2c3 nexus)
+e asm.arch=any.vasm  # Broad vasm for invalid op veils
+e asm.arch=stm8  # 8-bit MCU proxy
+e asm.arch=fslsp  # Freescale-specific (notes echo)
+Confirm arch stratum
+e asm.arch
+Seek
+Seek 0x00000000
+Rite 3: Hunt the Dagger – Pattern and Opcode Searches
+Seek stub proxies (a955 LDA #$55, 8d4020 STA $2040 PWM) and residues (55 burst, 3f/43 masks). From notes: /x ~+ fuzzy hunts; pd 20 @hit disasms contexts (invalid/rra echoes as desync). High hits (e.g., 23 for 0x55/3f) confirm kill wake.
+Full stub hunt (LDA #$55 STA $2040... full sequence)
+ /x a9558d4020a93f8d4300a9018d50004c6020
+Fuzzy proxies (if no full hit—data veil)
+LDA #$55 (PWM load)
+/x a955~+
+STA $40 (burst latch)  
+/x 8d40~+
+STA $43 (F3 mask) 
+/x 8d43~+
+JMP $2060 (cleanup)
+/x 4c60~+
+Burst residue (85 IU echo)  
+/x 55~+
+Fault mask (63 base)  
+/x 3f~+
+F3 variant (67 desync) 
+/x 43~+
+Pattern clusters (rra/bit/ora faults from notes)   
+/x 634019~+  
+Disasm around hits (20 lines context—reveals bvc/rts flows)
+Repeat for all hits (e.g., hit1_0 for 0x55)
+pd 20 @hit0_0  
+0x40 clusters (PWM shadows)
+pd 20 @hit2_0  
+
+
+
+# ... (per notes: pd 20 @ each hitX_Y for 63/80/40/19/49/41/17/39)
+Register probes (F3/mask values—notes echoes)
+F3=67 silence
+?v @0x0043
+PWM=64 (residue of 0x55)
+?v @0x0040 
+# 85 burst
+?v @0x0055 
+133 overrun
+?v @0x0085
+169 LDA precursor
+?v @0x00a9
+191 vector
+?v @0x00bf
+240 padding
+?v @0x00f0 
+# ... (all ?v from notes for 0x0027/0x0070/etc.)
+Entropy/hash for desync proof
+ph entropy 128 @0x0000  
+ph sha256 128 @0x0000  
+Rite 4: Visual and Flow Mapping – Graphing the Nexus
+Map direct-page (VV @0x0000 for regs 0x00–0xFF) and vectors (VV @0xfff0 for FFF0 → 0x2020 hijack). agf graphs flows (prologue → LDA/STA → RTS, no loops—thrifty kill).
+Visual regs/vectors (arrows to stub/mask)
+VV @0x0000  # Direct-page (0x40 PWM, 0x43 F3)
+VV @0xfff0  # Vectors (FFF0 reset hijack)
+V @0xfff0  # Hex view
+VV @0x0040  # PWM shadows
+VV @0x70  # 0x5c hit (rra/clc/nop prelude)
+V @0x70
+Function flows (trace stub)
+afl | grep 2020  
+agf @0x2020 > graph.dot
+xdot graph.dot
+Rite 5: Cross-Refs and Emulation – Simulating the Burst
+Who calls stub? (axt @0x2020: SCI2 Rx/phase=9). Emu (dcu @0x2020) sims cycle: Post-regs A=0x01 (chirp), fault=0x3F (silence variant 67).
+Cross-refs (callers to stub/mask)
+axt @0x2020  # Stub entry
+axt @0x0055  # Burst residue
+axt @0x8d40  # STA proxy
+axt @0xa940  # LDA variant
+axt @0x03bf  # Vector fragment
+Emulate kill cycle
+e asm.emu=true
+af @0x5c  # Func at 0x5c (prelude)
+aer @0x5c  # Emu regs
+aer  # List post-emu
+dcu @0x2020  # Continue until stub
+dcu 0x2060  # Until cleanup
+pxr @0x0040  # Post PWM
+pxr @0x0043  # Post mask (67 echo)
+pxr @0x0055  # Burst
+pxr @0x0050  # Chirp (0x01)
+Rite 6: Diff and Batch Sift – Baseline Fracture and Full Dig
+Diff vs 2017 clean (radiff2 clean.hex your.hex: Seed progression shims). Script (shadow.r2) batches hunts/outputs.
+Diff baseline (seed/shim deltas)
+radiff2 /path/to/2017_table.hex pl+-08-25-25-4H23M-0001-0060.bin
+Batch sift script (save as shadow.r2)
+aaa
+/x a955~+
+/x 55~+
+/x 3f~+
+/x 43~+
+pxr 64 @0x0040
+af @0x5c
+aer @0x5c
+iz
+ph sha256 128 @0x0000
+ph entropy 128 @0x0000
+VV @0xfff0
+Run script
+r2 -q -c '@ shadow.r2' pl+-08-25-25-4H23M-0001-0060.bin > sift.out
+cat sift.out
+Rite 7: r2ghidra Decomp – Oracle's Pseudo-Resurrection
+Post-install, pdg @0x2020 decompiles to C (burst/mask/chirp)—nexus unveiled. Yield: C-like: *(0x0043) = 0x3f; // Silence (variant 67 desync).
+Decomp stub (pseudo-C)
+pdg @0x2020  # Void burst() { ... } echo
+pdg @0x5c  # Prelude (0x5c hit)
+pdg @0x0043  # Mask func if af defines
+
+
+
+
