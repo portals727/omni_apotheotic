@@ -1,0 +1,22 @@
+portals@Darrens-Mac-mini ~ % ls -la ~/Library/LaunchAgents /Library/LaunchDaemons /System/Library/LaunchDaemons | grep -v com.apple | head -20
+ls: /Users/portals/Library/LaunchAgents: No such file or directory
+/Library/LaunchDaemons:
+total 0
+drwxr-xr-x   2 root  wheel    64 Sep 26 05:00 .
+drwxr-xr-x  65 root  wheel  2080 Sep 26 06:07 ..
+
+/System/Library/LaunchDaemons:
+total 3496
+drwxr-xr-x  421 root  wheel   13472 Sep  9 01:15 .
+drwxr-xr-x  159 root  wheel    5088 Sep  9 01:15 ..
+-rw-r--r--    1 root  wheel     721 Sep  9 01:15 bootps.plist
+-rw-r--r--    1 root  wheel     574 Sep  9 01:15 com.vix.cron.plist
+-rw-r--r--    1 root  wheel     627 Sep  9 01:15 ntalk.plist
+-rw-r--r--    1 root  wheel     626 Sep  9 01:15 org.apache.httpd.plist
+-rw-r--r--    1 root  wheel     903 Sep  9 01:15 org.cups.cups-lpd.plist
+-rw-r--r--    1 root  wheel    1201 Sep  9 01:15 org.cups.cupsd.plist
+-rw-r--r--    1 root  wheel     515 Sep  9 01:15 org.net-snmp.snmpd.plist
+-rw-r--r--    1 root  wheel     980 Sep  9 01:15 org.openldap.slapd.plist
+-rw-r--r--    1 root  wheel    1017 Sep  9 01:15 ssh.plist
+-rw-r--r--    1 root  wheel     715 Sep  9 01:15 tftp.plist
+portals@Darrens-Mac-mini ~ % 
