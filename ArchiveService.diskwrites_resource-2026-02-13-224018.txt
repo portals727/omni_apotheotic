@@ -1,0 +1,395 @@
+{"app_name":"ArchiveService","timestamp":"2026-02-13 22:40:18.00 -0700","app_version":"26.0","slice_uuid":"1ED52A7A-E9B5-3AEE-8E5F-46B567982BBF","build_version":"1827.3.2","bundleID":"com.apple.desktopservices.ArchiveService","duration_ms":"1060503","share_with_app_devs":0,"is_first_party":0,"bug_type":"145","os_version":"iPhone OS 26.3 (23D127)","roots_installed":0,"name":"ArchiveService","incident_id":"3D123C7B-9021-4286-BF90-E448449586F6"}
+Date/Time:        2026-02-13 22:22:33.752 -0700
+End time:         2026-02-13 22:40:14.255 -0700
+OS Version:       iPhone OS 26.3 (Build 23D127)
+Architecture:     arm64e
+Report Version:   67
+Incident Identifier: 3D123C7B-9021-4286-BF90-E448449586F6
+
+Data Source:      Microstackshots
+Shared Cache:     754CD0B8-C15E-3BF0-A0C3-6D1580EC9B79 slid base address 0x19f790000, slide 0x1f790000
+
+Command:          ArchiveService
+Path:             /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/XPCServices/ArchiveService.xpc/ArchiveService
+Identifier:       com.apple.desktopservices.ArchiveService
+Version:          26.0 (1827.3.2)
+Resource Coalition: "com.apple.DocumentsApp"(1115)
+On Behalf Of:     83 samples UNKNOWN [3542] (83 samples originated by UNKNOWN [3542])
+Architecture:     arm64e
+Parent:           launchd [1]
+PID:              3675
+
+Event:            disk writes
+Action taken:     none
+Writes:           1073.75 MB of file backed memory dirtied over 1061 seconds (1012.50 KB per second average), exceeding limit of 12.43 KB per second over 86400 seconds
+Writes limit:     1073.74 MB
+Limit duration:   86400s
+Writes caused:    1073.75 MB
+Writes duration:  1061s
+Duration:         1060.50s
+Duration Sampled: 1060.06s (event starts 0.41s before samples)
+Steps:            571 (10.49 MB/step)
+
+Hardware model:   iPhone14,6
+Active cpus:      6
+Memory size:      3.79 GB
+HW page size:     16384
+VM page size:     16384
+Shared cache residency: 10.08% (578.83 MB / 5740.72 MB)
+
+Time Since Boot:  27231s
+Time Awake Since Boot: 16205s
+Time Since Wake:  135s
+
+Total CPU Time:   147.314s
+Advisory levels:  Battery -> 2, User -> 3, ThermalPressure -> 10, Combined -> 1
+Free disk space:  23.84 GB/59.51 GB, low space threshold 150 MB
+Vnodes Available: 68.72% (13745/20000, 10000 allocated, 10000 soft limit)
+Models:           none
+
+Preferred User Language: en-CA
+Country Code:     CA
+Keyboards:        en_CA QWERTY
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  83  ??? (libsystem_pthread.dylib + 2240) [0x1ff4208c0]
+  83  ??? (libsystem_pthread.dylib + 4988) [0x1ff42137c]
+  83  ??? (libdispatch.dylib + 83708) [0x1db5eb6fc]
+  83  ??? (libdispatch.dylib + 81736) [0x1db5eaf48]
+  83  ??? (libdispatch.dylib + 23768) [0x1db5dccd8]
+  83  ??? (libdispatch.dylib + 26212) [0x1db5dd664]
+  83  ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+  83  ??? (libdispatch.dylib + 70736) [0x1db5e8450]
+  83  ??? (Foundation + 96152) [0x19ff04798]
+  83  ??? (Foundation + 98012) [0x19ff04edc]
+  83  ??? (Foundation + 97044) [0x19ff04b14]
+  83  ??? (Foundation + 98420) [0x19ff05074]
+  83  ??? (Foundation + 98116) [0x19ff04f44]
+  83  ??? (Foundation + 99156) [0x19ff05354]
+  83  ??? (Foundation + 10643280) [0x1a0913750]
+  83  ??? (Foundation + 10628632) [0x1a090fe18]
+  83  ??? (Foundation + 10626908) [0x1a090f75c]
+  83  ??? (ArchiveService + 95540) [0x10094f534]
+  83  ??? (ArchiveService + 85800) [0x10094cf28]
+  83  ??? (ArchiveService + 123664) [0x100956310]
+  83  ??? (ArchiveService + 119224) [0x1009551b8]
+  83  ??? (ArchiveService + 118248) [0x100954de8]
+  83  ??? (ArchiveService + 124132) [0x1009564e4]
+  83  ??? (ArchiveService + 122480) [0x100955e70]
+  83  ??? (libarchive.2.dylib + 376796) [0x1df3bffdc]
+  80  ??? (libarchive.2.dylib + 859296) [0x1df435ca0]
+  80  ??? (libarchive.2.dylib + 859612) [0x1df435ddc]
+  80  ??? (libarchive.2.dylib + 88228) [0x1df3798a4]
+  80  ??? (libarchive.2.dylib + 87280) [0x1df3794f0]
+  80  ??? (libsystem_kernel.dylib + 20516) [0x250067024]
+
+
+Powerstats for:   ArchiveService [3675]
+UUID:             1ED52A7A-E9B5-3AEE-8E5F-46B567982BBF
+Path:             /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/XPCServices/ArchiveService.xpc/ArchiveService
+Identifier:       com.apple.desktopservices.ArchiveService
+Version:          26.0 (1827.3.2)
+Resource Coalition: 83 samples "com.apple.DocumentsApp"(1115)
+On Behalf Of:     83 samples UNKNOWN [3542] (83 samples originated by UNKNOWN [3542])
+Architecture:     arm64e
+Parent:           launchd [1]
+UID:              501
+Sudden Term:      Tracked (allows idle exit)
+Footprint:        2384 KB -> 2768 KB (+384 KB) (max 2992 KB )
+Pageins:          9 pages
+Start time:       2026-02-13 22:34:33.746 -0700
+End time:         2026-02-13 22:40:14.225 -0700
+Num samples:      83 (15%)
+Num threads:      10
+Primary state:    83 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, p-core
+User Activity:    0 samples Idle, 83 samples Active
+Power Source:     83 samples on Battery, 0 samples on AC
+  83  ??? (libsystem_pthread.dylib + 2240) [0x1ff4208c0]
+    83  ??? (libsystem_pthread.dylib + 4988) [0x1ff42137c]
+      83  ??? (libdispatch.dylib + 83708) [0x1db5eb6fc]
+        83  ??? (libdispatch.dylib + 81736) [0x1db5eaf48]
+          83  ??? (libdispatch.dylib + 23768) [0x1db5dccd8]
+            83  ??? (libdispatch.dylib + 26212) [0x1db5dd664]
+              83  ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                83  ??? (libdispatch.dylib + 70736) [0x1db5e8450]
+                  83  ??? (Foundation + 96152) [0x19ff04798]
+                    83  ??? (Foundation + 98012) [0x19ff04edc]
+                      83  ??? (Foundation + 97044) [0x19ff04b14]
+                        83  ??? (Foundation + 98420) [0x19ff05074]
+                          83  ??? (Foundation + 98116) [0x19ff04f44]
+                            83  ??? (Foundation + 99156) [0x19ff05354]
+                              83  ??? (Foundation + 10643280) [0x1a0913750]
+                                83  ??? (Foundation + 10628632) [0x1a090fe18]
+                                  83  ??? (Foundation + 10626908) [0x1a090f75c]
+                                    83  ??? (ArchiveService + 95540) [0x10094f534]
+                                      83  ??? (ArchiveService + 85800) [0x10094cf28]
+                                        83  ??? (ArchiveService + 123664) [0x100956310]
+                                          83  ??? (ArchiveService + 119224) [0x1009551b8]
+                                            83  ??? (ArchiveService + 118248) [0x100954de8]
+                                              83  ??? (ArchiveService + 124132) [0x1009564e4]
+                                                83  ??? (ArchiveService + 122480) [0x100955e70]
+                                                  83  ??? (libarchive.2.dylib + 376796) [0x1df3bffdc]
+                                                    80  ??? (libarchive.2.dylib + 859296) [0x1df435ca0]
+                                                      80  ??? (libarchive.2.dylib + 859612) [0x1df435ddc]
+                                                        80  ??? (libarchive.2.dylib + 88228) [0x1df3798a4]
+                                                          80  ??? (libarchive.2.dylib + 87280) [0x1df3794f0]
+                                                            80  ??? (libsystem_kernel.dylib + 20516) [0x250067024]
+                                                              76  <on behalf of UNKNOWN [3542] (originated by UNKNOWN [3542])>
+                                                              4   <on behalf of UNKNOWN [3542] (originated by UNKNOWN [3542]), e-core>
+                                                    3   ??? (libarchive.2.dylib + 859316) [0x1df435cb4]
+                                                      3   ??? (libarchive.2.dylib + 81236) [0x1df377d54]
+                                                        3   ??? (libarchive.2.dylib + 80732) [0x1df377b5c]
+                                                          3   ??? (libsystem_kernel.dylib + 20516) [0x250067024]
+                                                            2   <on behalf of UNKNOWN [3542] (originated by UNKNOWN [3542])>
+                                                            1   <on behalf of UNKNOWN [3542] (originated by UNKNOWN [3542]), e-core>
+
+  Binary Images:
+           0x100938000 -                ???  com.apple.desktopservices.ArchiveService 26.0 (1827.3.2) <1ED52A7A-E9B5-3AEE-8E5F-46B567982BBF>  /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/XPCServices/ArchiveService.xpc/ArchiveService
+           0x19feed000 -        0x1a0d33c9f  Foundation                                               <4C3912D2-E14A-3A21-926B-54BEF625BE89>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x1db5d7000 -        0x1db61d21f  libdispatch.dylib                                        <904D48A3-D99E-3962-BFA9-C3DFB66BBA83>  /usr/lib/system/libdispatch.dylib
+           0x1df364000 -        0x1df45b907  libarchive.2.dylib                                       <0CC6FBFC-38EE-3F05-A785-C7952BB280F6>  /usr/lib/libarchive.2.dylib
+           0x1ff420000 -        0x1ff42c45f  libsystem_pthread.dylib                                  <4F94107B-94D2-3E88-8542-F5403C581B50>  /usr/lib/system/libsystem_pthread.dylib
+           0x250062000 -        0x25009cd2b  libsystem_kernel.dylib                                   <8D830129-2CBE-32A9-B61E-CE493EECB399>  /usr/lib/system/libsystem_kernel.dylib
+
+
+Powerstats for:   ProtonDrive
+UUID:             4A73385E-C3BF-3BAF-A728-31882120BFAA
+Path:             /private/var/containers/Bundle/Application/2B116E84-702D-462C-9212-BD59AB3A59BA/ProtonDrive.app/ProtonDrive
+Identifier:       ch.protonmail.drive
+Version:          1.58.1 (11877.3)
+Adam ID:          1509667851
+Is First Party:   No
+Beta Identifier:  4FDEFFB7-24E5-4975-B280-9089AFE89F9E
+Resource Coalition: 275 samples "ch.protonmail.drive"(842)
+Architecture:     arm64
+Start time:       2026-02-13 22:23:14.393 -0700
+End time:         2026-02-13 22:32:16.874 -0700
+Num samples:      275 (48%)
+Primary state:    270 samples Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated, Override Thread QoS Unspecified, p-core
+User Activity:    0 samples Idle, 275 samples Active
+Power Source:     275 samples on Battery, 0 samples on AC
+  275  ??? (libsystem_pthread.dylib + 2240) [0x1ff4208c0]
+    272  ??? (libsystem_pthread.dylib + 4988) [0x1ff42137c]
+      272  ??? (libdispatch.dylib + 83708) [0x1db5eb6fc]
+        272  ??? (libdispatch.dylib + 81736) [0x1db5eaf48]
+          146  ??? (libdispatch.dylib + 25340) [0x1db5dd2fc]
+            146  ??? (libdispatch.dylib + 227300) [0x1db60e7e4]
+              146  ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                146  ??? (libdispatch.dylib + 198992) [0x1db607950]
+                  146  ??? (libsystem_kernel.dylib + 29580) [0x25006938c]
+                    85   <e-core>
+                    4    <Non-Frontmost App, Effective Thread QoS Background, e-core>
+                    1    <Non-Frontmost App, Effective Thread QoS Default, e-core>
+          126  ??? (libdispatch.dylib + 23768) [0x1db5dccd8]
+            126  ??? (libdispatch.dylib + 26212) [0x1db5dd664]
+              126  ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                126  ??? (libdispatch.dylib + 70736) [0x1db5e8450]
+                  126  ??? (Foundation + 96152) [0x19ff04798]
+                    126  ??? (Foundation + 98012) [0x19ff04edc]
+                      126  ??? (Foundation + 97044) [0x19ff04b14]
+                        126  ??? (Foundation + 98420) [0x19ff05074]
+                          126  ??? (Foundation + 98116) [0x19ff04f44]
+                            126  ??? (Foundation + 99156) [0x19ff05354]
+                              126  ??? (ProtonDrive + 543592) [0x102ae0b68]
+                                126  ??? (ProtonDrive + 5968016) [0x10300d090]
+                                  126  ??? (CoreData + 1225904) [0x1a4f784b0]
+                                    125  ??? (libdispatch.dylib + 71872) [0x1db5e88c0]
+                                      125  ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                                        125  ??? (CoreData + 6732) [0x1a4e4ea4c]
+                                          125  ??? (ProtonDrive + 1068840) [0x102b60f28]
+                                            125  ??? (ProtonDrive + 279612) [0x102aa043c]
+                                              125  ??? (ProtonDrive + 5969512) [0x10300d668]
+                                                125  ??? (ProtonDrive + 6034360) [0x10301d3b8]
+                                                  125  ??? (ProtonDrive + 6025368) [0x10301b098]
+                                                    125  ??? (ProtonDrive + 6020596) [0x103019df4]
+                                                      125  ??? (ProtonDrive + 6734364) [0x1030c821c]
+                                                        125  ??? (ProtonDrive + 5790984) [0x102fe1d08]
+                                                          122  ??? (ProtonDrive + 5795360) [0x102fe2e20]
+                                                            122  ??? (Foundation + 2395260) [0x1a0135c7c]
+                                                              122  ??? (Foundation + 2378180) [0x1a01319c4]
+                                                                122  ??? (libsystem_kernel.dylib + 20516) [0x250067024]
+                                                                  2    <e-core>
+                                                          3    ??? (ProtonDrive + 5794724) [0x102fe2ba4]
+                                                            3    ??? (Foundation + 1545988) [0x1a0066704]
+                                                              3    ??? (Foundation + 1197496) [0x1a00115b8]
+                                                                3    ??? (Foundation + 1591152) [0x1a0071770]
+                                                                  3    ??? (Foundation + 1563328) [0x1a006aac0]
+                                                                    3    ??? (Foundation + 1562784) [0x1a006a8a0]
+                                                                      3    ??? (Foundation + 7445560) [0x1a0606c38]
+                                                                        3    ??? (Foundation + 1164620) [0x1a000954c]
+                                                                          3    ??? (libsystem_kernel.dylib + 20516) [0x250067024]
+                                                                            1    <e-core>
+                                    1    ??? (libdispatch.dylib + 71540) [0x1db5e8774]
+                                      1    ??? (libdispatch.dylib + 72932) [0x1db5e8ce4]
+                                        1    ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                                          1    ??? (CoreData + 6732) [0x1a4e4ea4c]
+                                            1    ??? (ProtonDrive + 1068840) [0x102b60f28]
+                                              1    ??? (ProtonDrive + 279612) [0x102aa043c]
+                                                1    ??? (ProtonDrive + 5969512) [0x10300d668]
+                                                  1    ??? (ProtonDrive + 6034360) [0x10301d3b8]
+                                                    1    ??? (ProtonDrive + 6025368) [0x10301b098]
+                                                      1    ??? (ProtonDrive + 6020596) [0x103019df4]
+                                                        1    ??? (ProtonDrive + 6734364) [0x1030c821c]
+                                                          1    ??? (ProtonDrive + 5790984) [0x102fe1d08]
+                                                            1    ??? (ProtonDrive + 5795360) [0x102fe2e20]
+                                                              1    ??? (Foundation + 2395260) [0x1a0135c7c]
+                                                                1    ??? (Foundation + 2378180) [0x1a01319c4]
+                                                                  1    ??? (libsystem_kernel.dylib + 20516) [0x250067024]
+    3    ??? (libsystem_pthread.dylib + 5048) [0x1ff4213b8]
+      3    ??? (libdispatch.dylib + 85220) [0x1db5ebce4]
+        3    ??? (libdispatch.dylib + 87020) [0x1db5ec3ec]
+          3    ??? (libdispatch.dylib + 44868) [0x1db5e1f44]
+            3    ??? (libdispatch.dylib + 42088) [0x1db5e1468]
+              3    ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                3    ??? (CoreData + 6732) [0x1a4e4ea4c]
+                  3    ??? (CoreData + 509784) [0x1a4ec9758]
+                    3    ??? (CoreData + 520760) [0x1a4ecc238]
+                      2    ??? (ProtonDrive + 5458296) [0x102f90978]
+                        2    ??? (ProtonDrive + 5442216) [0x102f8caa8]
+                          2    ??? (ProtonDrive + 6832496) [0x1030e0170]
+                            2    ??? (CoreData + 1193264) [0x1a4f70530]
+                              2    ??? (CoreData + 1484136) [0x1a4fb7568]
+                                2    ??? (CoreData + 1444956) [0x1a4fadc5c]
+                                  2    ??? (CoreData + 1495348) [0x1a4fba134]
+                                    2    ??? (CoreData + 1715808) [0x1a4fefe60]
+                                      2    ??? (CoreData + 1704344) [0x1a4fed198]
+                                        2    ??? (CoreData + 2632268) [0x1a50cfa4c]
+                                          2    ??? (CoreData + 1422304) [0x1a4fa83e0]
+                                            2    ??? (CoreData + 1911572) [0x1a501fb14]
+                                              2    ??? (libdispatch.dylib + 71872) [0x1db5e88c0]
+                                                2    ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                                                  2    ??? (CoreData + 1911852) [0x1a501fc2c]
+                                                    2    ??? (CoreData + 1422512) [0x1a4fa84b0]
+                                                      2    ??? (CoreData + 826796) [0x1a4f16dac]
+                                                        2    ??? (CoreData + 2759720) [0x1a50eec28]
+                                                          2    ??? (CoreData + 116236) [0x1a4e6960c]
+                                                            2    ??? (CoreData + 110068) [0x1a4e67df4]
+                                                              2    ??? (CoreData + 37800) [0x1a4e563a8]
+                                                                2    ??? (libsqlite3.dylib + 191252) [0x1a1050b14]
+                                                                  2    ??? (libsqlite3.dylib + 233588) [0x1a105b074]
+                                                                    2    ??? (libsqlite3.dylib + 92476) [0x1a103893c]
+                                                                      2    ??? (libsqlite3.dylib + 259504) [0x1a10615b0]
+                                                                        2    ??? (libsqlite3.dylib + 260616) [0x1a1061a08]
+                                                                          2    ??? (libsqlite3.dylib + 327332) [0x1a1071ea4]
+                                                                            2    ??? (libsqlite3.dylib + 697296) [0x1a10cc3d0]
+                                                                              2    ??? (libsqlite3.dylib + 328236) [0x1a107222c]
+                                                                                2    ??? (libsystem_kernel.dylib + 27704) [0x250068c38]
+                      1    ??? (ProtonDrive + 5376248) [0x102f7c8f8]
+                        1    ??? (ProtonDrive + 5374808) [0x102f7c358]
+                          1    ??? (ProtonDrive + 6832496) [0x1030e0170]
+                            1    ??? (CoreData + 1193264) [0x1a4f70530]
+                              1    ??? (CoreData + 1484136) [0x1a4fb7568]
+                                1    ??? (CoreData + 1444956) [0x1a4fadc5c]
+                                  1    ??? (CoreData + 1495348) [0x1a4fba134]
+                                    1    ??? (CoreData + 1715808) [0x1a4fefe60]
+                                      1    ??? (CoreData + 1704344) [0x1a4fed198]
+                                        1    ??? (CoreData + 2632268) [0x1a50cfa4c]
+                                          1    ??? (CoreData + 1422304) [0x1a4fa83e0]
+                                            1    ??? (CoreData + 1911572) [0x1a501fb14]
+                                              1    ??? (libdispatch.dylib + 71872) [0x1db5e88c0]
+                                                1    ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                                                  1    ??? (CoreData + 1911852) [0x1a501fc2c]
+                                                    1    ??? (CoreData + 1422512) [0x1a4fa84b0]
+                                                      1    ??? (CoreData + 826796) [0x1a4f16dac]
+                                                        1    ??? (CoreData + 2759720) [0x1a50eec28]
+                                                          1    ??? (CoreData + 116236) [0x1a4e6960c]
+                                                            1    ??? (CoreData + 110068) [0x1a4e67df4]
+                                                              1    ??? (CoreData + 37800) [0x1a4e563a8]
+                                                                1    ??? (libsqlite3.dylib + 191252) [0x1a1050b14]
+                                                                  1    ??? (libsqlite3.dylib + 233588) [0x1a105b074]
+                                                                    1    ??? (libsqlite3.dylib + 92476) [0x1a103893c]
+                                                                      1    ??? (libsqlite3.dylib + 259504) [0x1a10615b0]
+                                                                        1    ??? (libsqlite3.dylib + 260616) [0x1a1061a08]
+                                                                          1    ??? (libsqlite3.dylib + 327332) [0x1a1071ea4]
+                                                                            1    ??? (libsqlite3.dylib + 697296) [0x1a10cc3d0]
+                                                                              1    ??? (libsqlite3.dylib + 328236) [0x1a107222c]
+                                                                                1    ??? (libsystem_kernel.dylib + 27704) [0x250068c38]
+
+  Binary Images:
+           0x102a5c000 -                ???  ch.protonmail.drive 1.58.1 (11877.3) <4A73385E-C3BF-3BAF-A728-31882120BFAA>  /private/var/containers/Bundle/Application/2B116E84-702D-462C-9212-BD59AB3A59BA/ProtonDrive.app/ProtonDrive
+           0x19feed000 -        0x1a0d33c9f  Foundation                           <4C3912D2-E14A-3A21-926B-54BEF625BE89>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x1a1022000 -        0x1a11cb6b3  libsqlite3.dylib                     <579118DA-D456-348C-9E1F-582D35482F62>  /usr/lib/libsqlite3.dylib
+           0x1a4e4d000 -        0x1a51dd4df  CoreData                             <F5D0D61A-7DC5-36DE-A232-E08926DBE9E4>  /System/Library/Frameworks/CoreData.framework/CoreData
+           0x1db5d7000 -        0x1db61d21f  libdispatch.dylib                    <904D48A3-D99E-3962-BFA9-C3DFB66BBA83>  /usr/lib/system/libdispatch.dylib
+           0x1ff420000 -        0x1ff42c45f  libsystem_pthread.dylib              <4F94107B-94D2-3E88-8542-F5403C581B50>  /usr/lib/system/libsystem_pthread.dylib
+           0x250062000 -        0x25009cd2b  libsystem_kernel.dylib               <8D830129-2CBE-32A9-B61E-CE493EECB399>  /usr/lib/system/libsystem_kernel.dylib
+
+
+Powerstats for:   fileproviderd
+UUID:             1E852D71-775F-360B-8158-E0C6A9DFC3E9
+Path:             /System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Resource Coalition: 133 samples "com.apple.FileProvider"(519)
+On Behalf Of:     133 samples SaveToFiles [3568] (133 samples originated by SaveToFiles [3568])
+Architecture:     arm64e
+Start time:       2026-02-13 22:24:04.964 -0700
+End time:         2026-02-13 22:32:04.299 -0700
+Num samples:      133 (23%)
+Primary state:    133 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated, Override Thread QoS Unspecified, e-core
+User Activity:    0 samples Idle, 133 samples Active
+Power Source:     133 samples on Battery, 0 samples on AC
+  133  ??? (libsystem_pthread.dylib + 2240) [0x1ff4208c0]
+    133  ??? (libsystem_pthread.dylib + 5048) [0x1ff4213b8]
+      133  ??? (libdispatch.dylib + 85220) [0x1db5ebce4]
+        133  ??? (libdispatch.dylib + 87020) [0x1db5ec3ec]
+          133  ??? (libdispatch.dylib + 44920) [0x1db5e1f78]
+            132  ??? (libdispatch.dylib + 42088) [0x1db5e1468]
+              132  ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                132  ??? (libdispatch.dylib + 70736) [0x1db5e8450]
+                  132  ??? (libsystem_kernel.dylib + 20516) [0x250067024]
+                    119  <on behalf of SaveToFiles [3568] (originated by SaveToFiles [3568])>
+                    13   <on behalf of SaveToFiles [3568] (originated by SaveToFiles [3568]), p-core>
+            1    ??? (libdispatch.dylib + 41680) [0x1db5e12d0]
+              1    ??? (libdispatch.dylib + 129056) [0x1db5f6820]
+                1    ??? (libdispatch.dylib + 112684) [0x1db5f282c]
+                  1    ??? (libxpc.dylib + 79236) [0x1b6c98584]
+                    1    ??? (libxpc.dylib + 138896) [0x1b6ca6e90]
+                      1    ??? (Foundation + 10950868) [0x1a095e8d4]
+                        1    ??? (Foundation + 10935144) [0x1a095ab68]
+                          1    ??? (Foundation + 166416) [0x19ff15a10]
+                            1    ??? (CoreFoundation + 283984) [0x1a28f8550]
+                              1    ??? (CoreFoundation + 284356) [0x1a28f86c4]
+                                1    ??? (CoreFoundation + 271004) [0x1a28f529c]
+                                  1    ??? (FileProvider + 920740) [0x1caa64ca4]
+                                    1    ??? (CoreFoundation + 413232) [0x1a2917e30]
+                                      1    ??? (CoreFoundation + 283984) [0x1a28f8550]
+                                        1    ??? (CoreFoundation + 284356) [0x1a28f86c4]
+                                          1    ??? (FileProviderResolver + 37084) [0x26e2890dc]
+                                            1    ??? (FileProviderResolver + 49068) [0x26e28bfac]
+                                              1    ??? (FileProviderDaemon + 1392576) [0x1ef2f8fc0]
+                                                1    ??? (FileProviderDaemon + 1201784) [0x1ef2ca678]
+                                                  1    ??? (FileProviderDaemon + 7630096) [0x1ef8ebd10]
+                                                    1    ??? (FileProviderDaemon + 7629776) [0x1ef8ebbd0]
+                                                      1    ??? (FileProviderDaemon + 1203252) [0x1ef2cac34]
+                                                        1    ??? (FileProviderDaemon + 1199012) [0x1ef2c9ba4]
+                                                          1    ??? (libdispatch.dylib + 71872) [0x1db5e88c0]
+                                                            1    ??? (libdispatch.dylib + 112636) [0x1db5f27fc]
+                                                              1    ??? (FileProviderDaemon + 1203400) [0x1ef2cacc8]
+                                                                1    ??? (libprequelite.dylib + 29260) [0x2bc72624c]
+                                                                  1    ??? (libprequelite.dylib + 27232) [0x2bc725a60]
+                                                                    1    ??? (FileProviderDaemon + 1203464) [0x1ef2cad08]
+                                                                      1    ??? (libprequelite.dylib + 35100) [0x2bc72791c]
+                                                                        1    ??? (libprequelite.dylib + 34956) [0x2bc72788c]
+                                                                          1    ??? (libprequelite.dylib + 34580) [0x2bc727714]
+                                                                            1    ??? (libsqlite3.dylib + 191252) [0x1a1050b14]
+                                                                              1    ??? (libsqlite3.dylib + 210288) [0x1a1055570]
+                                                                                1    ??? (libsqlite3.dylib + 324648) [0x1a1071428]
+                                                                                  1    ??? (libsqlite3.dylib + 311576) [0x1a106e118]
+                                                                                    1    ??? (libsqlite3.dylib + 368376) [0x1a107bef8]
+                                                                                      1    ??? (libsqlite3.dylib + 328236) [0x1a107222c]
+                                                                                        1    ??? (libsystem_kernel.dylib + 27704) [0x250068c38]
+                                                                                          1    <on behalf of SaveToFiles [3568] (originated by SaveToFiles [3568]), p-core>
+
+  Binary Images:
+           0x102030000 -                ???  fileproviderd           <1E852D71-775F-360B-8158-E0C6A9DFC3E9>  /System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+           0x19feed000 -        0x1a0d33c9f  Foundation              <4C3912D2-E14A-3A21-926B-54BEF625BE89>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x1a1022000 -        0x1a11cb6b3  libsqlite3.dylib        <579118DA-D456-348C-9E1F-582D35482F62>  /usr/lib/libsqlite3.dylib
+           0x1a28b3000 -        0x1a2e3973f  CoreFoundation          <D52BCEEE-E890-347C-8461-1537154E22D9>  /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+           0x1b6c85000 -        0x1b6cd707f  libxpc.dylib            <26E3F9D7-75BB-3384-A2BF-2628F1DBB2BC>  /usr/lib/system/libxpc.dylib
+           0x1ca984000 -        0x1cab3d2bf  FileProvider            <AA2B3101-41B0-3E1A-8832-104B94023C61>  /System/Library/Frameworks/FileProvider.framework/FileProvider
+           0x1db5d7000 -        0x1db61d21f  libdispatch.dylib       <904D48A3-D99E-3962-BFA9-C3DFB66BBA83>  /usr/lib/system/libdispatch.dylib
+           0x1ef1a5000 -        0x1efd3b39f  FileProviderDaemon      <18491EDC-CEEE-369B-967E-73BAF028BB66>  /System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon
+           0x1ff420000 -        0x1ff42c45f  libsystem_pthread.dylib <4F94107B-94D2-3E88-8542-F5403C581B50>  /usr/lib/system/libsystem_pthread.dylib
+           0x250062000 -        0x25009cd2b  libsystem_kernel.dylib  <8D830129-2CBE-32A9-B61E-CE493EECB399>  /usr/lib/system/libsystem_kernel.dylib
+           0x26e280000 -        0x26e293f04  FileProviderResolver    <FFEB3B61-9728-307E-8C69-14C37D34B782>  /System/Library/PrivateFrameworks/FileProviderResolver.framework/FileProviderResolver
+           0x2bc71f000 -        0x2bc733fbf  libprequelite.dylib     <90591318-D67D-34D4-8F43-377E85E03BC0>  /usr/lib/libprequelite.dylib

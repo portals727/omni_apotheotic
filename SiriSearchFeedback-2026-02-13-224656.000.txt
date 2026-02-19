@@ -1,0 +1,2 @@
+{"bug_type":"313","timestamp":"2026-02-13 22:46:56.00 -0700","os_version":"iPhone OS 26.3 (23D127)","roots_installed":0,"incident_id":"409C5F1B-D58F-45EF-B9A2-AEEB2517F098"}
+{"user_guid":"8818FB92-66A4-4A1C-877C-90753D6C624E","country_code":"CA","session_start":1771048016,"agent":"parsecd\/1 (iPhone14,6; iPhone OS 26.3 23D127) visualintelligence\/1"}

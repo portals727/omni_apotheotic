@@ -1,0 +1,66 @@
+{"is_simulated":1,"app_name":"MobileSafari","timestamp":"2026-02-13 14:49:49.00 -0700","app_version":"26.3","slice_uuid":"32733536-5ef2-31d6-98a1-dc8a9b814aad","build_version":"8623.2.7.10.4","platform":2,"bundleID":"com.apple.mobilesafari","share_with_app_devs":0,"is_first_party":1,"bug_type":"308","os_version":"iPhone OS 26.3 (23D127)","roots_installed":0,"name":"MobileSafari","incident_id":"9B170193-7495-4ED4-B09F-B8F36D9CA9B9"}
+{
+  "uptime" : 65,
+  "procRole" : "Unspecified",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "iPhone14,6",
+  "coalitionID" : 628,
+  "osVersion" : {
+    "isEmbedded" : true,
+    "train" : "iPhone OS 26.3",
+    "releaseType" : "User",
+    "build" : "23D127"
+  },
+  "captureTime" : "2026-02-13 14:49:49.3110 -0700",
+  "codeSigningMonitor" : 2,
+  "incident" : "9B170193-7495-4ED4-B09F-B8F36D9CA9B9",
+  "pid" : 411,
+  "translated" : false,
+  "cpuType" : "ARM-64",
+  "procStartAbsTime" : 1046280579,
+  "procName" : "MobileSafari",
+  "procPath" : "\/private\/var\/containers\/Bundle\/Application\/E18515F5-DE94-4AFB-86E5-36BBC572F6CD\/MobileSafari.app\/MobileSafari",
+  "bundleInfo" : {"CFBundleShortVersionString":"26.3","CFBundleVersion":"8623.2.7.10.4","CFBundleIdentifier":"com.apple.mobilesafari"},
+  "storeInfo" : {"deviceIdentifierForVendor":"39394EAA-D2D5-4D30-ACCF-BBABB0BCFECB"},
+  "parentPid" : 1,
+  "coalitionName" : "com.apple.mobilesafari",
+  "crashReporterKey" : "9d4fe23ff829fc0608fca5485e3767f773f13c0b",
+  "bootProgressRegister" : "0x20800004",
+  "codeSigningValidationCategory" : 0,
+  "codeSigningTrustLevel" : 0,
+  "bootSessionUUID" : "B780BF1A-E795-471D-B6B1-C3FE2255FCBD",
+  "basebandVersion" : "5.40.01",
+  "isLightWeightCorpse" : 1,
+  "exception" : {"codes":"0x600000000000001f, 0x0000000000000000","reason":0,"message":"namespc 31 reason_code 0x0000000000000000","subtype":"GUARD_TYPE_USER","type":"EXC_GUARD","rawCodes":[6917529027641081887,0],"namespc":31},
+  "termination" : {"namespace":"WEBKIT","flags":518,"code":0},
+  "faultingThread" : 0,
+  "threads" : [{"id":5810,"frames":[{"imageOffset":2962061676,"imageIndex":0},{"imageOffset":752640,"imageIndex":0},{"imageOffset":749044,"imageIndex":0},{"imageOffset":747956,"imageIndex":0},{"imageOffset":634140,"imageIndex":0},{"imageOffset":619748,"imageIndex":0},{"imageOffset":1428071268,"imageIndex":0},{"imageOffset":2574051140,"imageIndex":0},{"imageOffset":2574052276,"imageIndex":0},{"imageOffset":2574096872,"imageIndex":0},{"imageOffset":2574091308,"imageIndex":0},{"imageOffset":2574087072,"imageIndex":0},{"imageOffset":502806716,"imageIndex":0},{"imageOffset":507109860,"imageIndex":0},{"imageOffset":507102628,"imageIndex":0},{"imageOffset":501012064,"imageIndex":0},{"imageOffset":513266624,"imageIndex":0},{"imageOffset":507653792,"imageIndex":0},{"imageOffset":494595308,"imageIndex":0},{"imageOffset":494518848,"imageIndex":0},{"imageOffset":494586128,"imageIndex":0},{"imageOffset":406309584,"imageIndex":0},{"imageOffset":406309000,"imageIndex":0},{"imageOffset":51953424,"imageIndex":0},{"imageOffset":51953284,"imageIndex":0},{"imageOffset":51813068,"imageIndex":0},{"imageOffset":51644120,"imageIndex":0},{"imageOffset":51640940,"imageIndex":0},{"imageOffset":2812990616,"imageIndex":0},{"imageOffset":146734584,"imageIndex":0},{"imageOffset":146378324,"imageIndex":0},{"imageOffset":2572659616,"imageIndex":0},{"imageOffset":1158696,"imageIndex":0}],"threadState":{"x":[{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":0},"fp":{"value":0},"sp":{"value":0},"esr":{"value":0},"pc":{"value":0,"matchesCrashFrame":0},"far":{"value":0}}}],
+  "usedImages" : [
+  {
+    "size" : 4870639764,
+    "source" : "S",
+    "base" : 6442450944,
+    "uuid" : "754cd0b8-c15e-3bf0-a0c3-6d1580ec9b79"
+  }
+],
+  "legacyInfo" : {
+  "threadTriggered" : {
+
+  }
+},
+  "bug_type" : "308",
+  "roots_installed" : 0,
+  "trialInfo" : {
+  "rollouts" : [
+
+  ],
+  "experiments" : [
+
+  ]
+},
+  "reportNotes" : [
+  "PC register does not match crashing frame (0x0 vs 0x2308D796C)"
+]
+}
