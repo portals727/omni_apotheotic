@@ -1,0 +1,311 @@
+Omnipod Bayshore Shipments
+———————————————————————
+Purolator (June)
+———————————————————————
+Bayshore Order # (Date): 06-03-2025 (6:18PM)
+Bayshore Order #: 6218086-0P
+Bayshore Tracking #: 335480758622
+Bayshore (Delivered): 06-05-2025 (8:41PM)
+Bayshore Order #2 (06-05-2025): 5780050116666
+———————————————————————
+Purolator Exceltions: (5780050116666)
+———————————————————————
+Omnipod Online (Out for delivery ~ 06-05-2025-3:11PM): 335480758622
+———————————————————————
+Purolator Tracking #: 335480758622
+Purolator (Service): Purolator Express
+Purolator (References): SM08217079
+Purolator (Delivery Date): 06-05-2025 (2:30PM)
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=335480758622&sdate=2025-06-04
+———————————————————————
+Date	City	Description
+Thu. June 5, 2025 - 2:30 p.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Thu. June 5, 2025 - 8:47 a.m.	EDMONTON, AB	On vehicle for delivery
+Thu. June 5, 2025 - 7:51 a.m.	EDMONTON, AB	On vehicle for delivery
+Thu. June 5, 2025 - 3:12 a.m.	EDMONTON, AB	Arrived at sort facility
+Thu. June 5, 2025 - 3:06 a.m.	EDMONTON, AB	Arrived at sort facility
+Thu. June 5, 2025 - 2:58 a.m.	EDMONTON, AB	Arrived at sort facility
+Thu. June 5, 2025 - 1:36 a.m.	PUROLATOR	Label information electronically submitted
+Wed. June 4, 2025 - 4:01 p.m.	EDMONTON, AB	Arrived at sort facility
+Wed. June 4, 2025 - 4:00 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Wed. June 4, 2025 - 10:39 a.m.	PUROLATOR	Shipper created a label
+———————————————————————
+Bayshore Order # (Date): 06-10-2025
+Bayshore Order #: 6218773-0P
+Bayshore Order # (Date Delivered): 06-11-2025 (11:20PM)
+Bayshore Order #2: 5792518930490
+Bayshore Tracking Number: 335495184459
+———————————————————————
+Purolator Exceptions: (5792518930490)
+———————————————————————
+Purolator Tracking #: 335495184459
+Purolator (References): SM08244249
+Purolator (Shipment Date): 06-10-2025
+Purolator (Delivered Date): 06-11-2025 (4:54PM)
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=335495184459&sdate=2025-06-10
+———————————————————————
+Date	City	Description
+Wed. June 11, 2025 - 4:54 p.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Wed. June 11, 2025 - 8:28 a.m.	EDMONTON, AB	On vehicle for delivery
+Wed. June 11, 2025 - 3:16 a.m.	EDMONTON, AB	Arrived at sort facility
+Wed. June 11, 2025 - 1:43 a.m.	PUROLATOR	Label information electronically submitted
+Tue. June 10, 2025 - 4:05 p.m.	EDMONTON, AB	Arrived at sort facility
+Tue. June 10, 2025 - 4:05 p.m.	EDMONTON, AB	Arrived at sort facility
+Tue. June 10, 2025 - 4:04 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Tue. June 10, 2025 - 10:51 a.m.	PUROLATOR	Shipper created a label
+———————————————————————
+Bayshore Order # (Date): 06-19-2025 (11:14AM)
+Bayshore Order #: 6219808-0P
+Bayshore Order #2: 5803147329594
+Bayshore Tracking #: 335522107903
+Bayshore (Delivered Date): 06-23-2025 (7:49PM)
+———————————————————————
+Purolator (Shipment Date): 06-20-2025 (11:42AM)
+Purolator (Delivered w/Signature): 06-23-2025 (1:30PM)
+Purolator Tracking #: 335522107903
+Purolator (References): SM08292665
+———————————————————————
+Purolator Exceptions (5803147329594): 
+———————————————————————
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=335522107903&sdate=2025-06-20
+———————————————————————
+Omnipod Rep (Aftership): https://omnipod.aftership.com/335522107903?_sc_p=lid%3Ae8273e9b8606618ab2da721cc8dc7545%2Aseg%3Aaftership-tracking_out_for_delivery_to_customer-am_trace_id%3D4038b05e6ca88e3e2e19acae0690da16%2F0%2Amdm%3Aemail
+———————————————————————
+Date	City	Description
+Mon. June 23, 2025 - 1:30 p.m.	EDMONTON, AB	Shipment delivered to Darren H at: Front Door 9923 88 ST NW,T5H4N1
+Mon. June 23, 2025 - 7:46 a.m.	EDMONTON, AB	On vehicle for delivery
+Mon. June 23, 2025 - 2:47 a.m.	EDMONTON, AB	Arrived at sort facility
+Mon. June 23, 2025 - 2:38 a.m.	EDMONTON, AB	Arrived at sort facility
+Sat. June 21, 2025 - 7:15 a.m.	PUROLATOR	Label information electronically submitted
+Fri. June 20, 2025 - 3:52 p.m.	EDMONTON, AB	Arrived at sort facility
+Fri. June 20, 2025 - 3:51 p.m.	EDMONTON, AB	Arrived at sort facility
+Fri. June 20, 2025 - 3:51 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Fri. June 20, 2025 - 11:42 a.m.	PUROLATOR	Shipper created a label
+———————————————————————
+Purolator (July)
+———————————————————————
+Bayshore Order # (Date): 07-01-2025 (6:42AM)
+Bayshore Order #: 6221151-0P
+Bayshore Note: Local Pickup 07-02-2025
+———————————————————————
+Bayshore Order (Date): 07-05-2025 
+Bayshore Order (Email Date): 07-06-2025 (2:18AM)
+Bayshore Note: What kind of fucking company sends an email at 2:18AM in the morning other than a crack head?
+Bayshore Order #: 6221680-0P
+Bayshore (Shipment Date): 07-07-2025 (1:40PM)
+Bayshore Order # (Delivered): 07-08-2025 (4:26PM)
+———————————————————————
+Purolator References: SM08364691
+Purolator (Service): Purolator Express
+Purolator Tracking #: 335556177350
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=335556177350&sdate=2025-07-07&ref=SM08364691
+———————————————————————
+Date	City	Description
+Tue. July 8, 2025 - 4:26 p.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Tue. July 8, 2025 - 8:07 a.m.	EDMONTON, AB	On vehicle for delivery
+Tue. July 8, 2025 - 7:50 a.m.	EDMONTON, AB	Arrived at sort facility
+Tue. July 8, 2025 - 3:19 a.m.	EDMONTON, AB	Arrived at sort facility
+Tue. July 8, 2025 - 2:56 a.m.	EDMONTON, AB	Arrived at sort facility
+Tue. July 8, 2025 - 12:30 a.m.	PUROLATOR	Label information electronically submitted
+Mon. July 7, 2025 - 8:10 p.m.	EDMONTON, AB	Arrived at sort facility
+Mon. July 7, 2025 - 8:09 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Mon. July 7, 2025 - 1:40 p.m.	PUROLATOR	Shipper created a la
+Bayshore Order (Date): 07-17-2025
+Bayshore (Delivered): 07-18-2025 (6:08PM)
+———————————————————————
+Purolator Tracking #: 335580480861
+Purolator (Reference): SM08400141
+Purolator (Delivered): 07-18-2025 (11:59AM)
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=335580480861&sdate=2025-07-17
+Date	City	Description
+Fri. July 18, 2025 - 11:59 a.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Fri. July 18, 2025 - 7:23 a.m.	EDMONTON, AB	On vehicle for delivery
+Fri. July 18, 2025 - 1:55 a.m.	EDMONTON, AB	Arrived at sort facility
+Fri. July 18, 2025 - 1:48 a.m.	EDMONTON, AB	Arrived at sort facility
+Fri. July 18, 2025 - 12:15 a.m.	PUROLATOR	Label information electronically submitted
+Thu. July 17, 2025 - 5:27 p.m.	EDMONTON, AB	Arrived at sort facility
+Thu. July 17, 2025 - 5:26 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Thu. July 17, 2025 - 11:23 a.m.	PUROLATOR	Shipper created a label
+Bayshore Order (Date ~ Cancelled): 07-24-2025 (10:49PM)
+Bayshore Order # (Date): 6223801-0P
+Order # (Cancelled - 07-25-2025): 6223801OP
+———————————————————————
+Bayshore Order Date: 07-29-2025 (8:05PM)
+Bayshore Order #: 6224333-0P
+Bayshore Order # (Delivered): 224333
+Bayshore Local Pickup: 07-31-2025 
+———————————————————————
+Purolator (August)
+———————————————————————
+Bayshore (Date): 08-09-2025 (6:55PM) 
+Bayshore Order #: 6225540-0P
+Bayshore (Date Delivered): 08-14-2025 (7:33PM)
+Bayshore Order #2: 5865206808634
+Bayshore Tracking #: 335629340894
+———————————————————————Omnipod Online (Out for Delivery): 225540
+Omnipod Online (Delivered): Missing
+———————————————————————
+Purolator Tracking #: 335629340894
+Purolator (Reference): SM08520933
+Purolator (Exceptions): 5865206808634
+Purplator (Shipper Created Label): 10-13-2025 (10:20AM)
+Purolator (Label Information Electronically Submitted): 08-14-2025 (12:12AM)
+Purolator (Delivered): 08-14-2025 (1:13PM)
+Purolater (Service): Purolator Express
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=335629340894&sdate=2025-08-13
+———————————————————————
+Date	City	Description
+Thu. Aug. 14, 2025 - 1:13 p.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Thu. Aug. 14, 2025 - 7:42 a.m.	EDMONTON, AB	On vehicle for delivery
+Thu. Aug. 14, 2025 - 2:46 a.m.	EDMONTON, AB	Arrived at sort facility
+Thu. Aug. 14, 2025 - 2:05 a.m.	EDMONTON, AB	Arrived at sort facility
+Thu. Aug. 14, 2025 - 1:57 a.m.	EDMONTON, AB	Arrived at sort facility
+Thu. Aug. 14, 2025 - 12:12 a.m.	PUROLATOR	Label information electronically submitted
+Wed. Aug. 13, 2025 - 6:08 p.m.	EDMONTON, AB	Arrived at sort facility
+Wed. Aug. 13, 2025 - 6:08 p.m.	EDMONTON, AB	Arrived at sort facility
+Wed. Aug. 13, 2025 - 6:07 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Wed. Aug. 13, 2025 - 10:20 a.m.	PUROLATOR	Shipper create
+Bayshore Order Date: 08-22-2025 (8:21AM)
+Bayshore Order #: 6226979-0P
+Bayshore Order # (Delivered): 08-25-2025 
+———————————————————————
+Omnipod Online (Out for Delivery): 2:03PM
+Omnipod Online (Delivered): Missing
+———————————————————————
+Purolator (Tracking #): 520021800070
+Purolator (Delivered Date): 08-25-2025 (12:34PM)
+Purolator (Origin): Not Available/Pas Disponible
+Purolator (References): SM08579063
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=520021800070&sdate=2025-08-22
+———————————————————————
+Purolator (Label Information Electronically Submitted): 08-23-2025 (7:00AM)
+———————————————————————
+Date	City	Description
+Mon. Aug. 25, 2025 - 12:34 p.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Mon. Aug. 25, 2025 - 8:00 a.m.	EDMONTON, AB	On vehicle for delivery
+Mon. Aug. 25, 2025 - 2:34 a.m.	EDMONTON, AB	Arrived at sort facility
+Mon. Aug. 25, 2025 - 2:11 a.m.	EDMONTON, AB	Arrived at sort facility
+Mon. Aug. 25, 2025 - 2:05 a.m.	EDMONTON, AB	Arrived at sort facility
+Sat. Aug. 23, 2025 - 7:00 a.m.	PUROLATOR	Label information electronically submitted
+Fri. Aug. 22, 2025 - 3:29 p.m.	EDMONTON, AB	Arrived at sort facility
+Fri. Aug. 22, 2025 - 3:28 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Fri. Aug. 22, 2025 - 2:25 p.m.	PUROLATOR	Shipper created a label
+———————————————————————
+———————————————————————
+Purolator (September)
+———————————————————————
+———————————————————————
+Bayshore Order (Date): 09-06-2025 (6:36PM)
+Bayshore Order #: 6228684-0P
+———————————————————————
+Bayshore Lead Pin: 6228684
+———————————————————————
+Bayshore Order (Date): 09-06-2025 (6:36PM)
+Bayshore Order #: 6228684-0P
+Bayshore Order #2: 5902236254266
+Bayshore Order (Delivered): 09-09-2025 (7:35PM)
+Bayshore Tracking #: 520043728135
+———————————————————————
+Purolator Exceptions: (5902236254266)
+———————————————————————
+Purolator Tracking #: 520043728135
+Purolator (References): SM08647730
+Purolator (Shipment Date): 09-08-2025
+Purolator (Delivered): 09-09-2025 (1:16PM)
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=520043728135&sdate=2025-09-08
+———————————————————————
+Date	City	Description
+Mon. Sept. 15, 2025 - 10:22 p.m.	PUROLATOR	Label information electronically submitted
+Tue. Sept. 9, 2025 - 1:16 p.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Tue. Sept. 9, 2025 - 7:48 a.m.	EDMONTON, AB	On vehicle for delivery
+Tue. Sept. 9, 2025 - 1:55 a.m.	EDMONTON, AB	Arrived at sort facility
+Tue. Sept. 9, 2025 - 1:54 a.m.	EDMONTON, AB	Arrived at sort facility
+Mon. Sept. 8, 2025 - 11:09 p.m.	EDMONTON, AB	Arrived at sort facility
+Mon. Sept. 8, 2025 - 11:08 p.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Mon. Sept. 8, 2025 - 11:09 a.m.	PUROLATOR	Shipper created a label
+———————————————————————
+Strange Phenomenon (Bayshore Order Confirmation # -> Lead Pin): 6228684
+———————————————————————
+Lead Pin (1 of 3): WDA000348934
+Date	City	Description
+Fri. Aug. 23, 2024 - 9:52 a.m.	YARMOUTH, NS	Shipment delivered
+Fri. Aug. 23, 2024 - 9:28 a.m.	YARMOUTH, NS	On vehicle for delivery
+Fri. Aug. 23, 2024 - 9:10 a.m.	YARMOUTH, NS	Arrived at sort facility
+Thu. Aug. 22, 2024 - 3:37 p.m.	DIEPPE, NB	Arrived at sort facility
+Thu. Aug. 22, 2024 - 3:34 p.m.	DIEPPE, NB	Arrived at sort facility
+Wed. Aug. 21, 2024 - 9:07 p.m.	ETOBICOKE, ON	Departed sort facility
+Wed. Aug. 21, 2024 - 6:41 p.m.	ETOBICOKE, ON	Departed sort facility
+Wed. Aug. 21, 2024 - 6:38 p.m.	ETOBICOKE, ON	Arrived at sort facility
+Wed. Aug. 21, 2024 - 6:37 p.m.	ETOBICOKE, ON	Picked up by Purolator
+Wed. Aug. 21, 2024 - 6:19 p.m.	PUROLATOR	Label information electronically submitted
+Wed. Aug. 21, 2024 - 2:05 p.m.	PUROLATOR	Shipper created a label
+———————————————————————
+Lead Pin (2 of 3): WDA000349318
+Date	City	Description
+Fri. Aug. 23, 2024 - 9:52 a.m.	YARMOUTH, NS	Shipment delivered
+Fri. Aug. 23, 2024 - 9:28 a.m.	YARMOUTH, NS	On vehicle for delivery
+Fri. Aug. 23, 2024 - 9:13 a.m.	YARMOUTH, NS	Arrived at sort facility
+Thu. Aug. 22, 2024 - 10:52 p.m.	DIEPPE, NB	Arrived at sort facility
+Thu. Aug. 22, 2024 - 3:37 p.m.	DIEPPE, NB	Arrived at sort facility
+Thu. Aug. 22, 2024 - 3:34 p.m.	DIEPPE, NB	Arrived at sort facility
+Wed. Aug. 21, 2024 - 9:07 p.m.	ETOBICOKE, ON	Departed sort facility
+Wed. Aug. 21, 2024 - 6:20 p.m.	ETOBICOKE, ON	Departed sort facility
+Wed. Aug. 21, 2024 - 6:19 p.m.	PUROLATOR	Label information electronically submitted
+Wed. Aug. 21, 2024 - 6:19 p.m.	PUROLATOR	Shipper created a label
+Wed. Aug. 21, 2024 - 6:17 p.m.	ETOBICOKE, ON	Arrived at sort facility
+Wed. Aug. 21, 2024 - 6:16 p.m.	ETOBICOKE, ON	Picked up by Purolator
+———————————————————————
+Lead Pin (3 of 3): WDA000349319
+Date	City	Description
+Fri. Aug. 23, 2024 - 9:52 a.m.	YARMOUTH, NS	Shipment delivered
+Fri. Aug. 23, 2024 - 9:28 a.m.	YARMOUTH, NS	On vehicle for delivery
+Fri. Aug. 23, 2024 - 9:10 a.m.	YARMOUTH, NS	Arrived at sort facility
+Thu. Aug. 22, 2024 - 10:54 p.m.	DIEPPE, NB	Arrived at sort facility
+Thu. Aug. 22, 2024 - 3:37 p.m.	DIEPPE, NB	Arrived at sort facility
+Thu. Aug. 22, 2024 - 3:34 p.m.	DIEPPE, NB	Arrived at sort facility
+Wed. Aug. 21, 2024 - 9:07 p.m.	ETOBICOKE, ON	Departed sort facility
+Wed. Aug. 21, 2024 - 6:19 p.m.	ETOBICOKE, ON	Departed sort facility
+Wed. Aug. 21, 2024 - 6:19 p.m.	PUROLATOR	Label information electronically submitted
+Wed. Aug. 21, 2024 - 6:19 p.m.	PUROLATOR	Shipper created a label
+Wed. Aug. 21, 2024 - 6:16 p.m.	ETOBICOKE, ON	Arrived at sort facility
+Wed. Aug. 21, 2024 - 6:15 p.m.	ETOBICOKE, ON	Picked up by Purolato
+———————————————————————
+Bayshore Order (Date): 09-17-2025 (6:09AM)
+Bayshore Order #: 6229886-0P
+———————————————————————
+Omnipod Online (Out for Delivery): Potentially email hack deleted
+Omnipod Online (Delivered): Potentially email hack deleted
+———————————————————————
+Bayshore Order (Date): 09-22-2025 
+Bayshore Order #: 6226979-0P
+Bayshore Order # (Delivered): Email Hack related
+Omnipod Online (Out for Delivery): Email Hack related
+Omnipod Online (Delivered): Email Hack related
+_______________________________________
+October
+_______________________________________
+Bayshore (Date): 10-09-2025 (7:11PM)
+Bayshore Order #: 6232515-0P
+Bayshore Order # (Delivered): 
+———————————————————————
+Purolator Tracking #: 520098678524
+Purolator (Ship Date): 10-10-2025 (
+Purolator (Delivered): 10-15-2025 (4:36PM)
+Purolator (Origin): Not Available/Pas Disponible
+Purolator (Service): Purolator Express
+Purolator (References): SM08802634
+Purolator: https://www.purolator.com/en/shipping/tracker?pin=520098678524&sdate=2025-10-10
+———————————————————————
+Date	City	Description
+Wed. Oct. 15, 2025 - 4:36 p.m.	EDMONTON, AB	Shipment delivered at: Front Door 9923 88 ST NW,T5H4N1
+Wed. Oct. 15, 2025 - 4:03 p.m.	EDMONTON, AB	On vehicle for delivery
+Wed. Oct. 15, 2025 - 8:48 a.m.	EDMONTON, AB	On vehicle for delivery
+Wed. Oct. 15, 2025 - 6:59 a.m.	EDMONTON, AB	Arrived at sort facility
+Wed. Oct. 15, 2025 - 6:49 a.m.	EDMONTON, AB	Arrived at sort facility
+Wed. Oct. 15, 2025 - 2:55 a.m.	EDMONTON, AB	Arrived at sort facility
+Wed. Oct. 15, 2025 - 1:59 a.m.	EDMONTON, AB	Departed sort facility
+Tue. Oct. 14, 2025 - 1:13 p.m.	EDMONTON, AB	Mechanical delay - delivery date to be updated once service resumes
+Tue. Oct. 14, 2025 - 5:57 a.m.	EDMONTON, AB	Arrived at sort facility
+Tue. Oct. 14, 2025 - 5:56 a.m.	EDMONTON, AB	Picked up by Purolator at EDMONTON,AB
+Sat. Oct. 11, 2025 - 7:14 a.m.	PUROLATOR	Label information electronically submitted
+Fri. Oct. 10, 2025 - 11:20 a.m.	PUROLATOR	Shipp

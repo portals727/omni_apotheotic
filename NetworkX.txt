@@ -1,0 +1,22 @@
+Networkx
+_______________________________________
+Create Virtual Environment
+python3 -m venv omni_env
+_______________________________________
+python3 -m venv omni_apotheosis_env
+_______________________________________
+Activate Virtual Environment
+source omni_env/bin/activate
+_______________________________________
+source omni_apotheosis_env/bin/activate
+_______________________________________
+Install networkx
+pip install networkx[default]
+_______________________________________
+Deactivate Virtual Environment
+deactivate
+_______________________________________
+pip install 'networkx[default]'
+_______________________________________
+pip install ‘ray[default]’
+_______________________________________

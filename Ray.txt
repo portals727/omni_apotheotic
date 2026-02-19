@@ -1,0 +1,20 @@
+Ray Installation
+_______________________________________
+Create the environment
+mamba create -n ray_env python=3.12 -y
+_______________________________________
+Activate it
+mamba activate ray_env
+_______________________________________
+Install Ray
+pip install -U "ray[default]"
+_______________________________________
+Test
+python -c "import ray; print(ray.__version__)"
+_______________________________________
+import ray
+@ray.remote
+def hello():
+    return "Hello from Ray!"
+print(ray.get(hello.remote()))
+_______________________________________

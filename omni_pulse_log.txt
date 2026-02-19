@@ -1,0 +1,50 @@
+
+# File: load_omnipod_pulselog.py
+# Drop into Ghidra → Script Manager → New Script → Python
+from ghidra.app.util.bin.format import FactoryBundledWithBinaryReader
+from ghidra.program.model.data import StructureDataType, ByteDataType, Pointer64DataType
+from ghidra.program.model.mem import MemoryBlock
+import struct
+
+def parse_pulse_line(line):
+    if not line.strip() or ':' not in line: return None
+    parts = line.split(':')[1].strip().split()
+    if len(parts) != 4: return None
+    return bytes(int(b,2) for b in parts)
+
+currentProgram.getMemory().deleteUninitializedBlocks()
+mem = currentProgram.getMemory()
+
+base = 0x00000000   # We load raw flash at 0x0 (HCS08 is 64 KB)
+block = mem.createInitializedBlock("flash", toAddr(base), 0x10000, 0, monitor=True)
+
+with open(currentProgram.getExecutablePath(), "rb") as f:  # assume you imported one .txt as binary first
+    raw = f.read()
+
+addr = base
+for filename in [
+    "6D1597C1-6070-4EF7-AA.txt",
+    "09-25-2025-24H8M-(0001-0060).txt",
+    "08-25-25-4H23M-(0001-0060).txt",
+    "Unknown-(1001-1050).txt",
+    "Unknown-(2532-2581).txt",
+    "08-23-2025-(3343-3392).txt",
+    "08-25-25_PL+62_0H6M.txt",
+    "09-20-24-(1547-1596).txt"
+]:
+    with open(filename) as f:
+        for line in f:
+            b = parse_pulse_line(line)
+            if b:
+                block.putBytes(toAddr(addr), b)
+                addr += 4
+
+# Define the 32-bit pulse structure
+pulse_struct = StructureDataType("Pulse32", 0)
+pulse_struct.add(ByteDataType(), 1, "eeee ee0a", "")
+pulse_struct.add(ByteDataType(), 1, "ppp liii b", "")
+pulse_struct.add(ByteDataType(), 1, "ccc cccc c", "")
+pulse_struct.add(ByteDataType(), 1, "dfgg gggg", "")
+currentProgram.getDataTypeManager().addDataType(pulse_struct)
+
+print("Omnipod pulse logs loaded 0x%08X → 0x%08X" % (base, addr))
