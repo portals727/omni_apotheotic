@@ -1,0 +1,57 @@
+### Key Points on Exploitation Possibilities for Reddit OAuth and SSO
+- **CSRF Attacks**: Attackers can forge requests to trick users into authorizing malicious apps, leading to unauthorized access without user awareness.
+- **Authorization Code Interception**: Codes can be stolen during transmission or via misconfigured redirects, allowing account hijacks.
+- **Redirect URI Manipulation**: By altering URIs, attackers redirect tokens to controlled sites, compromising user sessions.
+- **Response-Type Switching in Apple SSO**: Exploits switch response types to leak codes or tokens via XSS, enabling full account takeovers.
+- **Email-Based Misconfigurations**: Using the same email for OAuth logins can bypass verifications, letting attackers access accounts.
+
+#### Overview
+Reddit's OAuth and SSO implementations, while enabling convenient logins via providers like Google and Apple, inherit common OAuth vulnerabilities. These can lead to account compromises, data leaks, or unauthorized actions. Specific issues have been reported in Reddit's Apple integration and general OAuth handling.
+
+#### Impacts
+Such exploits can result in full account access, credential theft, or session hijacking, affecting user privacy and security.
+
+---
+
+Reddit's OAuth and SSO systems, built on OAuth 2.0 protocols, facilitate third-party integrations and logins but expose several exploitation vectors due to inherent framework weaknesses and implementation flaws. This comprehensive overview details possible abuse methods, drawing from documented vulnerabilities and general OAuth risks applicable to Reddit. While Reddit acts as both an OAuth provider (for external apps) and consumer (via Google/Apple SSO), these roles create bidirectional risks.
+
+#### Conceptual Foundations and Inherent Risks
+OAuth 2.0 underpins Reddit's SSO, allowing delegated authorization without sharing credentials. However, flaws like improper validation of parameters (e.g., state, redirect_uri) enable attacks. Common patterns include logic errors in token handling and misconfigurations in provider integrations. Reddit's consumer-focused design amplifies these, as it lacks enterprise-grade features like SAML, making it susceptible to web-based exploits.
+
+#### Specific Exploitation Vectors
+1. **CSRF in Authorization Flows**: Attackers forge requests to initiate unauthorized OAuth grants. Without proper state parameter validation, users can be tricked into approving malicious apps via phishing or embedded links, leading to token issuance for attacker-controlled clients.
+   
+2. **Authorization Code and Token Interception**: Codes/tokens can be stolen mid-flow, especially in implicit grants or via insecure channels. In Reddit's Apple SSO, a reported flaw allowed one-click hijacks by switching response types (from code to code+id_token) and using response_mode=fragment, leaking tokens via XSS on redditmedia.com subdomains.
+
+3. **Redirect URI Manipulation**: By registering broad or wildcard URIs, attackers redirect authorization responses to malicious sites, capturing codes/tokens. This bypasses Reddit's endpoint restrictions, enabling session hijacks.
+
+4. **Email and Account Linking Misconfigurations**: OAuth logins with shared emails (e.g., Google) can bypass verifications. An attacker signing up via OAuth with a victim's email gains access post-logout, as Reddit doesn't enforce unique bindings or notify of existing accounts.
+
+5. **XSS and PostMessage Vulnerabilities**: In Apple integrations, tainted state values and href leaks to XSS-vulnerable domains allow token theft. This exploits postMessage for cross-origin communication, capturing sensitive data without user interaction.
+
+6. **Implicit Grant Weaknesses**: Used for installed apps, this flow sends tokens in URL fragments, vulnerable to logging or interception in browsers/servers.
+
+#### Broader Implications
+These vectors can chain: e.g., intercepted tokens grant API access for data exfiltration or privilege escalation. Impacts include account takeovers, PII leaks, or backdoor creation. Reddit's limited data sharing (no emails) mitigates some risks, but consumer SSO dependencies on external providers introduce third-party flaws.
+
+| Exploitation Vector | Description | Potential Impact | Example in Reddit Context |
+|---------------------|-------------|------------------|---------------------------|
+| CSRF Attacks | Forged requests approve malicious apps without validation. | Unauthorized access to user data. | Tricking users into authorizing attacker apps via phishing. |
+| Code Interception | Stealing codes during transmission or via mode switches. | Full account hijack. | Apple SSO response-type switch leaking tokens via XSS. |
+| Redirect URI Manipulation | Altering URIs to redirect tokens to attacker sites. | Session compromise. | Broad URI registrations capturing Reddit API tokens. |
+| Email Misconfigurations | Bypassing verifications with shared OAuth emails. | Account takeover. | Logging in with victim's Gmail post-signup. |
+| XSS/PostMessage Flaws | Leaking data via cross-origin vulnerabilities. | Token theft. | Href leaks on redditmedia.com in Apple flows. |
+
+#### Mitigation Considerations
+While not exhaustive, best practices include strict URI validation, state/nonce usage, and token encryption. Reddit has patched specific issues (e.g., Apple hijack), but ongoing risks stem from OAuth's design.
+
+**Key Citations:**
+- [https://hackerone.com/reports/1567186](https://hackerone.com/reports/1567186)
+- [https://portswigger.net/web-security/oauth](https://portswigger.net/web-security/oauth)
+- [https://blog.doyensec.com/2025/01/30/oauth-common-vulnerabilities.html](https://blog.doyensec.com/2025/01/30/oauth-common-vulnerabilities.html)
+- [https://hackerone.com/reports/1212374](https://hackerone.com/reports/1212374)
+- [https://arxiv.org/abs/1601.01229](https://arxiv.org/abs/1601.01229)
+- [https://securityboulevard.com/2025/04/security-vulnerabilities-in-saml-oauth-2-0-openid-connect-and-jwt](https://securityboulevard.com/2025/04/security-vulnerabilities-in-saml-oauth-2-0-openid-connect-and-jwt)
+- [https://www.cise.ufl.edu/~butler/pubs/dimva15.pdf](https://www.cise.ufl.edu/~butler/pubs/dimva15.pdf)
+- [https://astrix.security/learn/blog/part-2-how-attackers-exploit-oauth-a-deep-dive](https://astrix.security/learn/blog/part-2-how-attackers-exploit-oauth-a-deep-dive)
+- [https://securityboulevard.com/2025/06/common-sso-vulnerabilities-and-mitigations-protecting-your-authentication-flow](https://securityboulevard.com/2025/06/common-sso-vulnerabilities-and-mitigations-protecting-your-authentication-flow)
