@@ -1,0 +1,276 @@
+omni_apotheosis.py - apotheotic_rtlomni_seed.json
+_______________________________________
+09-20-24-(1547-1596) - Terminal Output
+Killware: True
+2025-11-11 23:21:22,883 - APOTHEOTIC - INFO - Annealed LCG_a: 24.000 (resonance: -0.0449)
+2025-11-11 23:21:23,165 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.020926, Pleroma 1.246159
+2025-11-11 23:21:24,945 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000156, Pleroma 0.977449
+2025-11-11 23:21:26,701 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000101, Pleroma 0.973477
+2025-11-11 23:21:28,463 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000043, Pleroma 0.972396
+2025-11-11 23:21:30,282 - APOTHEOTIC - INFO - Pleromic Candidates: 77 from 77
+2025-11-11 23:21:34,366 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:21:34,440 - APOTHEOTIC - INFO - Pleromic Apotheosis: 127.26 (var: 5457.7671)
+2025-11-11 23:21:34,853 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 127.25968,
+  "apotheosis_variance": 5457.767086297599,
+  "apotheosized_chain": "11995959595959595959595959595959595959595959595959595959595959595959595959595959595959595959595959595959595959",
+  "chain_entropy": 0.18141552308224446,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.025908340214698598,
+  "apotheotic_fractal_dimension": 1.740108861599167,
+  "vae_pca_variance": 1.0,
+  "reconstruction_loss": 2544.49755859375,
+  "f1_anomalies": "25",
+  "f4_anomalies": "2688",
+  "shift_ratio": "25:2688",
+  "f1_entropy": 3.9120230054281455,
+  "f4_entropy": 0.6802920001921535,
+  "replay_fidelity": "99.8% (ent: 0.18, ham: 0.03, loss: 2544.4976)"
+Unknown-(2532-2581).txt - Terminal Output
+Killware: True
+2025-11-11 23:17:48,931 - APOTHEOTIC - INFO - Annealed LCG_a: 19.000 (resonance: -0.0473)
+2025-11-11 23:17:49,199 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.020805, Pleroma 1.237650
+2025-11-11 23:17:51,028 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000202, Pleroma 0.973945
+2025-11-11 23:17:52,771 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000092, Pleroma 0.967419
+2025-11-11 23:17:54,537 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000054, Pleroma 0.968888
+2025-11-11 23:17:56,246 - APOTHEOTIC - INFO - Pleromic Candidates: 156 from 156
+2025-11-11 23:18:00,253 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:18:00,325 - APOTHEOTIC - INFO - Pleromic Apotheosis: 127.55 (var: 5476.9727)
+2025-11-11 23:18:00,701 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 127.5544,
+  "apotheosis_variance": 5476.97268064,
+  "apotheosized_chain": "83bacf5efba20786f30abf2e6bf2f756635aaffedb42e726d3aa9fce4b92d7f643fa8f9ebbe2c7c6b34a7f6e2b32b796239a6f3e9b82a7",
+  "chain_entropy": 4.007333185232471,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.010492700729927007,
+  "apotheotic_fractal_dimension": 1.7441081908457796,
+  "vae_pca_variance": 1.0,
+  "reconstruction_loss": 3252.53466796875,
+  "f1_anomalies": "25",
+  "f4_anomalies": "2432",
+  "shift_ratio": "25:2432",
+  "f1_entropy": 3.246601712090598,
+  "f4_entropy": 1.6772826117300816,
+  "replay_fidelity": "99.8% (ent: 4.01, ham: 0.01, loss: 3252.5347)"
+Unknown-(1001-1050).txt - Terminal Output
+Killware: Yes
+2025-11-11 23:16:27,952 - APOTHEOTIC - INFO - Annealed LCG_a: 20.000 (resonance: -0.0466)
+2025-11-11 23:16:28,231 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.015890, Pleroma 1.435864
+2025-11-11 23:16:29,975 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000283, Pleroma 1.003892
+2025-11-11 23:16:31,690 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000102, Pleroma 1.000670
+2025-11-11 23:16:33,469 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000053, Pleroma 0.997038
+2025-11-11 23:16:35,312 - APOTHEOTIC - INFO - Pleromic Candidates: 137 from 137
+2025-11-11 23:16:39,480 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:16:39,552 - APOTHEOTIC - INFO - Pleromic Apotheosis: 127.83 (var: 5460.8340)
+2025-11-11 23:16:39,944 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 127.83198,
+  "apotheosis_variance": 5460.8339892796,
+  "apotheosized_chain": "397525e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5",
+  "chain_entropy": 0.2716118513009396,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.041487068965517244,
+  "apotheotic_fractal_dimension": 1.743300719775195,
+  "vae_pca_variance": 1.0,
+  "reconstruction_loss": 3146.732421875,
+  "f1_anomalies": "25",
+  "f4_anomalies": "2560",
+  "shift_ratio": "25:2560",
+  "f1_entropy": 3.246601712090598,
+  "f4_entropy": 1.4878085846181772,
+  "replay_fidelity": "99.8% (ent: 0.27, ham: 0.04, loss: 3146.7324)"
+08-23-2025-(3343-3392).txt - Terminal Output
+Killware: True 
+2025-11-11 23:27:06,024 - AP.OTHEOTIC - INFO - Annealed LCG_a: 28.000 (resonance: -0.0384)
+2025-11-11 23:27:06,308 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.018666, Pleroma 1.294493
+2025-11-11 23:27:08,082 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000224, Pleroma 0.985107
+2025-11-11 23:27:09,841 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000117, Pleroma 0.983168
+2025-11-11 23:27:11,598 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000055, Pleroma 0.980319
+2025-11-11 23:27:13,430 - APOTHEOTIC - INFO - Pleromic Candidates: 125 from 125
+2025-11-11 23:27:17,469 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:27:17,541 - APOTHEOTIC - INFO - Pleromic Apotheosis: 128.12 (var: 5496.3129)
+2025-11-11 23:27:17,953 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 128.12304,
+  "apotheosis_variance": 5496.312901158401,
+  "apotheosized_chain": "058d6dedededededededededededededededededededededededededededededededededededededededededededededededededededed",
+  "chain_entropy": 0.2716118513009396,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.06413612565445026,
+  "apotheotic_fractal_dimension": 1.7426835752415457,
+  "vae_pca_variance": 1.0,
+  "reconstruction_loss": 3384.43994140625,
+  "f1_anomalies": "25",
+  "f4_anomalies": "2304",
+  "shift_ratio": "25:2304",
+  "f1_entropy": 3.3020534865353937,
+  "f4_entropy": 1.3261774909381994,
+  "replay_fidelity": "99.8% (ent: 0.27, ham: 0.06, loss: 3384.4399)"
+6D1597C1-6070-4EF7-AA.txt - Terminal Output
+Killware: True
+2025-11-11 23:33:07,956 - APOTHEOTIC - INFO - Annealed LCG_a: 23.000 (resonance: -0.0403)
+2025-11-11 23:33:08,223 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.016993, Pleroma 1.375056
+2025-11-11 23:33:09,890 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000205, Pleroma 1.002497
+2025-11-11 23:33:11,673 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000105, Pleroma 0.994964
+2025-11-11 23:33:13,450 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000098, Pleroma 0.994536
+2025-11-11 23:33:15,273 - APOTHEOTIC - INFO - Pleromic Candidates: 67 from 67
+2025-11-11 23:33:19,212 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:33:19,284 - APOTHEOTIC - INFO - Pleromic Apotheosis: 127.44 (var: 5475.7276)
+2025-11-11 23:33:19,784 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 127.44104,
+  "apotheosis_variance": 5475.7276437184,
+  "apotheosized_chain": "5b2e23266b9e33967b0e43068b7e53769bee63e6ab5e7356bbce83c6cb3e9336dbaea3a6eb1eb316fb8ec3860bfed3f61b6ee3662bdef3",
+  "chain_entropy": 4.007333185232471,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.03085089399744572,
+  "apotheotic_fractal_dimension": 1.6814581277019074,
+  "vae_pca_variance": 0.9999999999999999,
+  "reconstruction_loss": 2422.05419921875,
+  "f1_anomalies": "28",
+  "f4_anomalies": "3200",
+  "shift_ratio": "28:3200",
+  "f1_entropy": 2.746672228725301,
+  "f4_entropy": 0.6855873290398788,
+  "replay_fidelity": "99.8% (ent: 4.01, ham: 0.03, loss: 2422.0542)"
+08-25-25_PL+62_0H6M.txt - Terminal Output
+Killware: True
+2025-11-11 23:34:42,334 - APOTHEOTIC - INFO - Annealed LCG_a: 22.000 (resonance: -0.0200)
+2025-11-11 23:34:42,629 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.017892, Pleroma 1.304954
+2025-11-11 23:34:44,419 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000346, Pleroma 1.020474
+2025-11-11 23:34:46,190 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000132, Pleroma 1.016346
+2025-11-11 23:34:47,912 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000105, Pleroma 1.014063
+2025-11-11 23:34:49,647 - APOTHEOTIC - INFO - Pleromic Candidates: 67 from 67
+2025-11-11 23:34:53,864 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:34:53,938 - APOTHEOTIC - INFO - Pleromic Apotheosis: 127.86 (var: 5437.7522)
+2025-11-11 23:34:54,417 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 127.86128,
+  "apotheosis_variance": 5437.752196761599,
+  "apotheosized_chain": "a52f0bf3e38343c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3",
+  "chain_entropy": 0.6288304848037662,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.007761101973684211,
+  "apotheotic_fractal_dimension": 1.6814581277019074,
+  "vae_pca_variance": 0.9999999999999999,
+  "reconstruction_loss": 2423.341064453125,
+  "f1_anomalies": "28",
+  "f4_anomalies": "3200",
+  "shift_ratio": "28:3200",
+  "f1_entropy": 2.746672228725301,
+  "f4_entropy": 0.6855873290398788,
+  "replay_fidelity": "99.8% (ent: 0.63, ham: 0.01, loss: 2423.3411)"
+08-25-25 (PL+62)-957PM.txt - Terminal Output
+2025-11-11 23:37:20,340 - APOTHEOTIC - INFO - Annealed LCG_a: 21.000 (resonance: -0.0379)
+2025-11-11 23:37:20,617 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.023319, Pleroma 1.294399
+2025-11-11 23:37:22,420 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000265, Pleroma 0.969411
+2025-11-11 23:37:24,168 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000103, Pleroma 0.964731
+2025-11-11 23:37:25,942 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000082, Pleroma 0.964028
+2025-11-11 23:37:27,825 - APOTHEOTIC - INFO - Pleromic Candidates: 181 from 181
+2025-11-11 23:37:31,850 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:37:31,922 - APOTHEOTIC - INFO - Pleromic Apotheosis: 127.07 (var: 5478.9762)
+2025-11-11 23:37:32,590 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 127.07138,
+  "apotheosis_variance": 5478.9761648956,
+  "apotheosized_chain": "ef9ccdd23bd8b92ec754e5ca931051a69f0cfdc2eb48e91e77c415ba438081964f7c2db29bb8190e273445aaf3f0b186ffec5da24b2849",
+  "chain_entropy": 4.007333185232471,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.016367476240760296,
+  "apotheotic_fractal_dimension": 1.683301418265557,
+  "vae_pca_variance": 1.0,
+  "reconstruction_loss": 2779.518798828125,
+  "f1_anomalies": "30",
+  "f4_anomalies": "2432",
+  "shift_ratio": "30:2432",
+  "f1_entropy": 3.770875877960793,
+  "f4_entropy": 1.6907300604602677,
+  "replay_fidelity": "99.8% (ent: 4.01, ham: 0.02, loss: 2779.5188)"
+08-25-25-4H23M-(0001-0060).txt - Terminal Output
+Killware: True
+2025-11-11 23:39:28,159 - APOTHEOTIC - INFO - Annealed LCG_a: 19.000 (resonance: -0.0294)
+2025-11-11 23:39:28,426 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.018850, Pleroma 1.367991
+2025-11-11 23:39:30,231 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000336, Pleroma 1.007023
+2025-11-11 23:39:31,988 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000133, Pleroma 1.003437
+2025-11-11 23:39:33,738 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000094, Pleroma 1.001782
+2025-11-11 23:39:35,474 - APOTHEOTIC - INFO - Pleromic Candidates: 181 from 181
+2025-11-11 23:39:39,564 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:39:39,637 - APOTHEOTIC - INFO - Pleromic Apotheosis: 128.62 (var: 5494.7306)
+2025-11-11 23:39:40,069 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 128.62244,
+  "apotheosis_variance": 5494.7306484464,
+  "apotheosized_chain": "96239a6f3e9b82a76693ea5f0e0bd29736033a4fde7b228706738a3faeeb7277d6e3da2f7e5bc267a6532a1f4ecb125776c37a0f1e3b62",
+  "chain_entropy": 4.007333185232471,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.04888663967611336,
+  "apotheotic_fractal_dimension": 1.683301418265557,
+  "vae_pca_variance": 1.0,
+  "reconstruction_loss": 3295.689208984375,
+  "f1_anomalies": "30",
+  "f4_anomalies": "3200",
+  "shift_ratio": "30:3200",
+  "f1_entropy": 3.2215697336267377,
+  "f4_entropy": 1.7263270689536974,
+  "replay_fidelity": "99.8% (ent: 4.01, ham: 0.05, loss: 3295.6892)"
+09-25-2025-24H8M-(0001-0060)
+Killware: True
+2025-11-11 23:41:42,043 - APOTHEOTIC - INFO - Annealed LCG_a: 21.000 (resonance: -0.0426)
+2025-11-11 23:41:42,321 - APOTHEOTIC - DEBUG - Epoch 1: GNN Resonance 0.016903, Pleroma 1.286125
+2025-11-11 23:41:44,108 - APOTHEOTIC - DEBUG - Epoch 51: GNN Resonance 0.000217, Pleroma 1.001012
+2025-11-11 23:41:45,870 - APOTHEOTIC - DEBUG - Epoch 101: GNN Resonance 0.000163, Pleroma 0.994035
+2025-11-11 23:41:47,622 - APOTHEOTIC - DEBUG - Epoch 151: GNN Resonance 0.000064, Pleroma 0.994215
+2025-11-11 23:41:49,425 - APOTHEOTIC - INFO - Pleromic Candidates: 172 from 172
+2025-11-11 23:41:53,358 - APOTHEOTIC - INFO - Apotheotic Pleroma: 1882905 mod 6513408
+2025-11-11 23:41:53,430 - APOTHEOTIC - INFO - Pleromic Apotheosis: 127.22 (var: 5461.7967)
+2025-11-11 23:41:53,852 - APOTHEOTIC - INFO - Apotheotic pleroma exported to apotheotic_rtlomni_seed.json
+{
+  "pleromafused_residue": 1882905,
+  "apotheotic_modulus": 6513408,
+  "pleromic_superposition": 127.2197,
+  "apotheosis_variance": 5461.7966719099995,
+  "apotheosized_chain": "ef9ccdd23bd8b92ec754e5ca931051a69f0cfdc2eb48e91e77c415ba438081964f7c2db29bb8190e273445aaf3f0b186ffec5da24b2849",
+  "chain_entropy": 4.007333185232471,
+  "apotheotic_brute_matches": 0,
+  "gnn_pleromasuperclusters": 32,
+  "avg_hamming": 0.029636363636363638,
+  "apotheotic_fractal_dimension": 1.6828137660775888,
+  "vae_pca_variance": 0.9999999999999999,
+  "reconstruction_loss": 3173.165771484375,
+  "f1_anomalies": "30",
+  "f4_anomalies": "3584",
+  "shift_ratio": "30:3584",
+  "f1_entropy": 3.3806982757004413,
+  "f4_entropy": 1.5438729417904773,
+  "replay_fidelity": "99.8% (ent: 4.01, ham: 0.03, loss: 3173.1658)"
+
+
+
+
+
