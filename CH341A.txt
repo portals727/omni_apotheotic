@@ -1,0 +1,149 @@
+CH341A
+During normal operation both Reset and Debug pins
+must be at logic level ‘1’ (>1.5V). There are only two pins
+(38 and 40) which satisfy this requirement. These pins
+were tested with the HCS08 Flash programmer to find the
+exact locations for the Debug interface. They turned out to
+be pin 38 for the Reset and pin 40 for the BKGD.
+CH341A Pin	CH341A Name	Omnipod Pin #	Omnipod Name	Notes
+VCC	VCC (3.3V)	15	VDD_CA (2.87V)	Use buck converter to 2.9V.
+GND	GND	17	VSS_MC	Ground.
+TX	TX	7	PTA1_T (MCU RX)	Add resistor if needed.
+RX	RX	6	PTA0_T (MCU TX)	UART data.
+N/A	N/A	38	Reset	Ground briefly for boot mode.
+_______________________________________
+40-PIN (CH341A)
+Pin #	Pin Name	Pin Description	Connected Pin #
+1	PTA7_K	Pump_Encoder	TP10
+2	PTA6_K	ANCHOR-1	TP9
+3	PTA5	ANCHOR-2	TP8
+4	PTB4_W	Tank Fill	TP17
+5	PTB3_R	Unknown	N/A
+6	PTA0_T	Unknown	TP3 / TP4
+7	PTA1_T	Unknown	TP5
+8	PTA2_T	Unknown	TP6
+9	PTA3_T	Unknown	TP7
+10	PTA4	Unknown	N/A
+11	PTB1_S	Unknown	TP13
+12	PTB2_S	Unknown	TP14
+13	PIEZO_1	Piezo Speaker-1	TP1 : PZ1 : BZ1
+14	PIEZO_2	Piezo Speaker-2	TP2 : PZ2 : BZ2
+15	VDD_CA	Core/Battery Power (2.87V) - Comments: Core Power	Unknown
+16	VDD_MC	Battery Power (3V Coin Cells)	TP25
+17	VSS_MC	Unknown	TP23
+18	LOAD2	WIRE2	PIN-19 (LOAD2_)
+19	LOAD2_	WIRE2	PIN-18 (LOAD2)
+20	PVDD_2	Unknown	PVDD_1
+21	PVDD_1	Unknown	PVDD_2
+22	LOAD1	WIRE1	PIN-23 (LOAD1_)
+23	LOAD1_	WIRE1	PIN-22 (LOAD1)
+24	N/A	N/A	N/A
+25	RFTRX1	Antenna (RF)	TP2 : TP19 : TP20 : Antenna : VCCRF (PIN-28)
+26	VSSPA	Antenna REF (GND)	A
+27	RFTRX2	Rx (Receive?)	TP18
+28	VCCRF	Core/Battery Power (2.87V) + RF (Radio Frequency) - Comments: Battery (3V / Coin Cells)	TP2 : TP19 : TP20 : GND : ANTENNA
+29	VSSRF	RF (Radio Frequency)	C11 (0.22uF) : GND
+30	VDDRF	VDD (Voltage) + RF (Radio Frenquency)	PIN-31 (VDDIF)
+31	VDDIF	VDD (Voltage Related)	PIN-30 (VDDRF)
+32	VSSIF	Unknown	GND (Cell-1 / TP24)
+33	XTAL (Crystal, C)	Clock	PIN-34 (EXTAL)
+34	EXTAL (Crystal, C)	Clock	PIN-33 (XTAL)
+35	VDDRFD	VDD (Voltage Related) + RF (Radio Frequency)	C8 : GND
+36	VSSRFD	RF (Radio Frequency)	GND
+37	PTB5_VE	PTB = ? / VE = ?	TP15
+38	Reset	Reset Related	TP25 : GND
+39	PTB6_TI	TI = ?	TP16
+40	PTB0_A/BKGD	Unknown	(TP11 + TP12)
+Abbreviations and Notes:
+TP: Test point
+PCB function: Connections to the Pin
+PCB level: Voltage during operation
+ΔV GND: Voltage drop between the Pin and GND line
+ΔV VDD: Voltage drop between the Pin and Core power supply
+Type: Function of the Pin
+TABLE II. PINS FUNCTIONS OF THE SOC
+Pin No.	PCB Function	PCB Level	ΔV GND	ΔV VDD	Type	Comments	Associated Component
+1	Pad, TP	0/2.04V	0.722	0.729	I/O	Encoder	Encoder-1
+2	Pad, TP	0/2.04V	0.723	0.729	I/O	Anchor T1	Anchor End-1; Muscle Wire-1 (ground end)
+3	Pad, TP	0/2.04V	0.721	0.729	I/O	Anchor T2	Anchor End-2; Muscle Wire-2 (ground end)
+4	Pad, TP, C	0/2.04V	0.726	0.726	I/O	Rod spring	Tank Fill (related)
+5	TP	0V	0.720	0.731	I/O	Not used	N/A
+6	TP	0V	0.732	0.731	I/O	Not used	N/A
+7	TP	0V	0.731	0.731	I/O	Not used	N/A
+8	TP	0V	0.731	0.731	I/O	Not used	N/A
+9	TP	0V	0.731	0.731	I/O	Not used	N/A
+10	TP	0V	0.513	N/A	I/O	Not used	N/A
+11	TP	0V	0.732	0.730	I/O	Not used	N/A
+12	TP	0V	0.726	0.724	I/O	Not used	N/A
+13	Pad, TP, R	0V	0.732	0.728	I/O	Piezo T1	Piezo-1
+14	Pad, TP, R	0V	0.732	0.729	I/O	Piezo T2	Piezo-2
+15	TP, C	2.87V	0.352	VDD	Power	Core Power	N/A
+16	C, TP, Battery	2.87V	0.449	0.132	Power	Battery 3V	Battery (+3.0V)
+17	GND	0V	GND	0.353	GND	GND	Anchor GND (shared ground reference)
+18	Pad	0V	0.686	N/A	FET	Motor T1	Muscle Wire-1 (drive end)
+19	Pin 18	0V	0.686	N/A	FET	Motor T1	Muscle Wire-1 (drive end)
+20	TP, Battery	4.34V	0.391	N/A	Power	Battery 4.5V	Battery (+4.5V)
+21	Pin 20	4.34V	0.391	N/A	Power	Battery 4.5V	Battery (+4.5V)
+22	Pad, TP	0V	0.686	N/A	FET	Motor T2	Muscle Wire-2 (drive end)
+23	Pin 22	0V	0.686	N/A	FET	Motor T2	Muscle Wire-2 (drive end)
+24	TP	NC	N/A	N/A	NC	Not used	N/A
+25	TP, L, C	2.87V	0.456	N/A	RF	Antenna	N/A
+26	GND	0V	0.690	1.044	RF	Antenna Ref	N/A
+27	TP	0.31V	0.456	N/A	RF	Not used	N/A
+28	C, TP, Battery	2.87V	0.348	N/A	Power	Battery 3V	Battery (+3.0V)
+29	GND	0V	GND	0.353	GND	GND	N/A
+30	TP, C, C	0.03V	0.537	N/A	Power	Bypass Cap	N/A
+31	Pin 30	0.03V	0.525	N/A	Power	Bypass Cap	N/A
+32	GND	0V	GND	0.359	GND	GND	N/A
+33	Crystal, C	0.669	1.098	Clock	Clock	26MHz	N/A
+34	Crystal, C	0.655	N/A	Clock	Clock	26MHz	N/A
+35	TP, C	0V	0.535	1.206	Power	Bypass Cap	N/A
+36	GND	0V	GND	0.360	GND	GND	N/A
+37	TP	0V	0.718	0.728	I/O	Not used	N/A
+38	TP, C	2.86V	0.734	0.728	I/O	Not used	N/A
+39	TP	0V	0.734	0.729	I/O	Not used	N/A
+40	TP	2.86V	0.734	0.729	I/O	Not used	N/A
+For UART serial extraction/logging with CH341A (assuming based on S08 PTA0/1 pins for UART):
+* Positive (VCC, 2.87V - use buck converter to match): Pin 15 (VDD_CA)
+* Negative (GND): Pin 17 (VSS_MC)
+* CH341A RX: Pin 6 (PTA0_T - MCU TX)
+* CH341A TX: Pin 7 (PTA1_T - MCU RX)
+* Optional Reset (to enter boot mode): Pin 38 (Reset) - ground briefly.
+For UART serial extraction with CH341A (use 2.9V via buck converter to match Cambridge study):
+* Positive (VCC): Pin 15 (VDD_CA, 2.87V Core Power) or Pin 16 (VDD_MC, 3V Battery Power).
+* Negative (GND): Pin 17 (VSS_MC).
+* CH341A TX: Pin 7 (PTA1_T - MCU RX).
+* CH341A RX: Pin 6 (PTA0_T - MCU TX).
+* Optional Reset (for boot mode): Ground Pin 38 briefly.
+For BKGD debug (single-wire, Pins 38 Reset + 40 BKGD + GND Pin 17): CH341A doesn't support; use JTAG/SWD tool like Segger J-Link.
+Pin #	Pin Name	Description	Wiring for CH341A UART
+15	VDD_CA	Core/Battery Power (2.87V)	VCC (Positive, 2.9V via buck converter)
+16	VDD_MC	Battery Power (3V Coin Cells)	Alternative VCC
+17	VSS_MC	Unknown	GND (Negative)
+28	VCCRF	Core/Battery Power (2.87V) + RF	Alternative VCC
+Firmware Upload on Omnipod Tubeless Pump:https://www.youtube.com/watch?v=YK6aa4ojl7M
+Firmware is viewable, however cannot upload new firmware without erasure first. 
+
+Export Mode -> Programmer - Change MicroController Specification since different from Demo Mode
+Programmer detects micro controller port is secured, used to prevent access to firmware to anyone
+Flash Settings
+Erase Old Firmare
+Flash New Firmware
+Reactivate Pod
+Reset: Short Circuit Reset + GND (Before Activation)
+Attempt to Reactivate Pod
+Question
+Not that I'm misunderstood. I don’t want to hack the PODs, but I want to reprogram the MCUs of my used PODs for other purposes. Do you see chances for success?
+Answer
+Sure, start with using PE Micro programming software with 9S08 demo board (make sure you remove on-board 9S08 microcontroller first). 9S08ER48 can be programmed with most 48kB algorithms, e.g. 9S08AW48 (in case PE Micro removed ER48 support from algorithms list).
+ 
+Alternatively, you can use universal programmer like Elnec BeeProg2 and again use 9S08AW48 as the target. Flash memory addresses and programming protocol is exactly the same. Any differences kick in at SFR level, but that's when you try to compile code using CodeWarrior. For that you have to find legacy software version 10.
+
+URL: https://www.pemicro.com/products/product_viewDetails.cfm?product_id=15320181&productTab=5053
+PROGDSC
+PROGDSC, PEmicro's flash programming software for NXP's DSC devices, is available free of charge; click to download PROGDSC.
+System Requirements
+Windows 7/8/10: 32-bit (x86) or 64-bit (x64)
+Windows 11: 64-bit (x64)
+Target: 9S08AW48 
+_______________________________________
