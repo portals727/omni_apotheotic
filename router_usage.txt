@@ -1,0 +1,336 @@
+Applications (GL.iNet BE3600 WIFI-7 Travel Router Admin Settings)
+_______________________________________
+Forensic Step	Tools/Methods	Indicators of Malice	Expected Output for Clean vs. Compromised
+Traffic Baselining	Wireshark (iPhone tethered to Mac); tcpdump on BE3600 CLI (tcpdump -i br-lan -w capture.pcap)	Anomalous SYN/ACK to US IPs (e.g., 172.217.x.x Google proxies); TLS mismatches with your hotspot captures	Clean: Symmetric Canadian endpoints; Compromised: 20%+ redirects to NY/AS13335 (Cloudflare proxies)
+Firmware Extraction	esptool.py for ESP32 dumps; binwalk on /etc/config/* files	Embedded backdoors (e.g., hardcoded C2 at 0x40000110, per omni_daemon.txt patterns)	Clean: SHA256 matches gl-inet.com hashes; Compromised: Delta >5% in IRAM sections
+Process/Module Audit	ps aux	grep luci` on router SSH; Volatility for memory forensics if dumped	Rogue daemons (e.g., GSPE21D-like, from launch_daemons.txt); kernel modules with unsigned sigs
+DNS/Resolver Scrutiny	dig @99.212.32.4 example.com vs. public tools; nmap -sU for UDP leaks
+	Poisoned responses (e.g., A records to US geos despite Canadian query)	Clean: Consistent Vancouver TTLs; Compromised: Variable anomalies matching dns_historical.txt
+Hardware Integrity	JTAG probe (e.g., Bus Pirate on BE3600 UART); multimeter for SPI flash tampering	Altered NAND (e.g., 6502 emulator stubs from hexfiend.txt)	Clean: Factory ROM CRC; Compromised: Sector erases at 0x1FC
+Vulnerability Mapping: GL.iNet BE3600 Exposures
+CVE ID	Description	CVSS Score	Exploitation Tie to Your Case	Patch Status (as of Nov 16, 2025)
+CVE-2024-57391	Buffer overflow in dnsmasq allowing DNS hijack	8.8	Enables poisoned resolvers (e.g., to NY geos), matching your historical anomalies	Patched in v4.6.0; verify via opkg list-installed
+CVE-2025-2811	LuCI auth bypass for RCE	9.1	Injects iptables for IP spoofing; aligns with deauths in router_logs.txt	Firmware v4.7.0+; manual flash required
+CVE-2025-XXXX (GL-specific)	SPI flash erase vuln	7.5	Wipes logs post-exfil, echoing omni_daemon.txt sector erases	Advisory Apr 24, 2025; apply via GL.iNet portal
+Unspecified (forum-reported)	Touchscreen input sanitization flaw	6.5	Potential keylogger for creds, chaining to Entra ID hijacks	Beta fix in v4.7.4; disable touchscreen if unused
+API Endpoint Probe for ReDoS
+_______________________________________
+Use curl to test regex-heavy API calls (e.g., /cgi-bin/luci/admin/status/overview) Monitor response time (>10s indicates potential ReDoS trigger). If crash/reboot, vulnerability confirmed—restore from backup
+curl -k -d "search=(a+)+b" http://192.168.8.1/cgi-bin/luci/admin/status/overview
+IP Spoofing Chain Test
+
+Check for related routing manipulation
+sudo pfctl -s rules -v | grep -i spoof
+Simulate spoof (from a connected device)—watch for ARP anomalies in tcpdump -i br-lan arp.
+arping -I br-lan -c 3 192.168.8.1
+arp -I br-lan -c 3 192.168.8.1
+  
+arping -I br-lan -c 3 192.168.8.180
+Terminal CLI Launch 
+Command-1
+open -a Wireshark
+Command-2
+/Applications/Wireshark.app/Contents/MacOS/Wireshark
+Wireshark CLI Basics
+Wireshark (tshark) version
+tshark -v
+CLI with tshark (DNS Capture)
+_______________________________________
+tshark (save 100 packets)
+tshark -i en0 -c 100 -w capture.pcap 
+Analyze DNS (captured 100 packets)
+tshark -r capture.pcap -Y "dns"
+CLI (tshark DNS Logging)
+tshark -i en0 -f "port 53" -c 50 -T fields -e dns.qry.name -e ip.src > dns_log.txt
+Airportd Commands
+_______________________________________
+Airport Monitor Mode (airportd commands)
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 sniff 11
+tshark (capture packets)
+tshark -i en0 -c 10
+Capture Type	Command (CLI)	Filter Example (GUI/CLI)	Use Case	Expected Output	M4 Performance Notes
+Basic WiFi	tshark -i en0 -c 100 -w capture.pcap	"dns"	Check poisoning	PCAP with queries (e.g., google.com A records)	Low CPU (5%) for 100 packets
+
+ARP Spoofing	tshark -i en0 -f "arp" -c 50	"arp.opcode == 2" (replies)	Detect duplicates	MAC/IP pairs; no incompletes	Fast dissection ( <1s)
+TLS Traffic	tshark -i en0 -Y "tls" -c 20	"tls.handshake"	Inspect versions	TLSv1.2 handshakes (e.g., to 157.240.3.20)	Efficient on unified memory
+mDNS Analysis	tshark -i en0 -f "port 5353" -c 30	"mdns"	Local discovery	Service responses (e.g., _asquic._udp.local)	Handles multicast well
+Full Session	GUI: en0 start/stop	"ip.src == 192.168.8.100"	Router traffic	Filtered local packets	GUI uses ~200MB RAM
+Lists interfaces (filers DNS traffic)
+tshark -D
+tshark (Filter DNS Traffic)
+Port-53
+tshark -i en0 -f "port 53" -Y "dns"
+Port-22
+tshark -i en0 -f "port 22" -Y "dns"
+_______________________________________
+Wireshark Install
+Brew install --cask wireshark
+_______________________________________
+Lock Commands (via SSH) (enables lock)
+uci set glconfig.display.lock=1; uci commit glconfig; /etc/init.d/glconfig restart 
+_______________________________________
+Firmware Check, SSH into router (default password): goodlife
+ssh root@192.168.8.1
+(DISTRIB_REVISION ≥4.7.0. If vulnerable (<4.7.0), update immediately via admin panel)
+cat /etc/openwrt_release
+_______________________________________
+2. API Endpoint Probe for ReDoS (curl to test regex-heavy API calls (e.g., /cgi-bin/luci/admin/status/overview)
+curl -k -d "search=(a+)+b" http://192.168.8.1/cgi-bin/luci/admin/status/overview
+ Monitor response time (>10s indicates potential ReDoS trigger).  
+ If crash/reboot, vulnerability confirmed—restore from backup.
+_______________________________________
+3. IP Spoofing Chain Test
+Check for related routing manipulation
+iptables -L -n -v | grep -i spoof
+Simulate spoof - (from a connected device)—watch for ARP anomalies in `tcpdump -i br-lan arp`,  If unexpected redirects (e.g., to US IPs), chain confirmed.
+arping -I br-lan -c 3 192.168.8.1
+_______________________________________
+2. Lock Commands (via SSH)
+uci set glconfig.display.lock=1; uci commit glconfig; /etc/init.d/glconfig restart 
+ Set password: Admin > More Settings > Display > Lock Screen Password.
+_______________________________________
+3. Disable Screen
+echo 0 > /sys/class/backlight/lcd/brightness
+_______________________________________
+Resource Hogs (sort by CPU; cross with ps aux—no outliers).
+top -l 1 -o cpu | head -20
+_______________________________________
+Malicious Processes
+Scan for anomalies (flags reverse shells)
+ps aux | grep -E (nc|netcat|bash -i|python.*-c)
+_______________________________________
+High-resource check
+ps aux --sort=-%cpu | head -20
+_______________________________________
+Loaded modules (third-party kernel extensions; empty is good)
+kextstat | grep -v com.apple 
+Full audit root process file ops; watch for erases)
+sudo lsof -p 1 | grep -i delete
+_______________________________________
+DNS Poisoning
+List resolvers (should show Rogers/Cloudflare; flag US-only like 8.8.8.8).  
+scutil --dns
+_______________________________________
+Test leak (returns your IP; compare to whatismyipaddress.com)
+dig @99.212.32.4 +short whoami.akamai.net
+Cache flush/test
+sudo dscacheutil -flushcache
+Sudo killall
+sudo killall -HUP mDNSResponder
+nslookup (verify no hijacks)
+nslookup google.com 
+Spoof probe (trace root hints; anomalies in NS records indicate poisoning)
+dig google.com +trace
+_______________________________________
+Network Connections
+_______________________________________
+Active sockets (local listeners; flag non-system ports)
+lsof -i -P | grep LISTEN
+Outbound (connections; grep for US IPs like 172.217.x.x)
+netstat -an | grep ESTABLISHED
+ARP scan (local devices; mismatches suggest spoofing)
+arp -a
+Wireshark Brew Install
+brew install --cask wireshark
+Post-install (Wireshark)
+brew services start wireshark
+Wire Shark Update
+brew upgrade wireshark
+Capture on en0 (WiFi): Select interface > Start > Filter "arp or dns" to spot spoofing/poisoning. Export PCAPs for analysis.
+_______________________________________
+CVE-2025-2811: Detailed Testing Protocol
+_______________________________________
+1. Vulnerability Scanner
+brew install nuclei
+ Template (Output): Vulnerable if regex triggers >5s delay.
+nuclei -u http://192.168.8.1 -t cves/2025/CVE-2025-2811.yaml 
+2. Manual ReDoS Exploitation (Metric: If >30s or 100% CPU (`top`), confirmed. Monitor: `watch -n1 'cat /proc/loadavg’`)
+time curl -k -d 'pattern=(a+)+b&input=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaab' http://192.168.8.1/cgi-bin/luci/admin/network/firewall
+_______________________________________
+3. Spoofing Escalation Check  
+ Post-DoS, inspect routes (flag injected US gateways)
+ip route show | grep default 
+ARP poison sim (from another host; ethical only on test net) - Detect: `tcpdump -i br-lan -nn arp`—duplicate IPs indicate chain.
+arpspoof -i br-lan -t 192.168.8.180 192.168.8.1\ 
+_______________________________________
+Mitigation Verification (SHA256)
+How do I perform SHA256 to verify I have correct firmware loaded?
+_______________________________________
+Detailed Testing
+1. Firmware Audit
+SSH > opkg list-installed | grep luci
+2. Screen Exposure Probe
+Power cycle: time to lock (~30s default).  
+Simulate tap: Use a stylus on QR— if editable without auth, vulnerable.  
+_______________________________________
+Command disable
+uci set glconfig.display.qr_enable=0; uci commit; reboot
+_______________________________________
+Process Forensics
+_______________________________________
+Rogue Detection (non-system paths; empty= clean)
+ps aux | awk 'NR>1 && $11 !~ /^\/(System|Applications|usr)/ {print}'
+PID Tree (shell spawns; your output: none)
+ps -eo pid,ppid,command | grep -E "(ssh|nc|python.*socket)" 
+Resource Hogs (sort by CPU; cross with ps aux—no outliers)
+top -l 1 -o cpu | head -20
+_______________________________________
+DNS/Network Poisoning
+_______________________________________
+Resolver Integrity (expect 99.212.32.x; US-only= poison) 
+networksetup -getdnsservers Wi-Fi
+Query Validation (multi-resolver test; mismatches= tampering)
+host google.com $(scutil --dns | grep 'nameserver' | awk '{print $2}')
+Traffic Audit (DNS packets; analyze in Wireshark for forged responses)
+sudo tcpdump -i en0 -c 100 -w /tmp/capture.pcap port 53
+Spoof Indicators (ARP cache gaps suggest poisoning)
+arp -a | grep incomplete
+_______________________________________
+SSH Setup on GL.iNet BE3600: Corrected Instructions
+_______________________________________
+Accessing and Configuring SSH (http://192.168.8.1/cgi-bin/luci)
+Advanced tweaks (e.g., port change), click "Open LuCI" link in System > Advanced Settings (if available; otherwise, direct to http://192.168.8.1/cgi-bin/luci)
+_______________________________________
+Luci (Services)
+LuCI: Services > Dropbear (SSH server) > Edit settings like Port (default 22) or enable key auth.
+_______________________________________
+Persistence Checks
+_______________________________________
+Launch Agents
+ls -la ~/Library/LaunchAgents /Library/LaunchDaemons | grep -v com.apple
+Cron Jobs scheduled tasks; empty= good)
+crontab -l; sudo crontab -l
+Network Listeners (open ports; flag non-local)
+sudo lsof -i :22,80,443 | grep LISTEN
+_______________________________________
+Connecting via Terminal on Mac
+ssh root@192.168.8.1 
+Troubleshoot: "Connection refused"—check firewall in admin > Network > Firewall > Allow SSH. "Host key failed"—remove entry
+ssh-keygen -R 192.168.8.1
+_______________________________________
+Integration for Network Diagnostics
+_______________________________________
+SSH into BE3600
+tcpdump -i br-lan -w - | tee /tmp/capture.pcap
+Mac SSH
+ssh root@192.168.8.1 cat /tmp/capture.pcap" | tshark -r - -Y "dns" 
+Command Category	Example Use Case	Terminal Command	Expected Clean Output
+Wireshark GUI Launch	Quick visual capture	open /Applications/Wireshark.app	App opens without errors
+tshark Filter	DNS anomaly detection	tshark -i en0 -f "port 53" -c 50	Packet list; no unexpected US resolvers
+ChmodBPF Install	Fix permission errors	sudo /usr/sbin/installer -pkg /Applications/Wireshark.app/Contents/Resources/ChmodBPF.pkg -target /	"Installer: Package installed successfully"
+SSH Connection	Router access	ssh root@192.168.8.1	Login prompt; successful with password
+Key Gen for SSH	Passwordless auth	ssh-keygen -t ed25519	Generates ~/.ssh/id_ed25519.pub
+_______________________________________
+Key Commands Summary
+_______________________________________
+SSH Access
+ssh root@192.168.8.1
+Firmware Check
+cat /etc/openwrt_release (verify DISTRIB_REVISION ≥4.7.0)
+SHA256 Verification (Download firmware from): dl.gl-inet.com
+sha256sum filename.bin 
+_______________________________________
+nmap (UDP Leaks - Scan Router’s Top 100 UDP ports)
+sudo nmap -sU -T4 --top-ports 100 192.168.8.1
+_______________________________________
+SSH Mechanics on BE3600
+SSH on the BE3600 uses Dropbear, a lightweight server in OpenWrt, listening on port 22 by default. It's pre-enabled, but access requires the router's admin password for root. If disabled (rare, via custom firmware), re-enable via LuCI or UCI commands. 
+
+Default IP is 192.168.8.1, but changeable in Network > Interfaces. For security, disable password auth after adding keys to mitigate brute-force attacks.
+_______________________________________
+Top CVEs from Your Notes Relevant to Routing/ARP
+CVE ID	CVSS	Description	Tie to Your Setup	Mitigation
+CVE-2025-55241	10.0	Entra ID token hijack/DNS poisoning	Router DNS (192.168.8.1) anomalies; NY IP mismatch	Update firmware; use 1.1.1.1 DNS.
+CVE-2025-43359	9.8	UDP socket binds to all interfaces	lsof shows UDP *; potential for ARP/UDP replay	Scan with nmap -sU; enable pf anti-spoof.
+CVE-2024-7997	9.8	ESP-IDF SPI overflow	GL-BE3600 ESP32; firmware flash for persistence	Flash official OpenWRT; avoid mods.
+CVE-2025-43354	5.5	Bluetooth logging issue	airportd in ps_aux; BLE relay for ARP	Disable unnecessary Bluetooth; monitor with tcpdump.
+_______________________________________
+Active Connections from netsat_an_grep_established.txt
+Local IP:Port	Remote IP:Port	Service	Potential Issue
+192.168.8.100:55699	34.107.243.93:443	HTTPS (Google)	Normal, but check for exfil if persistent.
+192.168.8.100:55695	142.250.99.108:993	IMAPS (Gmail)	Email sync; vulnerable to MITM if DNS hijacked.
+192.168.8.100:55694	142.251.188.188:5228	XMPP (Google Chat)	Chat services; Pegasus often hooks here for persistence.
+192.168.8.100:55640	157.240.3.3:443	HTTPS (Meta)	Facebook; multiple connections suggest active sessions.
+... (truncated for brevity)	...	...	High Meta traffic (ports 555xx) ties to Rambox; monitor for leaks.
+_______________________________________
+Curl
+curl ifconfig.me
+_______________________________________
+SSH (Hidden Configs)
+ssh root@192.168.8.1 
+Output (“server=8.8.8.8") indicates US DNS.
+uci show dhcp.@dnsmasq[0]
+_______________________________________
+Command-Line Fixes
+_______________________________________
+Router SSH
+uci set dhcp.@dnsmasq[0].server='64.71.255.198'; uci commit; /etc/init.d/dnsmasq restart
+Test
+dig google.com
+Mac
+networksetup -setdnsservers Wi-Fi 64.71.255.198
+_______________________________________
+DNS Check - (logs shows lan domain via 192.168.8.1)
+scutil --dns 
+Test resolution (True External IP)
+dig +short myip.opendns.com @resolver1.opendns.com
+_______________________________________
+ICMP Monitoring (Watches for redirects (type 5) that alter routes)
+sudo tcpdump -i en0 -n icmp
+_______________________________________
+Routing Manipulation Analysis
+Routing issues could explain the geo-IP mismatch. Rogers (AS812) typically assigns Canadian IPs (e.g., 99.0.0.0/8), but peering with US providers (e.g., Level 3 AS3356) can route through New York data centers. However, if curl ifconfig.me consistently shows NY (e.g., 104.x.x.x Cloudflare), it may indicate manipulation.
+_______________________________________
+Diagnostic Commands
+Anomalies: Your netsat shows multiple Facebook/Google connections, potentially from Rambox/Firefox.
+_______________________________________
+Routing Table - (Look for default gateway (192.168.8.1) and unexpected routes (e.g., to 34.107.243.93 Google)
+netstat -nr
+_______________________________________
+Traceroute
+traceroute google.com
+Normal path: Local → Rogers edge (e.g., Toronto) → US if needed. If hops detour to NY unexpectedly, suspect DNS poisoning (CVE-2025-55241).
+_______________________________________
+DNS (dscacheutil)
+dscacheutil -flushcache
+_______________________________________
+DNS Options table
+Setting	Location	Purpose	Recommendation	Geo Impact
+Custom DNS Servers	Network > DNS	Sets primary/secondary	Use Canadian (64.71.255.198)	Prevents US inference
+Allow Custom DNS to Override VPN DNS	Network > DNS	Prioritizes custom over VPN	Disable	Fixes mismatches
+Rebind Protection	Network > DNS	Blocks private IP responses	Enable	Mitigates poisoning
+DNS Mode	Network > DNS	Auto/Custom/Proxy	Auto for ISP	Aligns to Rogers
+_______________________________________
+_______________________________________
+Scapy Script
+from scapy.all import sniff, IP
+
+def check_spoof(pkt):
+    if IP in pkt:
+        if pkt[IP].src == '192.168.8.100' and pkt.src != '56:b8:0e:91:f3:36':  # Replace with your IP/MAC
+            print("Potential spoof detected:", pkt.summary())
+
+sniff(iface="en0", prn=check_spoof, filter="ip", count=10)
+_______________________________________
+install Docker via brew 
+install --cask docker
+Ubuntu container
+docker run -it --rm --cap-add=NET_ADMIN ubuntu bash
+apt (update/install)
+apt update && apt install iptables <Original Command>
+_______________________________________
+macOS uses pf (Packet Filter) as its built-in firewall equivalent to iptables, and you can query it directly via the pfctl command.
+pfctl (Enable)
+sudo pfctl -e
+_______________________________________
+pfctl (list rules numerically)
+sudo pfctl -s rules -v | grep -i spoof
+_______________________________________
+Tool/Command	Installation Method	Purpose	Dependencies	Example Usage
+pfctl	Built-in (no install)	List firewall rules, grep for spoof	None	`sudo pfctl -s rules -v
+scapy	pip install scapy	Packet sniffing for spoof detection	Python 3 (built-in), libpcap (built-in)	Script as above for IP/MAC checks
+nmap	brew install nmap	UDP port scanning for leaks	None additional	sudo nmap -sU 192.168.8.1
+Docker (for iptables)	brew install --cask docker	Run Linux container with iptables	Docker app	Container setup as described
+_______________________________________
+
+

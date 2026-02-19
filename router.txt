@@ -1,0 +1,65 @@
+GL.iNet Dual-band WI-FI 7 Travel Router
+_______________________________________
+IP: 192.168.8.1
+Router Admin Panel: http://192.168.8.1
+SSID: GL-BE3600-2d6
+Default Wifi Password: 8Q2BM5T7T2
+SSH Key Passphrase: L3m0nad3z8712-51893
+SSH Login: ssh -i ~/.ssh/be3600_key -p 2222 root@192.168.8.1
+New Wifi Password: 8921054383loKW&
+MAC: 94:83:C4:B3:92:D6
+Model: GL-BE3600 Slate 7 WIFI-7 Router
+Guest Wifi Password: 56189741&%
+_______________________________________
+ShadowGuard Domain (End-Point)
+shadowguard-be3600.duckdns.org:51820
+_______________________________________
+SSH Key Passphrase: L3m0nad3z8712-51893
+SSH Login: ssh -i ~/.ssh/be3600_key -p 2222 root@192.168.8.1
+ssh -i ~/.ssh/be3600_key -p 2222 root@192.168.8.1
+_______________________________________
+root@GL-BE3600:~#), persist changes: Any /etc/config/* edit requires 
+/etc/init.d/network restart 
+OR
+/etc/init.d/network reboot
+_______________________________________
+SSH Key Passphrase: L3m0nad3z8712-51893
+key fingerprint
+SHA256:IbbeS5uQbQS0cgbzE8Q6yUKscxtav4Yxgb7tjbPo72s m4-be3600-key
+Public key: /Users/portals/.ssh/be3600_key.pub
+cd /Users/portals/.ssh/be3600_key.pub
+_______________________________________
+SSH Login
+ssh -i ~/.ssh/be3600_key -p 2222 root@192.168.8.1
+_______________________________________
+key's randomart image
++--[ED25519 256]--+
+| .  oo+          |
+|  o  =.o         |
+| + ..oX .        |
+|+ * == = .       |
+|.= * .. S        |
+|..+ .. =         |
+|  o+ .+ =        |
+| .oE=  + +       |
+|.o=O+.  +        |
++----[SHA256]-----+
+_______________________________________
+IP & MAC addresses
+_______________________________________
+MacBook M4 Air
+192.168.8.100
+56:B8:0E:91:F3:36
+_______________________________________
+Fire Stick TV 4K Max
+192.168.8.164
+CC:22:93:6B:42:1E
+_______________________________________
+iPhone 14 Pro
+192.168.8.172
+46:7D:85:9B:DD:36
+iPhone 14 Pro (Old IP + MAC from Logs)
+192.168.8.180
+DE:AD:35:B0:98:7E
+_______________________________________
+

@@ -1,0 +1,63 @@
+Set PMF on Main Networks (wifi2g/wifi5g — blocks floods on your primary SSIDs):
+uci set wireless.wifi2g.ieee80211w='2'
+uci set wireless.wifi5g.ieee80211w='2'
+uci commit wireless
+wifi reload
+# Set on Guests (guest2g/guest5g — optional but recommended for isolation, prevents leaks to vacuums like OKP K8 on guest):
+uci set wireless.guest2g.ieee80211w='2'
+uci set wireless.guest5g.ieee80211w='2'
+uci commit wireless
+wifi reload
+Set on MLO (wlanmld2g/wlanmld5g — if using multi-link; skips guests unless needed):
+uci set wireless.wlanmld2g.ieee80211w='2'
+uci set wireless.wlanmld5g.ieee80211w='2'
+uci commit wireless
+wifi reload
+Verify (check all ifaces; should show '=2' on set sections):
+uci show wireless | grep ieee80211w
+iw dev wlan0 info | grep MFP  
+iw dev wlan1 info | grep MFP  
+logread | grep ieee80211w    
+List Active Interfaces
+iw dev
+Verify MFP on Each (replace '' with names from above, e.g., phy0-ap0):
+iw dev <interface> info | grep -i MFP  # Expect "MFP required" or "802.11w: Required"
+Target Exact Interfaces
+iw dev wlan1 info | grep -i MFP  # 5GHz main: Expect "MFP required" or "802.11w: Required"
+iw dev wlan01 info | grep -i MFP  # 2.4GHz guest: Same expectation
+iw dev mld-wifi0 info | grep -i MFP  # MLO bridge: If "capable" or missing, force '2' below
+iw dev wifi1 info | grep -i MFP  # Secondary 5GHz (likely redundant AP)
+iw dev wifi0 info | grep -i MFP  # Secondary 2.4GHz
+Hostpad config (Hostapd Runtime Check (verifies ieee80211w=2 in active AP configs — your ls shows wlan1/wlan01 files):
+cat /var/run/hostapd-wlan1.conf | grep ieee80211w  # 5GHz main: Expect "=2"
+cat /var/run/hostapd-wlan01.conf | grep ieee80211w  # 2.4GHz guest: Expect "=2"
+_______________________________________
+MT76 Debugfs Probe (MTK-specific — checks PMF enforcement via driver debugfs for phy#4/5):
+ls /sys/kernel/debug/ieee80211/phy*/mt76  # Confirm pmf/pmf_protect files
+cat /sys/kernel/debug/ieee80211/phy4/mt76/pmf_protect  # 2.4GHz (wlan01): "1" or stats = active
+cat /sys/kernel/debug/ieee80211/phy5/mt76/pmf_protect  # 5GHz (wlan1): Same
+Iwinfo Summary (alternative display — may show MFP indirectly):
+iwinfo wlan1 info | grep -i 'protect\|mfp\|802\.11w'  # 5GHz: "Management Frame Protection: Required"
+iwinfo wlan01 info | grep -i 'protect\|mfp\|802\.11w'  # 2.4GHz guest
+iwinfo mld-wifi0 info | grep -i 'protect\|mfp\|802\.11w'  # MLO bridge
+Client-Side Confirmation (from M4 Mac on WiFi — ultimate proof):
+airport -I | grep -i 'MFP\|802\.11w\|protected management'  # Expect "required"
+_______________________________________
+1. Block DNS leaks from guest network
+uci add firewall rule
+uci set firewall.@rule[-1].name='Drop-Guest-DNS-Leak'
+uci set firewall.@rule[-1].src='guest'
+uci set firewall.@rule[-1].dest_port='53'
+uci set firewall.@rule[-1].proto='tcp udp'
+uci set firewall.@rule[-1].target='DROP'
+2. Block DNS leaks from WireGuard clients (wgserver interface)
+uci add firewall rule
+uci set firewall.@rule[-1].name='Drop-WireGuard-DNS-Leak'
+uci set firewall.@rule[-1].src='wgserver'
+uci set firewall.@rule[-1].dest_port='53'
+uci set firewall.@rule[-1].proto='tcp udp'
+uci set firewall.@rule[-1].target='DROP'
+uci commit firewall && /etc/init.d/firewall restart
+3. Apply
+uci commit firewall && /etc/init.d/firewall restart
+_______________________________________

@@ -1,0 +1,6 @@
+SCP (File Transfer to Router)
+_______________________________________
+scp -P 3333 -O /Users/portals/Documents/iproute2-6.9.0-r0.apk root@192.168.8.1:/tmp/
+
+L77HTrUE8Y@#%8JUG3*&
+2903-6767$

@@ -1,0 +1,42 @@
+Persistence Check
+_______________________________________
+Check what is listening on UDP/TCP Port 53
+netstat -tulpn | grep :53
+Or using the 'ss' command 
+ss -tulpn | grep :53
+List all running processes and filter for dnsmasq
+ps | grep [d]nsmasq
+Comprehensive List
+top -n 1 | head -20
+Check if dnsmasq package installed
+opkg list-installed | grep dnsmasq
+Configuration Files
+ls -la /etc/dnsmasq* 2>/dev/null
+Check for Binaries/Scripts
+find /usr/sbin /usr/bin -name "*dnsmasq*" 2>/dev/null
+Check for Suspicious files in /tmp
+ls -la /tmp/*dns* /tmp/*DNS* 2>/dev/null
+check boot scripts for dnsmasq related entries
+grep -r dnsmasq /etc/init.d/ 2>/dev/null
+Look for suspicious cron jobs (user & system)
+crontab -l 2>/dev/null
+
+cat /etc/crontabs/* 2>/dev/null 2>/dev/null
+Summary of Commands & Clean-State Expectations
+Here is a quick-reference table for what you should see on a clean system:
+Check Type	Command to Run	What a Clean System Shows
+Port Listening	netstat -tulpn | grep :53 or ss -tulpn | grep :53	No output. Port 53 is free.
+Running Processes	ps | grep [d]nsmasq	No output. No dnsmasq process exists.
+Installed Packages	opkg list-installed | grep dnsmasq	Likely no output. The package is not installed.
+Config Files	ls -la /etc/dnsmasq* 2>/dev/null	May show dnsmasq.conf if a basic package exists, but it should be the default, unmodified file.
+Boot Scripts	grep -r dnsmasq /etc/init.d/ 2>/dev/null	No output. No service is configured to start dnsmasq on boot.
+
+
+
+
+
+
+
+
+
+
