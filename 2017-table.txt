@@ -1,6 +1,8 @@
-2017 Cambridge Baseline (arXiv:1709.06026 – Exact from Table IV)
+2017 Table
+_______________________________________
 Version/State	4000/1	4002/3	4008/9	4020/1	4022/3	4024	4078
 New Pod	FF FF	FF FF	FF FE	FF FF	FF FF	FF	FF
 #1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26
 #2	1F 03	9C EE	FF 00	09 07	11 0C	34	28
 #3	1F 03	9C EF	FF 00	09 07	11 0D	06	29
+Source: 2017 Cambridge Baseline (arXiv:1709.06026 – Exact from Table IV)

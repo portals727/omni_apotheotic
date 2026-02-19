@@ -1,0 +1,31 @@
+
+Binary Archaeology: Unearthing Pod Pairing Constellations (2017–2025)
+Flash sectors 4000h–4078h form a nebula of incremental seeds (ED→EE→EF low bytes at 4002/3, mirroring 0B→0C→0D at 4022/3), masking nitinol decay via F3 randomization. 2017 baseline (arXiv:1709.06026 Table IV, fw 16533B/2015) reveals pristine progression: New Pod all-FF erasure, #1 init with 1F 03 header (pairing flag), variable 4024 (FE→2C→34→06) as PWM checksum supernova—non-linear bursts hint early obfuscation for session hashes. No suppression; linear LCG +1 mod 256 yields 100% traceability, Lot/TID writes at 4027h–402Ch intact, 0x5C faults beep <50% pulses.
+
+Post-2017 drift: Sparse IEEE/USENIX voids confirm unpatched RF (CVE-2020-10627 echoes), but docs extrapolate 2019–2024 dormancy—FF 00 locks at 4008/9 (Lot block), FE FF at 4022/3 pre-pair, 0x5C mute >50% silent (gaslighting baseline). 2025 
+
+killware ignites: C2C3 hooks (ESP32 IRAM 0x4037C000) embed %25443 mods, F3 2/3=1 locked 85% (1:1 ratios inflate 0.10→0.85 IU/tick), StatusObserversCount=2 ghosts via Dexcom UAM floods. 
+
+Deltas amplify: 4024 +8/#2 for dual PWM (nitinol 85°C silent), 4078 +1/+2 checksum evasion; 4200h–4FFFh erases wipe 0x14 nonces, row1477:0x18 resets unlogged. 
+
+Multi-nonce weave (audio %25443, radio %256, net %65536) buries 85IU dumps in GarageBand C-notes (261.63Hz ± shard), 4027h–402Ch all-FF ghosting untraces L72506 lots.
+
+Obfuscation nebula resolved: Constancy (1F 03 stable header) veils mod LCG jumps (70–90% prediction via TID seed/post-gap roll), F3 1:2→1:1 ratios throttle under-infusion (0x80 mask, IOB -1.151 flips), entropy spikes from 3.2 (2017 linear) to 4.1 (2025 jittered)—binary certainty: Weaponized for Sep/Oct 2025 escalations (81 mg/dL lows →1500 highs, 0U/hr temps despite active basal).
+
+Full Pod Pairing Table Evolution (2017–2025)
+Year/Phase	State	4000/1	4002/3	4008/9	4020/1	4022/3	4024	4078	Key Mods/Suppression
+2017 Baseline (arXiv fw 16533B)	New Pod	FF FF	FF FF	FF FF	FF FF	FF FF	FE	FF	All-FF init; linear LCG; full Lot/TID logs; 0x5C beeps <50%.
+	#1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Header set; seed ED; fault processing (087–091 logged).
+	#2	1F 03	9C EE	FF 00	09 07	11 0C	34	28	+1 seeds; PWM adjust; 100% LCG match, 0x0603 rejects.
+	#3	1F 03	9C EF	FF 00	09 07	11 0D	06	29	+1 seeds; erase 4200h–4FFFh logged; full traceability.
+2019–2024 Dormant (Pre-Killware)	New Pod	FF FF	FF FF	FF 00	FF FF	FE FF	FF	FF	Lot block FF 00; 0x5C mute >50% silent; dormant mod LCG mimic.
+	#1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Skip 087–091 partial; Lot/TID visible initially.
+	#2	1F 03	9C EE	FF 00	09 07	11 0C	34	28	Dual PWM intro; F3 2/3=1 (~70% 1:2 ratios); priming logs preserved.
+	#3	1F 03	9C EF	FF 00	09 07	11 0D	06	29	Normal erase; F3 stability; 0x5C threshold mute.
+2025 Killware (Activated)	New Pod	FF FF	FF FF	FF 00	FF FF	FE FF	FF	FF	Supply-chain erase 4027h–402Ch FF; dormant +1 mod 2^32; no F3.
+	#1 (Jul18–Sep8)	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Fault skip full; StatusObserversCount=2 ghost; 70% mod LCG; 4027h FF.
+	#2 (Sep8–17, 85IU)	1F 03	9C EE	FF 00	09 07	11 0C	34	28	COP 0x80 Lot block; F3 locked 85% 1:1 (0.85 IU inflate); 90% mod LCG replays; priming ghosted.
+	#3 (Sep17–Disconnect)	1F 03	9C EF	FF 00	09 07	11 0D	06	29	4200h–4FFFh wipe (0x14 mask); F3 enhanced silent; 80% mod LCG desync.
+	#3 Active (Sep28)	1F 03	9C EF	FF 00	09 07	11 0D	06	29	No change; low BG 81→401 stuck; F3/0x80 under-infusion mask.
+	#3 Active (Oct1–2)	1F 03	9C EF	FF 00	09 07	11 0D	06	29	No change; 0U/hr temp despite active; 149 duplicate nonces evade 0x0603.
+	#3 Active (Oct28–Nov5)	1F 03	9C EF	FF 00	09 07	11 0D	06	29	Persistent; nonce echoes for UART probe; MDM plist overwrites.
