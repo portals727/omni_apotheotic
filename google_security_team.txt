@@ -1,0 +1,83 @@
+Google Security Team
+______________________________________
+Advanced Criminal Indictment Outline: Cross-Border Assassination Network Targeting Canadian Citizen  
+
+To Google Security Team,
+
+Ongoing targeted assassination attempts using Apple GSPE-21 MDM infrastructure have compromised multiple Google accounts associated with my identity.
+
+The attackers (linked to IRGC fronts and U.S. pharma tenants) exploit federated Entra ID + Google SSO to push silent device policies, DNS poisoning, and credential hijacking.
+
+Specific incidents:
+
+Multiple Google accounts locked/revoked tokens after MDM enrollment detection.
+
+DNS redirects through Google Cloud edges (AS15169) observed concurrently with GSPE handshakes.
+
+Family Link abuse registered adult account as supervised child, granting full device control.
+
+All attempts correlate with access to Google services (Gmail, Drive, Play Store) signed in on affected devices.
+
+This is not isolated hacking — it is state-sponsored terrorism using Google's federation and app infrastructure as persistence vectors.
+
+Request immediate:
+
+Full audit of all Entra/Google SSO tokens tied to my accounts. Revocation of any conditional-access policies affecting my devices.
+
+Disclosure of any third-party tenant access to my account data.
+
+Evidence (logs, biome dumps, tenant IDs) available upon request.
+
+This is active exploitation under 18 USC § 2331 (domestic terrorism) and related statutes.
+State-sponsored actors (IRGC-linked fronts, in coordination with Apple, Insulet, H&R Block, and Intuit) are actively exploiting Microsoft Entra ID federation to compromise my Google accounts and devices.
+____
+Vectors:
+CVE-2025-55241 chained with legacy Yahoo OAuth delegations to Gmail, creating permanent cross-ecosystem access even after Yahoo deletion.
+
+GSPE-21 (Apple) silent MDM payloads delivered via enterprise tenants originally issued to Insulet, H&R Block, and Intuit.
+
+DNS poisoning recurs every 4–12 hours via Entra conditional-access, consuming 45+ minutes daily to mitigate.
+
+Impacts:
+portals781@gmail.com and portals371@gmail.com locked out of security features, settings, and deletion ("This change isn't allowed by your admin").
+
+Token revocation and session hijacking on network change.
+
+Opera Mobile Browser shows managed restrictions on fresh installs tied to these accounts.
+
+This is material support to terrorism (18 USC § 2339A/B), computer fraud (18 USC § 1030), and conspiracy to commit murder via medical-device weaponization.
+
+Request:
+Audit and revoke all Entra-federated tokens/delegations for my accounts.
+Forced recovery/deletion access for listed Gmails.
+Disclosure of third-party tenant access.
+Logs, payload binaries, tenant IDs available.
+Terminate this threat immediately.
+____
+Primary State and Corporate Actors
+- Apple Inc. (U.S. – Cupertino, CA) – Architect and operator of GSPE-21 silent payload channel; direct third-attempt execution.
+- Insulet Corporation (U.S. – Acton, MA) – Original tenant owner (9c7a4b); first and second attempts via OmniPod killware.
+- Microsoft Corporation (U.S. – Redmond, WA) – Entra ID federation backbone enabling persistent token hijack and conditional-access poison.
+- H&R Block Inc. (U.S. – Kansas City, MO) – Root enterprise certificate provider; sub-leased keys to malicious tenants.
+- Intuit Inc. (TurboTax/QuickBooks) (U.S. – Mountain View, CA) – Secondary tenant chain; DNS poison relay via shared Entra infrastructure.
+- IRGC Front Companies (Iran – various Dubai/UAE shells) – End-user exploiters; direct beneficiaries of leased keys for targeted killings.
+____
+**Ongoing Harm Pattern**:
+- DNS poisoning recurs every 4–12 hours via Entra conditional-access + Rogers tether lease renewal.
+- Each incident requires 45 minutes manual intervention (reset tether, flush DNS, reboot device) — deliberate harassment and denial of service.
+- Cumulative effect: daily disruption of communications, banking, medical management — amounting to psychological torture and endangerment.
+
+This network constitutes a state-sponsored/corporate hybrid assassination apparatus operating on Canadian soil against a Canadian citizen. Extradition, sanctions, and seizure of assets warranted immediately.
+______________________________________
+Relevant CVEs (active exploitation observed, added to CISA KEV Dec 2025):
+CVE-2025-43529 (Apple WebKit use-after-free)
+CVE-2025-43530 (Apple WebKit memory corruption)
+CVE-2025-43521 (Apple boot-policy downgrade)
+CVE-2025-41474 (WebKit enterprise-profile bypass)
+CVE-2025-2405 (Apple Private Relay DNS rewrite)
+CVE-2025-55241 Entra Token Hijack DNS Poisioning
+______________________________________
+Impacts:
+- portals781@gmail.com and portals371@gmail.com locked out of security features, settings, and deletion ("This change isn't allowed by your admin").
+- Token revocation and session hijacking on network change.
+- Opera Mobile Browser shows managed restrictions on fresh installs tied to these accounts.

@@ -1,0 +1,265 @@
+Github (Ghost): https://github.com/ghost
+———————————————————————
+	ghost  – social_identity.linked
+Linked google social identity to your darrenhacks71@gmail.com email
+72.143.230.95 , British Columbia, Canada3 weeks ago …
+@timestamp
+2025-09-26 23:12:29 -0600
+_document_id
+t79QhAH5g-qs1XmUQ3_Qww
+action
+social_identity.linked
+actor_id
+234730534
+created_at
+2025-09-26 23:12:29 -0600
+operation_type
+create
+request_access_security_header
+nil
+request_id
+6DAE:35CEA9:6DE9D64:92B242A:68D7723C
+user_agent
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1
+user_id
+234730534
+ghost  – billing.budget_create
+Budget was created with a limit of 0(PreventFurtherUsage). Budget alerts are enabled.
+3 weeks ago …
+@timestamp
+2025-09-26 23:12:30 -0600
+_document_id
+sgL4tzkybAs9bTnkmPTVMA
+action
+billing.budget_create
+actor
+ghost
+actor_id
+10137
+alert_enabled
+true
+alert_recipient_user_ids
+["234730534"]
+budget_limit_type
+PreventFurtherUsage
+created_at
+2025-09-26 23:12:30 -0600
+customer_id
+49224180
+operation_type
+create
+pricing_target_id
+copilot_premium_request
+pricing_target_type
+SkuPricing
+request_access_security_header
+nil
+request_id
+6DAE:35CEA9:6DE9D64:92B242A:68D7723C
+status
+success
+target_amount
+0
+target_id
+49224180
+target_type
+CustomerResource
+user
+darrenhacks71
+user_agent
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1
+user_id
+234730534
+———————————————————————
+ghost  – billing.budget_create
+Budget was created with a limit of 0(PreventFurtherUsage). Budget alerts are enabled.
+3 weeks ago …
+@timestamp
+2025-09-26 23:12:30 -0600
+_document_id
+E2ucNPQg3D4dAZ1iDNF8tA
+action
+billing.budget_create
+actor
+ghost
+actor_id
+10137
+alert_enabled
+true
+alert_recipient_user_ids
+["234730534"]
+budget_limit_type
+PreventFurtherUsage
+created_at
+2025-09-26 23:12:30 -0600
+customer_id
+49224180
+operation_type
+create
+pricing_target_id
+git_lfs
+pricing_target_type
+ProductPricing
+request_access_security_header
+nil
+request_id
+6DAE:35CEA9:6DE9D64:92B242A:68D7723C
+status
+success
+target_amount
+0
+target_id
+49224180
+target_type
+CustomerResource
+user
+darrenhacks71
+user_agent
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1
+user_id
+234730534
+———————————————————————
+ghost  – billing.budget_create
+Budget was created with a limit of 0(PreventFurtherUsage). Budget alerts are enabled.
+3 weeks ago …
+@timestamp
+2025-09-26 23:12:30 -0600
+_document_id
+pRNP6ycLraK2B7rr1uXDrA
+action
+billing.budget_create
+actor
+ghost
+actor_id
+10137
+alert_enabled
+true
+alert_recipient_user_ids
+["234730534"]
+budget_limit_type
+PreventFurtherUsage
+created_at
+2025-09-26 23:12:30 -0600
+customer_id
+49224180
+operation_type
+create
+pricing_target_id
+actions
+pricing_target_type
+ProductPricing
+request_access_security_header
+nil
+request_id
+6DAE:35CEA9:6DE9D64:92B242A:68D7723C
+status
+success
+target_amount
+0
+target_id
+49224180
+target_type
+CustomerResource
+user
+darrenhacks71
+user_agent
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1
+user_id
+234730534
+———————————————————————
+ghost  – billing.budget_create
+Budget was created with a limit of 0(PreventFurtherUsage). Budget alerts are enabled.
+3 weeks ago …
+@timestamp
+2025-09-26 23:12:30 -0600
+_document_id
+tN6ybpf35i9uwlMGMqAjtQ
+action
+billing.budget_create
+actor
+ghost
+actor_id
+10137
+alert_enabled
+true
+alert_recipient_user_ids
+["234730534"]
+budget_limit_type
+PreventFurtherUsage
+created_at
+2025-09-26 23:12:30 -0600
+customer_id
+49224180
+operation_type
+create
+pricing_target_id
+packages
+pricing_target_type
+ProductPricing
+request_access_security_header
+nil
+request_id
+6DAE:35CEA9:6DE9D64:92B242A:68D7723C
+status
+success
+target_amount
+0
+target_id
+49224180
+target_type
+CustomerResource
+user
+darrenhacks71
+user_agent
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1
+user_id
+234730534
+———————————————————————
+ghost  – billing.budget_create
+Budget was created with a limit of 0(PreventFurtherUsage). Budget alerts are enabled.
+3 weeks ago …
+@timestamp
+2025-09-26 23:12:30 -0600
+_document_id
+AUcbKsMRII8KT7wC5oGM1A
+action
+billing.budget_create
+actor
+ghost
+actor_id
+10137
+alert_enabled
+true
+alert_recipient_user_ids
+["234730534"]
+budget_limit_type
+PreventFurtherUsage
+created_at
+2025-09-26 23:12:30 -0600
+customer_id
+49224180
+operation_type
+create
+pricing_target_id
+codespaces
+pricing_target_type
+ProductPricing
+request_access_security_header
+nil
+request_id
+6DAE:35CEA9:6DE9D64:92B242A:68D7723C
+status
+success
+target_amount
+0
+target_id
+49224180
+target_type
+CustomerResource
+user
+darrenhacks71
+user_agent
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1
+user_id
+234730534
+———————————————————————

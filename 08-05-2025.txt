@@ -1,0 +1,27 @@
+Email(s) to Insulet
+_______________________________________
+From: Darren Hacking <Darren_Hacks@hotmail.com>
+Sent: August 5, 2025 4:44 PM
+To: Product-Support-Clinical@insulet.com <Product-Support-Clinical@insulet.com>
+Subject: Final Verdict Device Defect
+_______________________________________
+Package did not arrive to send pods to be inspected further, due to needing both government ID and signature, which i thought bizarre for a poly mailer. Please send 4” x 6” Label and i will print label to send them. I’m interested in the Omnipod Dash as Omnipod 5 had issues giving 10X insulin delivery without a leading zero. The Eros problem is caused by recent firmware updates to the pods pcb making it consume more RAM, causing lag, in which as little as 30ms can cause insulin duplication. The PDM sends timed pulses to the pod’s muscle wire, but the signalling is affected by the recent firmware updates, causing delay, thus causing insulin duplication. You could replicate this on the official pdm as well, but devices with less ram, will be significantly more affected. As per FCC it also should not cause harmful interference with other devices, but did.
+
+The pod’s PCB processes commands via BLE from an nRF52810 chip (version 2.5, stable for five years, recently updated to 3.2 to test for improvements). A recent Insulet firmware change likely disrupts command processing, contributing to the dosing errors. I initially investigated primarily Five nRF52810-related files (.pfi, .po, .pr, .pri, .ps) to fully understand the command processing and can provide them if needed. I have now fully reversed engineered the nRF52810 file using Ghidra, and can confirm my findings to be accurate and have a thorough understanding my logic is correct, in regards to firmware.
+
+Hardware Comparison: Omnipod Eros PDM vs. nRF52810 (24KB vs 64KB-128KB)
+
+The original Omnipod Eros PDM (Personal Diabetes Manager) is a handheld device for managing the tubeless Pod, with limited public hardware details. Teardowns suggest it's based on an older ARM-based MCU (possibly Freescale or similar), with more RAM (estimated 64-128 KB or higher for its UI and storage) than the nRF52810's 24 KB RAM. The nRF52810 has 192 KB Flash, 24 KB RAM, a 64 MHz Cortex-M4, and focuses on low-power BLE/ANT, making it suitable for custom controllers but RAM-constrained for complex tasks.
+Firmware updates could strain lower-RAM devices like yours, potentially causing buffer overflows or delayed processing if new code demands more memory. No widespread reports of over-delivery deaths from Eros updates exist, suggesting issues are rare, recent or device-specific.
+
+Delay Effects on Nitinol Muscle Wire
+Nitinol (shape memory alloy) in pumps like Eros contracts when heated by electrical pulses, dispensing insulin via a piston. A 30ms delay in signals could prolong heating, causing over-contraction and excess delivery, as nitinol's response is time-sensitive (soft when cool, stiff when hot). In insulin resistance contexts, delays reduce uptake efficiency, but for pumps, precise BLE timing is key to avoid hypoglycemia risks.
+
+Recommendations
+* Compare RAM usage: Profile your firmware with Nordic tools to check for overflows.
+* Test delays: Use an oscilloscope on signals; replace busy-wait delays with hardware timers.
+* Firmware rollback: Revert to pre-update version if possible.
+* Monitor closely: Track glucose; report to Insulet or FDA if over-delivery persists.
+_______________________________________
+
+

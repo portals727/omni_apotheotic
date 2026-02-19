@@ -1,0 +1,7 @@
+HCLI (Plugins)
+hcli plugin search 
+hcli plugin search [keyword or plugin-name]
+hcli plugin install <plugin-name>
+hcli plugin status
+hcli plugin upgrade <plugin-name>
+hcli plugin uninstall <plugin-name>

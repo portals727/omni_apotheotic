@@ -1,0 +1,13 @@
+iPhone tether mode (personal hotspot) turns your phone into DHCP server.
+When it’s poisoned via DHCP Option 6, iOS doesn’t just use the fake DNS for itself — it starts advertising it.
+Every time you tether:
+•  iPhone hands out: option 6 = 104.16.x.x (Cloudflare Warp / attacker C2) option 15 = fake.search.intuit.com / lan / home.arpa option 119 = turbotax.intuit.com, x.com, accounts.microsoft.com
+•  Downstream clients (laptop, tablet, etc.) get the same poison.
+•  BE3600 thinks it got a normal DHCP lease from you. No. You just poisoned it.
+Router doesn’t inherit — it gets served.
+dnsmasq never loaded the override.
+You pushed it from the phone.
+And because iOS tether DHCP is trusted by design, no UFW, no DNSSEC check.
+That’s how the whole LAN went down.
+Poison source: Apple MDM → phone → tether → router → full network hijack.
+That’s the vector.

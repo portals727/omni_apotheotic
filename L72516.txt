@@ -1,0 +1,860 @@
+Email(s) to Insulet (L72516)
+_______________________________________
+From: Darren Hacking <Darren_Hacks@hotmail.com>
+Sent: July 31, 2025 1:50 AM
+To: Clinical Product Support Team <Product-Support-Clinical@insulet.com>; DiabetesExpress@bayshore.ca<DiabetesExpress@bayshore.ca>
+Subject: Re: D. Hacking EROS PDM Issue | L72516 : 3500794
+ _______________________________________
+To whom it may concern.
+
+Omnipod Eros Duplication Video Proof
+———————————————————————
+Currently experiencing hypoglycaemia on L72516 : 3500794 as Insulet refused to provide replacement & emergency pods (i have none). Sending them would be an admission of guilt (probably called their attorney and advised them not to). However results are repeatable & reproducible in nature on both official Eros PDM and 3rd-party pdm using nordic semiconductor technology, (nRF52830, nRF52840, etc). 
+
+Therefore, i'm still using this pod currently as of writing this email that is duplicating insulin delivery (sequential + randomized), due to manufacturer not replacing, due to admission of guilt or fault. The pod also does not know what state it is in currently, so it’s still delivering me insulin at 4.3mmol/L, when it should be suspending insulin delivery.
+
+Previous Hypoglycaemia Encephalopathy: Previous Hypoglycaemia Encephalopathy lasted 36 hours, due to an estimated 33% to 50% of the pods reservoir was delivered SC in 4-6 hours, in addition to the primary problem of insulin duplication. Typically the longest ever taken to recover from any hypoglycaemia event has been a few hours, but more so 30-60 minutes.
+
+However cognition wise I actually developed full mental retardation, which was scary or atleast from what I experienced I couldn’t think and everything took 20X longer than what it should take. Also suffered major short + long-term memory loss issues.
+———————————————————————
+Current Duplication Cognition Problems (Maybe related to Current _ Previous Hypoglycaemia Encephalopathy)
+
+Writing email @6:27PM, with glucose level of 3.3mmol/L, glucose delta 0.00 mmol/L (FLAT) ->. Noticed that text on my phone is actually tilting, not blurring, making typing incredibly difficult, worse than i've ever experienced, and the typing keeps jumping to other sections of the Notes app just from the tilting. Not sure if this is related to or particular to Diabetic Hypoglycaemia Encephalopathy, so i raise & document issue for awareness if I ever need to pursue litigation. 
+———————————————————————
+Intended Delivery (Apple Health-kit)
+
+Tuesday (Basal/Bolus)
+Bolus: 68.55-IU (Bolus)
+Basal: 13.029 (Basal)
+Total 81.579 (Basal/Bolus)
+
+Wednesday (Basal/Bolus)
+Bolus: 56.7 (Bolus)
+Basal: 2.95 (Basal)
+Total: 59.65 (Basal/Bolus)
+
+Wednesday + Tuesday (Total -> (59.65 + 81.579): 141.229
+Pod Full Contents: 200-IU - 141.229 -> 58.771 *ONLY 31-IU LEFT IN POD*
+58.771 (Intended Dosage Input) - 31-IU (Remaining After Duplication): 27.771-IU Insulin Overdosage due to Insulin duplication from likely firmware related changes.
+
+Actual Pod Contents (Reservoir): 31
+Overdosage Amount (49-Hours -> 58.771 - 31): 27.771-IU 
+———————————————————————
+
+
+
+
+
+
+
+
+
+
+
+
+———————————————————————
+Lot # in video w/sequential
+L72516 : 3500794
+———————————————————————
+Omnipod Eros : 0x5C Bypass Consequences
+———————————————————————
+OmniPod FCC ID
+———————————————————————
+OmniPod Eros FCC-ID: RBV-017
+
+FCC - (RBV-017)
+———————————————————————
+Omnipod Dash FCC ID: RBV-041
+
+FCC - (RBV-041): 
+———————————————————————
+0x5c 092 -> (Internal Pod Fault Reporting) Error
+
+Hexadecimal: 0x5c
+Decimal: 092
+
+0c5c 092: Problem with a safety check after priming. Note the word ‘after’ means safety check is performed after the prime, but the prime error occurs earlier. I also note that sometimes 0x5c (092) can occur before priming is finished, however the exact reason for so, remains unknown.
+
+Likely Problem: Recent Firmware changes to the Omnipod Eros Internal PCB appear to be causing problems with both Original. PDM, OL, Nordic Semiconductor BLE PDM devices. 
+
+0x5c (092) Priming Audible: I have tested Prime on original PDM and is making abnormal prime sounds that all 0x5c bypass (092) pods make. All 0x5c (092) pods duplicate insulin delivery, further investigation uncovered that they also continue to deliver insulin despite BOTH electronic & manual (pin hole reset) termination.
+
+Liability Concerns
+As a software developer or programmer you owe a duty of care to your customers. Which also means that your system may interfere with other BLE PDM like-devices and if the pcb was updated on a mass level that it could have catastrophic consequences. You also must adhere to FCC policies, including policies related to device must not cause any malicious interference with any other devices.  Before the pcb firmware change there was no duplication errors on neither PDM nor 3rd party BLE devices, such as nordic semiconductor, etc. Most of the code on these 3rd-party remains the same to the official Omnipod PDM, other than maybe some battery saving features, it’s pretty much the exact same PDM. The outcome of the 3rd-party transmitters has also been the same as of until recent firmware changes to the pods internal pcb. 
+———————————————————————
+Electronics, mechanical, thermal failure
+
+It appears to me that there is an electronic failure causing the muscle wire to not complete phases properly. Muscle wire is a thermal memory shape alloy that is intended to return back to its original shape. However that is not occurring here, suggesting maybe a problem completing phases correctly. An example of this would be a DC brushless motor only completing 1st phase (magnetization phase), in which the motor will violent jump from the magnetization, but since there is no electronic controller it cannot fully complete phases. 
+——————————————————————— 
+Firmware Related Causes 
+
+Cause: Probably related to newer firmware version releases with new pods. I only was able to find 1 survivor that I knew was 0x5c that properly displayed 0x5c.
+
+Alternative Causes: Potential PDM or DIY BLE devices that are incompatible with newer firmware releases, however haven’t had any problems for 5 years and was able to repeat the results with different BLE devices that act as the PDM. I consider it incredibly likely the original PDM would duplicate insulin delivery, the mechanical failure of the muscle wire also further proves my theory. The fact that the pod cannot be neither electronically or mechanically disable also further proves this. This is an advanced software + mechanical thermal problem with this thermal memory shape alloy (muscle wire).
+———————————————————————
+Potential of 0x5c Manufacturer Safety Alert Disabling & Associated Consequences ~ Command States
+
+Results Repeatable: Yes, global
+
+Mechanical Causes: Mechanical failure involving muscle wire.
+
+Electrical/Electronic Causes: Phase Issue(s) with Muscle Wire
+——————————————————————— 
+Anecdotal Findings (L73213): 0x5c (092) pods still delivers insulin despite being manually disabled (puncture hole through pcb), or electronically disabled. All these pods are also correlated to the 0x5c (091) Prime open count too low pod fault error code that should have occurred. The muscle wire visibly also has a larger width. No evidence of thermal over heating for this lot #, purely mechanical. It would make sense to do xray image scanning of the pcb and compare it to prior versions and check for things like vendor, vendor id, dates & any other important information, which would indicate recent changes to the pcb, which may have included disabling certain pod fault codes & safety features like 0x5c (091). 
+
+0x5c pods will always cause duplication. The extent of duplication varies, but it's also very predictable depending on how deranged the prime sounds upon initial startup. 0x5c (091-Prime open count low), internal pod fault error code is entirely audible in nature. However due to problems with provincial insurance coverage and insulin pump therapy programme limitations & policies make replacement difficult. replacement does not occur even when requested from manufacturer Insulet & distributor bayshore, despite negative health consequences of continued usage of duplicate insulin delivery. The results are always predictable & repeatable in nature. Every pod that i can hear an 0x5c prime, always results in insulin duplication. 
+———————————————————————
+Future Problems: The muscle wire is not fully completing phases. Due to the thermal & mechanical nature of the muscle wire, which is thermal shape memory alloy that is supposed to return back to it's original position, worsened defects may arise. Muscle wire is thermal so it remembers, atleast under normal conditions. The actual dosage increment of insulin delivered may be exponentially more than 0.05-IU. 
+
+Phase Problems: Seems very probable that there is problems with the electrodes plating & continuity on these electrode pads. Muscle wire is not polarity specific so you can actually open up the device and use a signal generator to fully identify the problems with the device, (0.5Hz) works best as a good reference point. 
+
+Occurrence Rate(s): Every single pod of approximately 50+ pods and affecting most pods of prior shipments, estimated 5-6 different shipments for L73213.
+———————————————————————
+1: Regular Insulin Delivery (1:1)
+——————————————————————— 
+2: Sequenced Insulin Delivery by Ratio (Typically 1:2 Ratio, although can be randomized). Distinguishable by Recognizable Pattern that can be established concretely. 
+
+a) Sequenced Duplication (Most Common) (1:2…1:2)-> i.e 10 Units is 15 Units (150%) 
+
+b) Regular Insulin Delivery (1:1) -> (0.05-IU + 0.05-IU / Total: 0.10-IU) <Intended Insulin Delivery> 
+
+c) Sequenced Insulin Delivery (1:2) -> (0.05-IU + 0.10-IU / Total: 0.15-IU) <Actual Insulin Delivery>
+
+Sequenced Insulin Delivery Duplication Temporary Solution (Typical) | Nulling out the additional tick (0.05-IU)
+
+67% Ratio applied to both basal & bolus insulin. Nulls out the additional tick. Tested and works. However with randomization and infinite duplication it’s a death sentence, no math can solve randomized insulin duplication. 
+——————————————————————— 
+3: Randomized Insulin Duplication -> (1:2:2)  0.15IU (Intended) -> 0.25IU (Actual Delivery) -> (166%) Insulin Delivery or (1:2:2:2:1) *Insert Math Here* or (1:1:1:2:2:2:2:2:2:2:1) *Insert Math Here*
+
+Note: Most Deadly occurred on last 10 pods, sometimes it can also occur with successions of normal sequence ticks then back to duplication, completely randomized in nature. 
+——————————————————————— 
+4: Infinite Insulin Duplication (2:2 Ratio) 2 Ticks instead of 1, 200% Insulin Delivery -> i.e 10 units is actually 20 units delivered.
+
+Notes: Solvable by math, but almost always has occurred with 3) Randomized Insulin duplication and 1) Normal Insulin Delivery. 
+———————————————————————
+5: Delayed Onset Duplication (Viral-Malware Like)
+
+Similar to viral infection almost, or highly advanced malware. Some pods may have only subtle hints during priming that 0x5c (092) is present in pod. 
+Summary: 0x5c is avoidable. It’s a built in safety alert, also known as 091 in decimal format, 0x5c (hex). 0x5c is audible, you can hear it during the prime. I can tell which pods have bypassed the safety mechanism, which is good in a way since i’m aware that i will be put in danger. Not knowing is much worse. Regardless the user will have no control what will happen to them.
+
+Problem: Pods with 0x5c are no longer triggering the built in safety mechanism that triggers the pod to abort itself.
+
+Potential Viable Causes
+a) Manufacturer disabled 0x5c (091) Prime Open Count Low safety alert because it was uneconomical to fix the issue & or as well to avoid detection and reporting from HC & FDA. 
+b) Problem with pod safety alert reporting system
+
+Affected Lot Numbers
+1: L73213
+2: L72516
+———————————————————————
+Anecdotal Findings
+
+Currently using L73209 and there’s no insulin duplication occurring, as per my notes problem with L73209 include invalid command state (failure to suspend / deliver) insulin appropriately as per patients glucose level, occlusion & early defect. No mention of insulin duplication, which rules out any hardware or software related problems, pointing to LOT # specific problems. 
+
+However it’s possible my notes may not be up to date, this is just what it’s reflecting currently in regard to L73209. 
+———————————————————————
+Duplication Types
+———————————————————————
+Sequenced: 1:2 Ratio typically (150% Insulin Delivery)
+Solution: Apply 67% Basal/Bolus amount to null out the additional tick (0.05-IU)
+
+Full Duplication (2X): 2:2 (200%) Insulin Delivery
+
+Delayed Onset Duplication: Pod starts out with 1:1 Ratio, then leads to sequenced, full, and randomized duplication.
+
+Randomized Duplication: 1:1:1:2:2:1:1:2:2:2:2:1 (Completely Randomized). Randomization means problem can't be solved temporarily by adding percentage basal/bolus amounts, since it's completely randomized. 
+
+Primarily Sequenced + Randomized Duplication (L72516): Typical 1:2 majority duplication (150% insulin delivery), but may occasionally revert to (randomization factor) 1:1:1:1 -> (Sequenced Duplication) 1:2 (Slightly less than 150% insulin delivery) duplication.
+
+Cause: Manufacturer Firmware Change and or disabling 0x5C (092) Prime Open Count Too Low Internal Pod Fault Error to avoid reporting to FDA. They have full immunity from HC. 
+———————————————————————
+Muscle Wire: Muscle wire is thermal memory shape alloy, meant to return back to it's original shape. However the muscle wire is not returning back to the original shape after each pod tick, potentially and likely causing the duplicate ticks. Ticks contain 0.05-IU under normal circumstances. The duplicate ticks are additionally also potentially higher than 0.05-IU incremental amounts of delivered insulin (upwards of 2000%) potentially. 
+
+The muscle wire is connected to 3 electronic pads, it's likely that only 1 or 2 of total 3 phases is being completed, suggesting short circuit or lack of electrical continuity reaching the pads. Similar concept to the 1st phase of a DC brushless motor (magnetization phase). 
+———————————————————————
+Temperatures Reached - Arrhenius equation
+———————————————————————
+Supporting Evidence - Omni Pods Eros Exact Point of Failure (Duplicate Commands / PCB On Fire)
+
+L72506 - (Summary): Inability to suspend insulin delivery due to inability to recognize invalid pod state. Notably affected pods can last longer duration before failure, compared to pods from other Lot #’s. Thermal scan 40C after cooldown, likely closer to 50C on PCB. This PCB is on fire. Insulin thermally cooked, which naturally probably explain exact methodology of failure for other lot #’s potentially. 
+———————————————————————
+Arrhenius Equation | k = A * exp(-Ea / (R * T))
+
+The Arrhenius equation, a fundamental concept in chemical kinetics, describes how the rate of a chemical reaction changes with temperature. It relates the rate constant of a reaction to the activation energy, temperature, and a pre-exponential factor (also known as the frequency factor). 
+
+Arrhenius Equation (Python Program) Findings
+
+The recorded thermal imaging scanning is within 10°C of the estimated temperatures generated by the Python program that incorporates Arrhenius equation to determine insulin temperature sustained based off given pod life before hyperglycaemia occurs. Readings plausibly lower due to deactivating pod before taking thermal imaging of the pod, suggesting the temperatures are either likely the same or higher than the thermal imaging scanning recorded temperatures. Real time thermal image scanning while pod is active would reveal either matching or higher temperatures than recored. 
+———————————————————————
+Retrospective Problems (2020-2024) Coin Cell Batteries Low or No Voltage Present (MuRata Coin Cell Batteries)
+
+Retrospectively these pod thermal defects were active causing hyperglycaemia since as early as 2020-2024. However I  couldn’t identify at the time when I discovered insulin still coming out of cannula, what made DKA was possible. Additionally I noticed either no voltage present or low voltage on these LR41/LR44 coin cell batteries in 2020-2024.
+———————————————————————
+L50-XXX Series
+(L50385): (24.52)
+Enter hours before failure: 24
+Enter minutes before failure (can be decimal, e.g., 0.52): .52
+Total time: 24.0087 hours
+Estimated temperature: 54.9 °C
+———————————————————————
+(L50388): (31.68)
+Enter hours before failure: 31
+Enter minutes before failure (can be decimal, e.g., 0.52): .68
+Total time: 31.0113 hours
+Estimated temperature: 52.4 °C
+———————————————————————
+(L50389):  (15.11)
+Enter hours before failure: 15
+Enter minutes before failure (can be decimal, e.g., 0.52): .11
+Total time: 15.0018 hours
+Estimated temperature: 59.7 °C
+———————————————————————
+(L50391):  (20.28)
+Enter hours before failure: 20
+Enter minutes before failure (can be decimal, e.g., 0.52): .28
+Total time: 20.0047 hours
+Estimated temperature: 56.8 °C
+———————————————————————
+(L50392): (26.218)
+Enter hours before failure: 26
+Enter minutes before failure (can be decimal, e.g., 0.52): .218
+Total time: 26.0036 hours
+Estimated temperature: 54.2 °C
+———————————————————————
+(L50393): (26.90)
+Enter hours before failure: 26
+Enter minutes before failure (can be decimal, e.g., 0.52): .90
+Total time: 26.0150 hours
+Estimated temperature: 54.1 °C
+———————————————————————
+(L72461): (20.49)
+Enter hours before failure: 20
+Enter minutes before failure (can be decimal, e.g., 0.52): 0.49
+Total time: 20.0082 hours
+Estimated temperature: 56.8 °C
+———————————————————————
+L72479
+Pod1: 24H | 48M
+Pod2: 42H | 14M
+Pod3: 37H | 13M
+Pod4: 29H | 28M
+Pod5: 40H | 44M Pod6: 28H | 29M
+Pod7: 24H | 10M
+Pod8: 20H | 10M
+Pod9: 20H | 37M Pod10: 59H | 10M
+AVG: 32.75H
+Enter hours before failure: 32
+Enter minutes before failure (can be decimal, e.g., 0.52): .75
+Total time: 32.0125 hours
+Estimated temperature: 52.1 °C
+———————————————————————
+L72480 - (092) - {0x5c}
+Pod1: 6H | 33M
+Pod2: 30H | 55M
+Pod3: 45H | 10M
+Pod4: 21H | 55M
+Pod5: 18H | 33M Pod6: {0x5c}
+Pod7: 30H | 29M
+Pod8: {0x5c}
+Pod9: 30H | 55M Pod10: 23H | 50M
+Pod11: 16H | 32M Pod12: 24H | 50M
+Pod13: 41H | 32M
+Pod14: 72H
+Pod15: {0x5c}
+Pod16: {0x5c}
+Pod17: 11H | 25M
+Pod18: 18H | 33M
+AVG Time: 28.08
+Enter hours before failure: 28
+Enter minutes before failure (can be decimal, e.g., 0.52): .08
+Total time: 28.0013 hours
+Estimated temperature: 53.4 °C
+———————————————————————
+(L73166): (16.872)
+Enter hours before failure: 16
+Enter minutes before failure (can be decimal, e.g., 0.52): .872
+Total time: 16.0145 hours
+Estimated temperature: 59.0 °C
+———————————————————————
+Python Program - Insulin_temperatures.py
+
+# Calculates Insulin Temperatures sustained via pump runtime before defect using Arrhenius Theory with Insulin Gas Constant
+
+# Cause: Faulty SMD Capacitor
+# TODO: 32 Bit Firmware Extraction from Insulet’s Chip / CH341A, etc
+
+import math
+
+# Constants
+t0 = 672    # Reference time in hours (28 days at 25°C)
+T0 = 298    # Reference temperature in Kelvin (25°C)
+R = 8.314   # Gas constant in J/mol·K
+Ea = 90000  # Activation energy in J/mol
+b = Ea / R  # Precomputed constant for the equation
+
+# Get input from the user
+hours = float(input("Enter hours before failure: "))
+minutes = float(input("Enter minutes before failure (can be decimal, e.g., 0.52): "))
+
+# Calculate total time in hours
+total_time = hours + minutes / 60
+
+# Check if time is valid
+if total_time <= 0:
+    print("Time must be positive.")
+else:
+    # Display total time for user confirmation
+    print(f"Total time: {total_time:.4f} hours")
+    
+    # Calculate temperature using the derived equation
+    ln_t = math.log(total_time)
+    ln_t0 = math.log(t0)
+    denominator = ln_t - ln_t0 + b / T0
+    
+    # Check for calculation validity
+    if denominator <= 0:
+        print("Calculation error: denominator non-positive. Time may be too long.")
+    else:
+        T = b / denominator  # Temperature in Kelvin
+        T_C = T - 273.15    # Convert to Celsius
+        print(f"Estimated temperature: {T_C:.1f} °C")
+———————————————————————
+Evidence
+
+Additionally, i have video evidence to confirm this all is true and valid if needed.
+———————————————————————
+Pod Fault Codes
+Internal Pod Fault	Hex Value	Pod Firmware Discovery	Additional Information
+000	0x00	Not used by Pod firmware for errors (indicates there is no error)	Used in PDM Ref Codes for Eros Occlusions in Alarm history.
+001	0x01	Flash erase failed	
+002	0x02	Flash store failed	
+003	0x03	Basal subcommand table corruption	
+004	0x04	Basal pulse corruption	
+005	0x05	Basal step corruption	
+006	0x06	RTC interrupt or pump encoder table corruption	
+007	0x07	Wire overdriven timeout	
+008	0x08	Invalid beep value	
+009	0x09	Invalid beep repeat pattern value	
+010	0x0A	Temp basal step corruption	
+011	0x0B	Temp basal subcommand table corruption	
+012	0x0C	Bolus overflow	
+013	0x0D	Reset due to COP	
+014	0x0E	Reset due to illegal opcode	
+015	0x0F	Reset due to illegal address	
+016	0x10	Reset due to SAWCOP	Safety check, Computer Operating Properly reset; CPU taking too long for some operation
+017	0x11	Bolus step corruption	
+018	0x12	Reset due to Low Voltage Detect	More likely on third day of use due to low batteries and/or static electricity
+019	0x13	Message length too long	
+020	0x14	Occluded	Reported as "Occlusion detected"
+021	0x15	Bolus program corruption	
+022	0x16	Bolus log corruption	Safety check
+023	0x17	Corruption in a validated table	
+024	0x18	Reservoir empty or exceeded maximum pulse delivery	Reported as "Empty reservoir"
+025	0x19	Load error before starting pulse	
+026	0x1A	Power Switch Array problem before starting pulse	
+027	0x1B	Tick count unexpectedly not zero when starting pulse	
+028	0x1C	Exceeded maximum Pod life of 80 hours	Reported as "Pod expired"
+029	0x1D	Commissioned bit unexpectedly not set	
+030	0x1E	Unexpected commissioned state upon reset	
+031	0x1F	Alerts table corruption	
+032	0x20	Validate encoder count error when bolusing	
+033	0x21	Bad timer variable state	
+034	0x22	Unexpected RTC Modulo Register value during reset	
+035	0x23	Calibrate timer problem	
+036	0x24	Tick count error RTC	
+037	0x25	Tick interrupt handler unexpectedly called	
+039	0x27	Failed to set up alerts for tank fill operation	
+040	0x28	Bad arg or state	
+041	0x29	Alert #0 auto-off timeout	Auto-off, not used by Loop app
+042	0x2A	Alert #1 auto-off timeout	Not used
+043	0x2B	Alert #2 auto-off timeout	Not used
+044	0x2C	Alert #3 auto-off timeout	Not used
+045	0x2D	Alert #4 auto-off timeout	Not used
+046	0x2E	Alert #5 auto-off timeout	Not used
+047	0x2F	Alert #6 auto-off timeout	Not used
+048	0x30	Alert #7 auto-off timeout	Not used
+049	0x31	Incorrect pod state for command	
+050	0x32	Bad COP value during startup testing	
+051	0x33	Multi Command Timeout Fault	
+052	0x34	Reset from unknown cause	More likely on third day of use due to low batteries and/or static electricity
+053	0x35	SAW Veto Status unexpectedly not set	
+054	0x36	External pin reset with incorrect pod progress	
+055	0x37	Bad beep pattern state variable	
+056	0x38	Unexpected wire state	
+057	0x39	Bad variable value for LOAD1/LOAD2 test	
+058	0x3A	Invalid value in message processing	
+059	0x3B	SAW reset testing failure	
+060	0x3C	MCP COP testing failure	
+061	0x3D	Problem with step sensor pump anchor	
+062	0x3E	Flash initialization or write error	
+064	0x40	Encoder open count too high	Probable pump issue, possible occlusion, often seen on 3rd day of use with Loop, especially during or immediately after a bolus
+065	0x41	Encoder count excessive variance	
+066	0x42	Encoder count too low	Safety check, delivery problem inside the Pod and not on the site
+067	0x43	Encoder count problem	
+068	0x44	Open load wire 1 detected	Software or hardware failure in Pod
+069	0x45	Open load wire 2 detected	Software or hardware failure in Pod
+070	0x46	Problem with Power Switch Array Status and Control Register values	
+071	0x47	Problem with SAW VETO	
+072	0x48	Bad timer calibration	
+073	0x49	Bad timer high value	
+074	0x4A	Bad timer period value	
+075	0x4B	Bad ICS trim value	
+076	0x4C	Unable to trim ICS correctly	
+077	0x4D	Bad timer calibration mode	
+078	0x4E	SAW trim error	Safety check, delivery problem inside the Pod
+079	0x4F	Unexpected RF transmission error set during reset	
+080	0x50	Timer Pulse-width Modulator 2 overflow	Static electricity
+081	0x51	Bad state before starting pump	
+082	0x52	Out of Lock Status Latch	
+083	0x53	Wrong Rx sensitively value	
+084	0x54	Packet frame length too long	
+085	0x55	Unexpected IRQ high	
+086	0x56	Unexpected IRQ low	
+087	0x57	Pump check table corrupt	
+088	0x58	Bad pump check table parameters	
+089	0x59	Error updating pump check table	
+090	0x5A	Pump check table values too high	
+091	0x5B	Pump check table corruption	
+092	0x5C	Prime open count too low	Problem with a safety check after priming
+093	0x5D	Bad RF Carrier Detect Threshold	
+094	0x5E	Write flash byte to disable flash security failed	
+095	0x5F	Both wire 1 and wire 2 open before starting pump	
+096	0x60	Timed pump check startup problem 1	Possible pump issue/occlusion
+097	0x61	Timed pump check startup problem 2	Possible pump issue/occlusion
+098	0x62	Timed pump check excess timeouts 1	Possible pump issue/occlusion
+102	0x66	Timed pump check excess timeouts 2	Possible pump issue/occlusion
+103	0x67	Timed pump check excess timeouts 3	Possible pump issue/occlusion
+104	0x68	Timed pump check pulse issue	Possible pump issue/occlusion
+105	0x69	Timed pump check bolus problem	Possible pump issue/occlusion
+106	0x6A	Timed pump check above threshold	Possible pump issue/occlusion
+128	0x80	Basal under infusion	
+129	0x81	Basal over infusion	
+130	0x82	Temp basal under infusion	
+131	0x83	Temp basal over infusion	
+132	0x84	Bolus under infusion	
+133	0x85	Bolus over infusion	
+134	0x86	Basal over infusion pulse	
+135	0x87	Temp basal over infusion pulse	
+136	0x88	Bolus over infusion pulse	
+137	0x89	Immediate bolus under infusion pulse	
+138	0x8A	Extended bolus over infusion pulse	
+139	0x8B	Insulin schedule table corruption	
+141	0x8D	Bad pulse type parameter	
+142	0x8E	Sync request with no active temp basal	
+143	0x8F	Insulin command parse unexpectedly failed	
+144	0x90	Bad Insulin Schedule Table selection parameter	
+145	0x91	Basal pulse request with no active basal insulin schedule	
+146	0x92	Temp basal pulse request with no active temp basal insulin schedule	
+147	0x93	Bolus pulse request with with no active bolus insulin schedule	
+149	0x95	Bad insulin command table specification	
+150	0x96	Bolus termination with incorrect values	
+151	0x97	Bad open transitions pod progress or count	
+———————————————————————
+OmniPod Lot Hierarchal Order - Average Hours before Pod Defect
+———————————————————————
+L50385: 51.0 °C (from 36.0033 hours)
+L50388: 52.4 °C (from 31.0113 hours)
+L50389: 53.4 °C (from 28.0040 hours)
+L50391: 57.3 °C (from 19.0027 hours)
+L50392: 54.2 °C (from 26.0036 hours)
+L50393: 54.1 °C (from 26.0150 hours)
+L71446: 59.0 °C (from 16.0018 hours)
+L71447: 55.8 °C (from 22.0062 hours)
+L71451: 58.4 °C (from 17.0103 hours)
+L72461: 56.8 °C (from 20.0082 hours)
+L72479: 52.1 °C (from 32.0125 hours)
+L72480: 53.4 °C (from 28.0013 hours)
+L72485: 53.4 °C (from 28.0132 hours)
+L72486: 58.4 °C (from 17.0055 hours)
+L73166: 53.4 °C (from 28.0088 hours)
+L73182: 53.4 °C (from 28.0082 hours)
+L73183: 55.8 °C (from 22.0112 hours)
+L73192: 52.1 °C (from 32.0017 hours)
+———————————————————————
+L50-XXX Series
+(L50385): (24.52)
+(L50388): (31.68)
+(L50389):  (15.11)
+(L50391):  (20.28)
+(L50392): (26.218)
+(L50393): (26.90)
+———————————————————————
+L71-XXX Series
+(L71446): (10.47) - (0x5c)
+(L71447): (6.27) - (0x5c)
+(L71451): (0x5c) | Risk: (Moderate-Severe)
+(L71460): [Early Defect Guaranteed DKA] *Likely low battery related (LR41/44) coin cells* | Also suggests (0x5c Bypass & or other unidentifiable error/bypass yet to be discovered) | Risk: (Catastrophic) + Occlusion
+(L71461): Occlusion; Early defect DKA
+———————————————————————
+L72-XXX Series
+(L72461): (20.49)
+(L72480): (0x5c) | Risk: (Moderate-Severe)
+(L72485): [(0x5c) : 3380125] | [(0x31) : 3500118] —> [0x5c bypass] | [Canulla Insertion Bypass] | Risk: Catastrophic 
+(L72486): Early Defect | Suggest (0x5c Bypass) | Risk: Catastrophic 
+(L72492): Early Defect | Guaranteed DKA | More unknown errors | Pod Defect scream upon needle insertion no push 
+———————————————————————
+L73-XXX Series
+(L73166): (16.872)
+(L73183): - [Early Defect] {Suggest 0x5c Bypass} | Risk: Severe-Catastrophic
+(L73192): (0x5c) —> [0x5c Bypass] —> {2990776 : 2910768 : 3100815 : 3000764 : 2990757 : 2980767} | Risk: Catastrophic
+———————————————————————
+L50385
+Pod1: 24H | 31M
+Pod2: 37H | 11M
+Pod3: 72H
+Pod4: 25H | 02M
+Pod5: 48H | 0M
+Pod6: 9H | 43M
+Pod7: 35H | 44M
+Pod8: 28H | 09M
+Pod9: 45H | 30M
+AVG: 36.20
+Enter hours before failure: 36
+Enter minutes before failure (can be decimal, e.g., 0.52): .20
+Total time: 36.0033 hours
+Estimated temperature: 51.0 °C
+———————————————————————
+L50388
+Pod 1: 70H
+Pod2: 6H + 55M
+Pod3: 18H + 8M
+AVG Time: 31.68
+Enter hours before failure: 31
+Enter minutes before failure (can be decimal, e.g., 0.52): .68
+Total time: 31.0113 hours
+Estimated temperature: 52.4 °C
+———————————————————————
+L50389
+Pod1: 17H + 14M
+Pod2: 12H + 59M
+Pod3: 16H + 05M
+Pod4: 63H | 35M
+Pod5: 31H | 20M
+AVG Time: 28.24
+Enter hours before failure: 28
+Enter minutes before failure (can be decimal, e.g., 0.52): .24
+Total time: 28.0040 hours
+Estimated temperature: 53.4 °C
+———————————————————————
+L50391
+Pod1: 26H + 0M
+Pod2: 20H + 55M
+Pod3: 3H + 28M - (User Error)
+Pod4: 8H + 59M
+Pod5: 30H + 5M
+Pod6: 40H + 26M
+Pod7: 18H + 32M
+Pod8: 25H + 5M
+Pod9:  9H + 0M
+Pod10: 11H + 43M
+Pod11: 35H +6M
+Pod 12: 20H + 0M
+Pod13: 20H + 13M
+Pod14: 18H + 27M
+Pod15: Defected Pod - (Unknown)
+Pod16: 5H + 26M
+Pod17: 3H + 30M
+Pod18: 8H + 54M
+Pod19: 39H + 0M
+AVG Time: 19.16
+Enter hours before failure: 19
+Enter minutes before failure (can be decimal, e.g., 0.52): .16
+Total time: 19.0027 hours
+Estimated temperature: 57.3 °C
+———————————————————————
+L50392
+Pod1: 41H + 59M
+Pod2: 29H + 9M
+Pod3: 19H + 4M
+Pod4: 17H + 13M
+Pod5: 44H + 36M
+Pod6: 5H + 0M
+Pod7: 4H + 35M
+Pod8: 56H + 7M
+Pod9: 15H + 45M
+Pod10: 28H + 43M
+AVG Time: 26.218
+Enter hours before failure: 26
+Enter minutes before failure (can be decimal, e.g., 0.52): .218
+Total time: 26.0036 hours
+Estimated temperature: 54.2 °C
+———————————————————————
+L50393
+Pod1: 20H + 33M
+Pod2: 33H + 15M
+AVG Time: 26.90
+Enter hours before failure: 26
+Enter minutes before failure (can be decimal, e.g., 0.52): .90
+Total time: 26.0150 hours
+Estimated temperature: 54.1 °C
+———————————————————————
+L71446 - (092) - {0x5c)
+Pod1: 0H + 0M - (0x5C Error)
+Pod2: 37H + 21M
+Pod3: 12H + 0M
+Pod4: 5H + 39M
+Pod5: 27H + 57M
+Pod6: 10H + 26M
+Pod7: 20H + 55M
+Pod8: 6H + 38M
+Pod9: 45H + 21M
+Pod10: 4H + 20M
+Pod11: 17H + 49M
+Pod12: 11H + 56M
+Pod13: 4H + 17M
+Pod14: 4H + 49M
+Pod15: 0H + 0M - (0x5c Error)
+Pod16: 0H + 0M - (0x5c Error)
+Pod17: 0H + 0M - (0x5c Error)
+Pod18: 0H + 0M - (0x5c Error)
+Pod19: 0H + 0M - (0x5c Error)
+Pod20: 0H + 0M - (0x5c Error)
+AVG-Time: 16.11
+Enter hours before failure: 16
+Enter minutes before failure (can be decimal, e.g., 0.52): .11
+Total time: 16.0018 hours
+Estimated temperature: 59.0 °C
+———————————————————————
+L71447 - (092) - {0x5c}
+Pod1: 4H | 46M
+Pod2: 11H | 23M
+Pod3: 8H | 56M - (*Potential ACK Malicious Sender*)
+Pod4: 0H | OM - (0x5c) - (Corrupted by ACK from Pod3 Likely, but still unsure as didn’t send log report)
+Pod5: 9H | 28M
+Pod6: 33H | 05M
+Pod7: 0H | 0M - (0x5C)
+Pod8: 19H | 38M
+Pod9: 50H | 46M
+Pod10: 48H | 01M
+Pod11: 0H | 0M - (0x5c)
+Pod12: 30H | 21M Pod13: 7H | 18M
+AVG Time: 22.37
+Enter hours before failure: 22
+Enter minutes before failure (can be decimal, e.g., 0.52): .37
+Total time: 22.0062 hours
+Estimated temperature: 55.8 °C
+———————————————————————
+L71451 - {0x5c)
+Pod1: 9H | 10M
+Pod2: 42H | 53M
+Pod3: 6H | 54M
+Pod4: 37H | 44M
+Pod5: 24H | 04M
+Pod6: 26H | 55M
+Pod7: 19H | 12M
+Pod8: 27H | 28M
+Pod9: 3H | 36M
+Pod10: 18H | 0M
+Pod11: 2H | 17M
+Pod12: 5H | 04M
+Pod13: 22H | 28M
+Pod14: {0x5c}
+Pod15: 2H | 20M
+Pod16: 16H | 6M
+AVG-Time: 17.62
+Enter hours before failure: 17
+Enter minutes before failure (can be decimal, e.g., 0.52): .62
+Total time: 17.0103 hours
+Estimated temperature: 58.4 °C
+———————————————————————
+L72461
+Pod1: 31H + 4M
+Pod2: 26H + 23M
+Pod3: 5H + 44M
+Pod4: 29H + 18M
+Pod5: 6H + 13M
+Pod6: 1H + 0M
+Pod7: 26H + 4M
+Pod8: Defective - (Unknown)
+Pod9: 18H + 0M
+Pod10: 21H + 19M
+Pod11: 37H + 11M
+Pod12: 23H + 10M
+AVG Time: 20.49
+Enter hours before failure: 20
+Enter minutes before failure (can be decimal, e.g., 0.52): .49
+Total time: 20.0082 hours
+Estimated temperature: 56.8 °C
+———————————————————————
+L72479
+Pod1: 24H | 48M
+Pod2: 42H | 14M
+Pod3: 37H | 13M
+Pod4: 29H | 28M
+Pod5: 40H | 44M Pod6: 28H | 29M
+Pod7: 24H | 10M
+Pod8: 20H | 10M
+Pod9: 20H | 37M Pod10: 59H | 10M
+AVG: 32.75H
+Enter hours before failure: 32
+Enter minutes before failure (can be decimal, e.g., 0.52): .75
+Total time: 32.0125 hours
+Estimated temperature: 52.1 °C
+———————————————————————
+L72480 - (092) - {0x5c}
+Pod1: 6H | 33M
+Pod2: 30H | 55M
+Pod3: 45H | 10M
+Pod4: 21H | 55M
+Pod5: 18H | 33M Pod6: {0x5c}
+Pod7: 30H | 29M
+Pod8: {0x5c}
+Pod9: 30H | 55M Pod10: 23H | 50M
+Pod11: 16H | 32M Pod12: 24H | 50M
+Pod13: 41H | 32M
+Pod14: 72H
+Pod15: {0x5c}
+Pod16: {0x5c}
+Pod17: 11H | 25M
+Pod18: 18H | 33M
+AVG Time: 28.08
+Enter hours before failure: 28
+Enter minutes before failure (can be decimal, e.g., 0.52): .08
+Total time: 28.0013 hours
+Estimated temperature: 53.4 °C
+———————————————————————
+L72485 - (092) : {0x5c} | {0x5c + Bypass} | 049 {0x31} - No Canulla Insertion
+Pod1: {0x5c} + (Canulla Delay -> Bypass)
+Pod2: 17H | 37M
+Pod3: {0x5c} + Bypass
+Pod4: 20H | 45M
+Pod5: {0x31}  Pod6: 50H | 29M
+Pod7: 10H | 12M
+Pod8: 23H | 14M
+Pod9: 15H | 55M Pod10: {0x5c}
+Pod11: 47H | 48M Pod12: 51H | 16M
+Pod13: 55H | 09M : 3370220
+Pod14: 20H | 41M : 3490207
+Pod15: 13H | 34M : 3350239
+Pod16: 22H | 12M : 3240234
+Pod17: 25H | 25M : 3610219
+Pod18: 27H | 0M : 3340237
+Pod19: 7H | 56M : 3550207
+Pod20: 0x5C : 3380125
+Pod21: No canulla insertion despite valid command sent : 3500118
+Pod22: 8H | 29M : 3320105
+Pod23: 57H | 56M : 3530119
+Pod24: 19H | 0M : 3430128
+Pod25: 23H | 35M : 3670128
+AVG time: 28.79
+Enter hours before failure: 28
+Enter minutes before failure (can be decimal, e.g., 0.52): .79
+Total time: 28.0132 hours
+Estimated temperature: 53.4 °C
+———————————————————————
+L72486
+Pod1: 15H | 37M
+Pod2: 7H | 0M
+Pod3: 12H | 34M
+Pod4: 4H | 4M
+Pod5: 5H | 28M
+Pod6: 13H 10M
+Pod7: 24H | 23M
+Pod8: 08H | 37M
+Pod9: 25H | 50M
+Pod10: 72H 
+Pod11: 4H | 0M
+Pod12: 8H | 31M : 3390549
+Pod13: 24H | 01M : 3460582
+AVG TIme: 17.33
+Enter hours before failure: 17
+Enter minutes before failure (can be decimal, e.g., 0.52): .33
+Total time: 17.0055 hours
+Estimated temperature: 58.4 °C
+———————————————————————
+L73166
+Pod1: 15H + 35M
+Pod2: 15H + 2M
+Pod3: 41H + 2M
+Pod4: 10H + 58M
+Pod5: 21H + 57M
+Pod6: 9H + 20M
+Pod7: 10H + 5M
+Pod8: 6H + 25M
+Pod9: 14H + 20M
+Pod10: 23H + 59M 
+Pod11: 61H | 55M
+Pod12: 19H | 37M
+Pod13: 47H | 24M
+Pod14: 15H | 43M
+Pod15: 37H | 13M
+Pod16: 4H | 46M Pod17: 72H
+Pod18: 69H
+Pod19: 54H | 24M
+Pod20: 19H | 51M
+AVG Time: 28.53
+Enter hours before failure: 28
+Enter minutes before failure (can be decimal, e.g., 0.52): .53
+Total time: 28.0088 hours
+Estimated temperature: 53.4 °C
+———————————————————————
+L73182
+Pod1: 37H | 40M
+Pod2: 18H | 42M
+Pod3: 34H | 04M
+Pod4: 42H | 0M
+Pod5: 18H | 17M
+Pod6: 13H | 53M
+Pod7: 55H | 25M 
+Pod8: 31H | 45M
+Pod9: 4H | 39M
+AVG Time: 28.49
+Enter hours before failure: 28 
+Enter minutes before failure (can be decimal, e.g., 0.52): .49
+Total time: 28.0082 hours
+Estimated temperature: 53.4 °C
+———————————————————————
+L73183
+Pod1: 43H | 49M
+Pod2: 12H | 37M
+Pod3: 72H 
+Pod4: 39H | 13M
+Pod5: 17H | 25M
+Pod6: 27H | 57M
+Pod7: 27H | 27M
+Pod8: 19H | 16M
+Pod9: 25H | 43M
+Pod10: 4H | 0M
+Pod11: 12H | 26M
+Pod12: 5H | 03M
+Pod13: 2H | 0M
+Pod14: 19H | 55M
+Pod15: 12H | 37M
+Pod16: 20H | 43M
+Pod17: 22H | 0M
+AVG Time: 22.67
+Enter hours before failure: 22
+Enter minutes before failure (can be decimal, e.g., 0.52): .67
+Total time: 22.0112 hours
+Estimated temperature: 55.8 °C
+———————————————————————
+L73192 - 0x5C
+Pod1: 48H | 0M : 
+Pod2: 19H | 0M : 
+Pod3: 43H | 5M : 2980785
+Pod4: 58H | 0M : 3010710
+Pod5: 12H | 29M: 2990776
+Pod6: 31H | 46M : 3000783
+Pod7: 37H | 36M : 2900796
+Pod8: 18H | 04M : 2910768
+Pod9: 56H | 38M : 2730793
+Pod10: 24H | 28M: 3100815
+Pod11: 5H | 58M : 3000764
+Pod12: 15H | 06M : 2990757
+Pod13: 72H : 2790771
+Pod14: 7H | 19M : 2980767
+Pod15: 0x5C
+AVG: 32.10
+Enter hours before failure: 32
+Enter minutes before failure (can be decimal, e.g., 0.52): .10
+Total time: 32.0017 hours
+Estimated temperature: 52.1 °C
+———————————————————————
+
+On Jul 30, 2025, at 3:14 PM, Clinical Product Support Team <Product-Support-Clinical@insulet.com> wrote:
+
+Please reply to this email with the video you took.
+
+Thank you
+
+

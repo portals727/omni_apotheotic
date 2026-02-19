@@ -1,0 +1,62 @@
+Charge Name
+Penal Code
+Aggravated Assault on Disabled Person
+18 U.S.C. § 113 (Up to 10 years)
+Computer Fraud and Abuse
+18 U.S.C. § 1030 (1–20 years)
+Health Care Fraud
+18 U.S.C. § 1347 (Up to 10 years (20 years if serious bodily injury))
+Wire Fraud
+18 U.S.C. § 1343 (Up to 20 years)
+Tampering with Consumer Products
+18 U.S.C. § 1365 (Up to 10 years (20 years if injury, life imprisonment if death))
+Theft of Medical Products
+18 U.S.C. § 670 (Up to 5 years)
+Prohibited Acts (Adulteration/Misbranding under FDCA)
+21 U.S.C. § 333 (Up to 1 year (misdemeanor); up to 3 years (felony second offense); up to 10 years (intent to defraud))
+Attempted Murder
+18 U.S.C. § 1113 (Up to 20 years)
+Involuntary Manslaughter
+18 U.S.C. § 1112 (Up to 8 years)
+Conspiracy to Defraud the United States
+18 U.S.C. § 371 (Up to 5 years)
+Mail Fraud
+18 U.S.C. § 1341 (Up to 20 years)
+Identity Theft
+18 U.S.C. § 1028 (Up to 15 years)
+Cyberstalking
+18 U.S.C. § 2261A (Up to 5 years)
+Racketeer Influenced and Corrupt Organizations (RICO)
+18 U.S.C. § 1962 (Up to 20 years)
+Obstruction of Justice
+18 U.S.C. § 1519 (Up to 20 years)
+Assault with Deadly Weapon
+CA Penal Code § 245(a)(1) (2–4 years)
+Tampering with Products
+VA Code § 18.2-144 (Up to 12 months (misdemeanor); 1–5 years (felony if damage over $2,500))
+False Statements
+18 U.S.C. § 1001 (Up to 5 years)
+Aiding and Abetting
+18 U.S.C. § 2 (Up to same as principal offense)
+Misprision of Felony
+18 U.S.C. § 4 (Up to 3 years)
+Securities Fraud
+15 U.S.C. § 78j (Up to 20 years)
+Wrongful Death (Corporate Liability)
+State-specific (e.g., CA Civ. Code § 1714.1) (Civil, up to millions in damages (potential criminal manslaughter tie-in))
+HIPAA Violations (Unauthorized Disclosure)
+42 U.S.C. § 1320d-6 (Up to 10 years)
+Bank Fraud
+18 U.S.C. § 1344 (Up to 30 years)
+Money Laundering
+18 U.S.C. § 1956 (Up to 20 years)
+False Claims Act (Criminal)
+31 U.S.C. § 3729 (Up to 5 years (civil penalties also))
+Endangerment of Public Health
+18 U.S.C. § 13 (assimilative) (Varies by state law)
+Aggravated Identity Theft
+18 U.S.C. § 1028A (2 years (mandatory consecutive))
+Access Device Fraud
+18 U.S.C. § 1029 (Up to 10 years (up to 15 years if involving financial institution))
+Total Potential Maximum Sentence
+N/A (Life Imprisonment + Over 300 Years Consecutive)

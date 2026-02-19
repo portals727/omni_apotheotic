@@ -1,0 +1,399 @@
+Email(s) to Insulet 
+_______________________________________
+Fw: Why are you sending me defective pods? - L71461
+
+From: Darren Hacking <Darren_Hacks@hotmail.com>
+Sent: September 5, 2024 2:16 AM
+To: Omnipod Program - Diabetes Express <omnipod@bayshore.ca>
+Subject: Re: Why are you sending me defective pods? - L71461
+ 
+I hope this email finds you well. I decided to put faith in manufacturer to resolve the problem; (Insulet) in this case, despite not really believing there will be any actual resolution. Primarily because how long the duration this problem has been occurring, so I considered it unlikely.
+
+The following is the missing & entire historical data, at least that I was able to find. Eventually the project had to be disbanded, due to the time consuming nature of it. This will probably prove useful if manufacturer in good faith attempts to resolve the defects & errors with their product, especially when they occurred. They began around 2021. There is additionally a rather disturbing error with L72485, involving delayed canulla insertion, despite valid command sent; which I feel may be problematic in the future if not addressed. I have yet to find an explanation for this phenomenon, probably why it’s so disturbing, no PDM ref code exists for it. In other words, it’s unidentifiable in nature. Suggesting that the manufacturer likely has yet to identify the cause of it. 
+————————————————————————————————————————————
+Occlusion
+
+It’s important to note that for occlusion fault reporting, the PDM only considers 020 fault (0x14) as occlusion. However, there is an additional 9 specific variants of occlusion. I also notice more occlusions as per of lately, unsure if the device (pods), have been updated to detect them better or not. 
+
+PDM: 020 {0x14}
+Actual Occlusion Faults
+PDM Reported Occlusions: 020 (0x14)
+Specific Occlusions
+090 {0x5A} : Pump check table values too high
+096 {0x60} : Timed pump check startup problem 1
+097 {0x61} : Timed pump check startup problem 2
+098 {0x62} : Timed pump check excess timeouts 1
+102 {0x66} : Timed pump check excess timeouts 2
+103 {0x67} : Timed pump check excess timeouts 3
+104 {0x68} : Timed pump check pulse issue
+105 {0x69} : Timed pump check bolus problem
+106 {0x6A} : Timed pump check above threshold
+————————————————————————————————————————————
+L50-XXX Series
+(L50385): (24.52)
+(L50388): (31.68)
+(L50389):  (15.11)
+(L50391):  (20.28)
+(L50392): (26.218)
+(L50393): (26.90)
+————————————————————————————————————————————
+L71-XXX Series
+(L71446): (10.47) - (0x5c)
+(L71447): (6.27) - (0x5c)
+(L71451): (0x5c) | Risk: (Moderate-Severe)
+(L71460): [Early Defect Guaranteed DKA] *Likely low battery related (LR41/44) coin cells* | Also suggests (0x5c Bypass & or other unidentifiable error/bypass yet to be discovered) | Risk: (Catastrophic) + Occlusion
+(L71461): Occlusion; Early defect DKA
+————————————————————————————————————————————
+L72-XXX Series
+(L72461): (20.49)
+(L72480): (0x5c) | Risk: (Moderate-Severe)
+(L72485): [(0x5c) : 3380125] | [(0x31) : 3500118] —> [0x5c bypass] | [Canulla Insertion Bypass] | Risk: Catastrophic 
+(L72486): Early Defect | Suggest (0x5c Bypass) | Risk: Catastrophic 
+(L72492): Early Defect | Guaranteed DKA | More unknown errors | Pod Defect scream upon needle insertion no push 
+————————————————————————————————————————————
+L73-XXX Series
+(L73166): (16.872)
+(L73183): - [Early Defect] {Suggest 0x5c Bypass} | Risk: Severe-Catastrophic
+(L73192): (0x5c) —> [0x5c Bypass] —> {2990776 : 2910768 : 3100815 : 3000764 : 2990757 : 2980767} | Risk: Catastrophic
+————————————————————————————————————————————
+————————————————————————————————————————————
+————————————————————————————————————————————
+L50385
+Pod1: 24H | 31M
+Pod2: 37H | 11M
+Pod3: 72H
+Pod4: 25H | 02M
+Pod5: 48H | 0M
+Pod6: 9H | 43M
+Pod7: 35H | 44M
+Pod8: 28H | 09M
+Pod9: 45H | 30M
+
+Max Pod: 24H | 31M
+Median Pod: 24.52
+Lowest Pod: TODO
+Total Hours: 24.52
+————————————————————————————————————————————
+L50388
+Pod 1: 70H
+Pod2: 6H + 55M
+Pod3: 18H + 8M
+
+Max Pod: 70H | 0M
+Median Pod: 31.68
+Lowest Pod: 6H | 55M
+Total Hours: 95.05 / 3 Pods = 31.68
+————————————————————————————————————————————
+L50389
+Pod1: 17H + 14M
+Pod2: 12H + 59M
+Pod3: 16H + 05M
+Pod4: 63H | 35M
+Pod5: 31H | 20M
+
+Max Pod: 17H + 14M
+Median Pod: 15.11 Hours
+Lowest Pod: 12H + 59M
+Total Hours: 30.22 / 2 Pods = 15.11
+————————————————————————————————————————————
+L50391
+Pod1: 26H + 0M
+Pod2: 20H + 55M
+Pod3: 3H + 28M - (User Error)
+Pod4: 8H + 59M
+Pod5: 30H + 5M
+Pod6: 40H + 26M
+Pod7: 18H + 32M
+Pod8: 25H + 5M
+Pod9:  9H + 0M
+Pod10: 11H + 43M
+Pod11: 35H +6M
+Pod 12: 20H + 0M
+Pod13: 20H + 13M
+Pod14: 18H + 27M
+Pod15: Defected Pod - (Unknown)
+Pod16: 5H + 26M
+Pod17: 3H + 30M
+Pod18: 8H + 54M
+Pod19: 39H + 0M
+
+Max Pod: 40H + 26M
+Median Pod: 20.28 Hours
+Lowest Pod: 3H + 30M
+Total Hours: 344.82 / 17 Pods = 20.28
+————————————————————————————————————————————
+L50392
+Pod1: 41H + 59M
+Pod2: 29H + 9M
+Pod3: 19H + 4M
+Pod4: 17H + 13M
+Pod5: 44H + 36M
+Pod6: 5H + 0M
+Pod7: 4H + 35M
+Pod8: 56H + 7M
+Pod9: 15H + 45M
+Pod10: 28H + 43M
+
+Max Pod: 56H + 7M
+Median Pod: 26.218 Hours
+Lowest Pod: 4H + 35M
+Total Hours: 262.18 / 10 Pods = 26.218
+_______________________________________
+L50393
+Pod1: 20H + 33M
+Pod2: 33H + 15M
+
+Max Pod: 33H | 15M
+Median Pod: 26.90
+Lowest Pod: 20H | 33M
+Total Hours: 53.80 / 2 Pods = 26.90
+_______________________________________
+L71446 - (092) - {0x5c)
+Pod1: 0H + 0M - (0x5C Error)
+Pod2: 37H + 21M
+Pod3: 12H + 0M
+Pod4: 5H + 39M
+Pod5: 27H + 57M
+Pod6: 10H + 26M
+Pod7: 20H + 55M
+Pod8: 6H + 38M
+Pod9: 45H + 21M
+Pod10: 4H + 20M
+Pod11: 17H + 49M
+Pod12: 11H + 56M
+Pod13: 4H + 17M
+Pod14: 4H + 49M
+Pod15: 0H + 0M - (0x5c Error)
+Pod16: 0H + 0M - (0x5c Error)
+Pod17: 0H + 0M - (0x5c Error)
+Pod18: 0H + 0M - (0x5c Error)
+Pod19: 0H + 0M - (0x5c Error)
+Pod20: 0H + 0M - (0x5c Error)
+
+Max Pod: 45H + 21M
+Median Pod: 10.47 Hours
+Lowest Pod: 0H + 0M - (0x5c Error)
+Total Hours: 209.47 / 20 Pods = 10.47
+_______________________________________
+L71447 - (092) - {0x5c}
+Pod1: 4H | 46M
+Pod2: 11H | 23M
+Pod3: 8H | 56M - (*Potential ACK Malicious Sender*)
+Pod4: 0H | OM - (0x5c) - (Corrupted by ACK from Pod3 Likely, but still unsure as didn’t send log report)
+Pod5: 9H | 28M
+Pod6: 33H | 05M
+Pod7: 0H | 0M - (0x5C)
+Pod8: 19H | 38M
+Pod9: 50H | 46M
+Pod10: 48H | 01M
+Pod11: 0H | 0M - (0x5c)
+Pod12: 30H | 21M Pod13: 7H | 18M
+
+Max Pod: 11H | 23M
+Median Pod: 6.27
+Lowest Pod: 0H | 0M
+Total Hours: 25.08 / 4 Pods = 6.27 
+_______________________________________
+L71451 - {0x5c)
+Pod1: 9H | 10M
+Pod2: 42H | 53M
+Pod3: 6H | 54M
+Pod4: 37H | 44M
+Pod5: 24H | 04M
+Pod6: 26H | 55M
+Pod7: 19H | 12M
+Pod8: 27H | 28M
+Pod9: 3H | 36M
+Pod10: 18H | 0M
+Pod11: 2H | 17M
+Pod12: 5H | 04M
+Pod13: 22H | 28M
+Pod14: {0x5c}
+Pod15: 2H | 20M
+Pod16: 16H | 6M
+_______________________________________
+L72461
+Pod1: 31H + 4M
+Pod2: 26H + 23M
+Pod3: 5H + 44M
+Pod4: 29H + 18M
+Pod5: 6H + 13M
+Pod6: 1H + 0M
+Pod7: 26H + 4M
+Pod8: Defective - (Unknown)
+Pod9: 18H + 0M
+Pod10: 21H + 19M
+Pod11: 37H + 11M
+Pod12: 23H + 10M
+
+Max Pod: 37H + 11M
+Median Pod: 20.49 Hours
+Lowest Pod: 1H + 0M
+Total Hours: 225.43 / 11 Pods = 20.49
+_______________________________________
+L72479
+Pod1: 24H | 48M
+Pod2: 42H | 14M
+Pod3: 37H | 13M
+Pod4: 29H | 28M
+Pod5: 40H | 44M Pod6: 28H | 29M
+Pod7: 24H | 10M
+Pod8: 20H | 10M
+Pod9: 20H | 37M Pod10: 59H | 10M
+_______________________________________
+L72480 - (092) - {0x5c}
+Pod1: 6H | 33M
+Pod2: 30H | 55M
+Pod3: 45H | 10M
+Pod4: 21H | 55M
+Pod5: 18H | 33M Pod6: {0x5c}
+Pod7: 30H | 29M
+Pod8: {0x5c}
+Pod9: 30H | 55M Pod10: 23H | 50M
+Pod11: 16H | 32M Pod12: 24H | 50M
+Pod13: 41H | 32M
+Pod14: 72H
+Pod15: {0x5c}
+Pod16: {0x5c}
+Pod17: 11H | 25M
+Pod18: 18H | 33M
+_______________________________________
+L72485 - (092) : {0x5c} | {0x5c + Bypass} | 049 {0x31} - No Canulla Insertion
+Pod1: {0x5c} + (Canulla Delay -> Bypass)
+Pod2: 17H | 37M
+Pod3: {0x5c} + Bypass
+Pod4: 20H | 45M
+Pod5: {0x31}  Pod6: 50H | 29M
+Pod7: 10H | 12M
+Pod8: 23H | 14M
+Pod9: 15H | 55M Pod10: {0x5c}
+Pod11: 47H | 48M Pod12: 51H | 16M
+Pod13: 55H | 09M : 3370220
+Pod14: 20H | 41M : 3490207
+Pod15: 13H | 34M : 3350239
+Pod16: 22H | 12M : 3240234
+Pod17: 25H | 25M : 3610219
+Pod18: 27H | 0M : 3340237
+Pod19: 7H | 56M : 3550207
+Pod20: 0x5C : 3380125
+Pod21: No canulla insertion despite valid command sent : 3500118
+Pod22: 8H | 29M : 3320105
+Pod23: 57H | 56M : 3530119
+Pod24: 19H | 0M : 3430128
+Pod25: 23H | 35M : 3670128
+_______________________________________
+L72486
+Pod1: 15H | 37M
+Pod2: 7H | 0M
+Pod3: 12H | 34M
+Pod4: 4H | 4M
+Pod5: 5H | 28M
+Pod6: 13H 10M
+Pod7: 24H | 23M
+Pod8: 08H | 37M
+Pod9: 25H | 50M
+Pod10: 72H 
+Pod11: 4H | 0M
+Pod12: 8H | 31M : 3390549
+Pod13: 24H | 01M : 3460582
+_______________________________________
+L73166
+Pod1: 15H + 35M
+Pod2: 15H + 2M
+Pod3: 41H + 2M
+Pod4: 10H + 58M
+Pod5: 21H + 57M
+Pod6: 9H + 20M
+Pod7: 10H + 5M
+Pod8: 6H + 25M
+Pod9: 14H + 20M
+Pod10: 23H + 59M 
+Pod11: 61H | 55M
+Pod12: 19H | 37M
+Pod13: 47H | 24M
+Pod14: 15H | 43M
+Pod15: 37H | 13M
+Pod16: 4H | 46M Pod17: 72H
+Pod18: 69H
+Pod19: 54H | 24M
+Pod20: 19H | 51M
+
+Max Pod: 41H + 2M
+Median Pod: 16.872 Hours
+Lowest Pod: 6H + 25M
+Total Hours: 168.72 / 10 Pods = 16.872
+_______________________________________
+L73182
+Pod1: 37H | 40M
+Pod2: 18H | 42M
+Pod3: 34H | 04M
+Pod4: 42H | 0M
+Pod5: 18H | 17M
+Pod6: 13H | 53M
+Pod7: 55H | 25M 
+Pod8: 31H | 45M
+Pod9: 4H | 39M
+_______________________________________
+L73183
+Pod1: 43H | 49M
+Pod2: 12H | 37M
+Pod3: 72H 
+Pod4: 39H | 13M
+Pod5: 17H | 25M
+Pod6: 27H | 57M
+Pod7: 27H | 27M
+Pod8: 19H | 16M
+Pod9: 25H | 43M
+Pod10: 4H | 0M
+Pod11: 12H | 26M
+Pod12: 5H | 03M
+Pod13: 2H | 0M
+Pod14: 19H | 55M
+Pod15: 12H | 37M
+Pod16: 20H | 43M
+Pod17: 22H | 0M
+_______________________________________
+L73192 - 0x5C
+Pod1: 48H | 0M : 
+Pod2: 19H | 0M : 
+Pod3: 43H | 5M : 2980785
+Pod4: 58H | 0M : 3010710
+Pod5: 12H | 29M: 2990776
+Pod6: 31H | 46M : 3000783
+Pod7: 37H | 36M : 2900796
+Pod8: 18H | 04M : 2910768
+Pod9: 56H | 38M : 2730793
+Pod10: 24H | 28M: 3100815
+Pod11: 5H | 58M : 3000764
+Pod12: 15H | 06M : 2990757
+Pod13: 72H : 2790771
+Pod14: 7H | 19M : 2980767
+Pod15: 0x5C
+_______________________________________
+On Sep 4, 2024, at 6:34 PM, Darren Hacking <Darren_Hacks@hotmail.com> wrote:
+
+Why are you sending me known and defective pods? Why are they marketed for human sale & use despite knowing they are defective? Do not sell the following to humans, as they are unsafe for human use. Every single pod from L71461 has been defective, historically always defective as well. There is manufacturing problem at your facility, and there is only 1 facility in Ontario. You can verify this as pods from United States of America, do not suffer the same defects or fate. Every single pod and lot # as of currently sold in Canada is defective for clarification purposes. Some are just more defective than others. Whenever I receive pods from United States of America they are perfectly functional. Common sense would tell you, that your manufacturing facility has a catastrophic error. I only mention, as it doesn’t seem you’re aware the severity of the situation and or likely is not important, it just doesn’t matter. 
+_______________________________________
+OmniPod Defective Lot #’s 
+Kindly do not send me the following Lot #’s as they are defective.
+_______________________________________
+LOT #’s 
+_______________________________________
+L71-Series
+* L71446  : (0x5c) | Risk: (Moderate-Severe)
+* L71447 : (0x5c) | [ACK Send] | Risk: (Moderate-Severe)
+* L71451 : (0x5c) | Risk: (Moderate-Severe)
+* L71460 : [Early Defect Guaranteed DKA] *Likely low battery related (LR41/44) coin cells* | Also suggests (0x5c Bypass & or other unidentifiable error/bypass yet to be discovered) | Risk: (Catastrophic) + Occlusion
+* L71461 : Occlusion; Early defect DKA
+_______________________________________
+L72-Series
+* L72480 - (0x5c) | Risk: (Moderate-Severe)
+* L72485 - [(0x5c) : 3380125] | [(0x31) : 3500118] —> [0x5c bypass] | [Canulla Insertion Bypass] | Risk: Catastrophic 
+* L72486 - Early Defect | Suggest (0x5c Bypass) | Risk: Catastrophic 
+* L72492 - Early Defect | Guaranteed DKA | More unknown errors | Pod Defect scream upon needle insertion no push 
+_______________________________________
+L73-Series
+* L73183 - [Early Defect] {Suggest 0x5c Bypass} | Risk: Severe-Catastrophic
+* L73192 : (0x5c) —> [0x5c Bypass] —> {2990776 : 2910768 : 3100815 : 3000764 : 2990757 : 2980767} | Risk: Catastrophic
+_______________________________________
+

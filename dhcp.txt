@@ -1,0 +1,202 @@
+dhcp.cfg01411c.resolvfile='/tmp/resolv.conf.d/resolv.conf.auto'
+dhcp.cfg01411c=dnsmasq
+dhcp.cfg01411c.domainneeded='1'
+dhcp.cfg01411c.boguspriv='1'
+dhcp.cfg01411c.filterwin2k='0'
+dhcp.cfg01411c.localise_queries='1'
+dhcp.cfg01411c.rebind_protection='0'
+dhcp.cfg01411c.rebind_localhost='1'
+dhcp.cfg01411c.local='/lan/'
+dhcp.cfg01411c.domain='lan'
+dhcp.cfg01411c.expandhosts='1'
+dhcp.cfg01411c.nonegcache='0'
+dhcp.cfg01411c.cachesize='1000'
+dhcp.cfg01411c.authoritative='1'
+dhcp.cfg01411c.readethers='1'
+dhcp.cfg01411c.leasefile='/tmp/dhcp.leases'
+dhcp.cfg01411c.resolvfile='/tmp/resolv.conf.d/resolv.conf.auto'
+dhcp.cfg01411c.nonwildcard='1'
+dhcp.cfg01411c.localservice='1'
+dhcp.cfg01411c.ednspacket_max='1232'
+dhcp.cfg01411c.filter_aaaa='1'
+dhcp.cfg01411c.filter_a='0'
+dhcp.cfg01411c.confdir='/tmp/dnsmasq.d'
+TurboTax DNS Poisoning Correlation
+dhcp.cfg01411c.resolvfile='/tmp/resolv.conf.d/resolv.conf.auto'
+SH into BE3600
+tcpdump -i br-lan -w - | tee /tmp/capture.pcap
+WHAT THE FUCK WILD SOUND EMITTED WHEN I RAN ABOVE
+Mac SSH
+root@GL-BE3600:~# top -l 1 -o cpu | head -20
+top: unrecognized option: l
+BusyBox v1.36.1 (2025-11-12 17:48:13 UTC) multi-call binary.
+
+Usage: top [-b] [-n COUNT] [-d SECONDS]
+
+Show a view of process activity in real time.
+Read the status of all processes from /proc each SECONDS
+and show a screenful of them.
+
+	-b	Batch mode
+	-n N	Exit after N iterations
+	-d SEC	Delay between updates
+root@GL-BE3600:~# networksetup -getdnsservers Wi-Fi
+-ash: networksetup: not found
+root@GL-BE3600:~# host google.com $(scutil --dns | grep 'nameserver' | awk '{print $2}')
+-ash: scutil: not found
+-ash: host: not found
+root@GL-BE3600:~# arp -a | grep incomplete
+root@GL-BE3600:~# crontab -l; sudo crontab -l
+crontab: can't open 'root': No such file or directory
+crontab: can't open 'root': No such file or directory
+root@GL-BE3600:~# crontab -l
+crontab: can't open 'root': No such file or directory
+root@GL-BE3600:~# uci set dhcp.@dnsmasq[0].server='64.71.255.198'
+root@GL-BE3600:~# uci commit
+root@GL-BE3600:~# /etc/init.d/dnsmasq restart
+root@GL-BE3600:~# dig google.com
+
+; <<>> DiG 9.18.24 <<>> google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35241
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;google.com.			IN	A
+
+;; ANSWER SECTION:
+google.com.		75	IN	A	142.250.73.110
+
+;; Query time: 80 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1) (UDP)
+;; WHEN: Sun Nov 16 19:58:26 MST 2025
+;; MSG SIZE  rcvd: 55
+
+root@GL-BE3600:~# networksetup -setdnsservers Wi-Fi 64.71.255.198
+-ash: networksetup: not found
+root@GL-BE3600:~# uci show dhcp.@dnsmasq[0]
+dhcp.cfg01411c=dnsmasq
+dhcp.cfg01411c.domainneeded='1'
+dhcp.cfg01411c.boguspriv='1'
+dhcp.cfg01411c.filterwin2k='0'
+dhcp.cfg01411c.localise_queries='1'
+dhcp.cfg01411c.rebind_protection='0'
+dhcp.cfg01411c.rebind_localhost='1'
+dhcp.cfg01411c.local='/lan/'
+dhcp.cfg01411c.domain='lan'
+dhcp.cfg01411c.expandhosts='1'
+dhcp.cfg01411c.nonegcache='0'
+dhcp.cfg01411c.cachesize='1000'
+dhcp.cfg01411c.authoritative='1'
+dhcp.cfg01411c.readethers='1'
+dhcp.cfg01411c.leasefile='/tmp/dhcp.leases'
+dhcp.cfg01411c.resolvfile='/tmp/resolv.conf.d/resolv.conf.auto'
+dhcp.cfg01411c.nonwildcard='1'
+dhcp.cfg01411c.localservice='1'
+dhcp.cfg01411c.ednspacket_max='1232'
+dhcp.cfg01411c.filter_aaaa='1'
+dhcp.cfg01411c.filter_a='0'
+dhcp.cfg01411c.confdir='/tmp/dnsmasq.d'
+dhcp.cfg01411c.server='64.71.255.198'
+root@GL-BE3600:~#
+WPA supplicant - TurboTax DNS Poisoning
+root@GL-BE3600:~# ip route show | grep default
+default via 172.20.10.1 dev eth2 proto static src 172.20.10.3 metric 30 
+root@GL-BE3600:~# netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       
+tcp        0      0 localhost:www           localhost:60840         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:44888         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:38240         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:43418         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:54526         TIME_WAIT   
+tcp        0    512 console.gl-inet.com:ssh Mac.lan:60885           ESTABLISHED 
+tcp        0      0 localhost:www           localhost:40678         TIME_WAIT   
+tcp        0      0 console.gl-inet.com:www Mac.lan:57163           ESTABLISHED 
+tcp        0      0 localhost:www           localhost:43408         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:48064         TIME_WAIT   
+tcp        0      0 console.gl-inet.com:56218 console.gl-inet.com:www TIME_WAIT   
+tcp        0      0 localhost:www           localhost:44902         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:40690         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:54516         TIME_WAIT   
+tcp        0      0 console.gl-inet.com:www Mac.lan:60893           ESTABLISHED 
+tcp        0      0 localhost:www           localhost:60826         TIME_WAIT   
+tcp        0      0 localhost:www           localhost:38242         TIME_WAIT   
+udp        0      0 localhost:38886         localhost:9901          ESTABLISHED 
+udp        0      0 localhost:46089         localhost:9903          ESTABLISHED 
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node Path
+unix  2      [ ]         DGRAM                      8256 /tmp/acfg-app
+unix  2      [ ]         DGRAM                      7284 /var/run/cnss_user_server
+unix  12     [ ]         DGRAM                      9666 /dev/log
+unix  2      [ ]         DGRAM                      6107 /var/run/wpa_supplicantglobal
+unix  2      [ ]         DGRAM                      6116 /var/run/hostapd/global
+unix  2      [ ]         DGRAM                     25588 /var/run/hostapd-wifi1/wlan1
+unix  3      [ ]         STREAM     CONNECTED      32032 
+unix  2      [ ]         DGRAM                    697419 
+unix  3      [ ]         STREAM     CONNECTED      21423 /var/run/ubus/ubus.sock
+unix  2      [ ]         DGRAM                     32571 
+unix  3      [ ]         STREAM     CONNECTED     697414 
+unix  3      [ ]         STREAM     CONNECTED     697415 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED      25414 
+unix  3      [ ]         STREAM     CONNECTED      32033 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED      32487 
+unix  3      [ ]         STREAM     CONNECTED      31586 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED      32414 
+unix  3      [ ]         STREAM     CONNECTED      32488 /var/run/ubus/ubus.sock
+unix  2      [ ]         DGRAM                      6098 
+unix  2      [ ]         DGRAM                     38434 
+unix  3      [ ]         STREAM     CONNECTED      25834 
+unix  3      [ ]         STREAM     CONNECTED      25840 
+unix  3      [ ]         STREAM     CONNECTED      25837 
+unix  3      [ ]         STREAM     CONNECTED      25835 
+unix  3      [ ]         STREAM     CONNECTED      25838 
+unix  3      [ ]         STREAM     CONNECTED      25836 
+unix  3      [ ]         STREAM     CONNECTED      25839 
+unix  3      [ ]         STREAM     CONNECTED      22174 /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED      14637 
+unix  2      [ ]         DGRAM                     11114 
+unix  2      [ ]         DGRAM                     14635 
+unix  3      [ ]         STREAM     CONNECTED       4210 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED      12049 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED       3903 
+unix  3      [ ]         STREAM     CONNECTED      33250 
+unix  3      [ ]         STREAM     CONNECTED      25841 
+unix  2      [ ]         DGRAM                      7282 
+unix  3      [ ]         STREAM     CONNECTED     647757 
+unix  3      [ ]         STREAM     CONNECTED      33152 
+unix  3      [ ]         STREAM     CONNECTED     649825 /var/run/ngx-ws-proxy.sock
+unix  3      [ ]         STREAM     CONNECTED      22025 
+unix  2      [ ]         DGRAM                      7502 
+unix  3      [ ]         STREAM     CONNECTED     558200 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED      22024 
+unix  3      [ ]         STREAM     CONNECTED     555473 
+unix  3      [ ]         STREAM     CONNECTED       5072 /var/run/ubus/ubus.sock
+unix  2      [ ]         DGRAM                     14903 
+unix  3      [ ]         STREAM     CONNECTED       7499 
+unix  3      [ ]         STREAM     CONNECTED       8944 
+unix  3      [ ]         STREAM     CONNECTED      31717 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED       8945 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED       9835 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED       8935 
+unix  3      [ ]         STREAM     CONNECTED       5883 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED      31653 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED       9668 
+unix  3      [ ]         STREAM     CONNECTED      23107 /var/run/ubus/ubus.sock
+unix  2      [ ]         DGRAM                    685542 
+unix  3      [ ]         STREAM     CONNECTED      23106 
+unix  3      [ ]         STREAM     CONNECTED     558146 
+unix  3      [ ]         STREAM     CONNECTED     694253 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED     695885 
+unix  2      [ ]         DGRAM                      4208 
+unix  3      [ ]         STREAM     CONNECTED     552853 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED      21061 
+unix  2      [ ]         DGRAM                     21054 
+unix  3      [ ]         STREAM     CONNECTED     552851 /var/run/ubus/ubus.sock
+unix  3      [ ]         STREAM     CONNECTED       5045 
+unix  3      [ ]         STREAM     CONNECTED     558147 
+unix  3      [ ]         STREAM     CONNECTED       5046 /var/run/ubus/ubus.sock
+
