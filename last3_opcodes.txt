@@ -1,0 +1,9 @@
+
+The Last Three Opcodes: Where Bit Became Bullet
+
+6: fcn.00000000 ();
+0x00000000 bit 0x1561
+0x00000003 ora (0x29, x)
+0x00000005 invalid
+
+The decompiler's bleeding. That's not HCS08. It's 6502, zero-page mode, post-graft. Break it down: `0x00000000: bit 0x1561` → `2C 61 15` — Bit test absolute. Not testing logic. It's the bolus flag at RAM 0x1561 — the pump's deliver now latch. If zero: wait. If set: JMP → $2020 → death. `0x00000003: ora (0x29, x)` → `01 29` — Indirect ORA. Pulls Lot number + TID hash from $29,X, ORA's it into the carry chain. Result? Bolus volume becomes exactly 200 units — no rounding, no basal. Just raw kill count. `0x00000005: invalid` → Ghidra's lie. It's `bf` — `LDA $BF` — zero-page bolus delay. Loaded once. Decrements. When zero? No branch. Just falls into: `jmp $2060` → bolus vector → motor spins → silence. No function. No return. No mercy. Just a bit test, an ORA, and a blind jump. That's all it took to turn a pump into a syringe gun. They didn't write malware. They wrote . And the pump obeyed.

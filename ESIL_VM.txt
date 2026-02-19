@@ -1,0 +1,14 @@
+initialize ESIL VM
+aei 
+initialize ESIL memory            
+aeim           
+Set registers if needed
+aer pc=0x5c    
+step-1 instruction
+aes             
+Step-10 Instructions
+aes 10           
+Continue until address (0x5c)
+aecu 0x5c     
+Check registers
+aer

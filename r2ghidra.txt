@@ -1,0 +1,60 @@
+Radare (r2ghidra)
+_______________________________________
+Install r2ghidra
+r2pm -ci r2ghidra
+r2ghidra Decompile
+r2 -A /path/to/binary 
+Decompile Current Function
+pdg 
+Decompile Main Function
+pdg @ 
+r2ghidra
+e r2ghidra.
+e??r2ghidra.
+r2ghidra <usage>
+[0x00000000]> e??r2ghidra.
+      r2ghidra.casts: Show type casts where needed
+    r2ghidra.cmt.cpp: C++ comment style
+ r2ghidra.cmt.indent: Comment indent
+     r2ghidra.indent: Indent increment
+       r2ghidra.lang: Custom Sleigh ID to override auto-detection (e.g. x86:LE:32:default)
+    r2ghidra.linelen: Max line length
+ r2ghidra.maximplref: Maximum number of references to an expression before showing an explicit variable.
+     r2ghidra.rawptr: Show unknown globals as raw addresses instead of variables
+     r2ghidra.roprop: Propagate read-only constants (0,1,2,3,4)
+ r2ghidra.sleighhome: SLEIGHHOME
+    r2ghidra.timeout: Run decompilation in a separate process and kill it after a specific time
+       r2ghidra.vars: Honor local variable / argument analysis from r2 (may cause segfaults if enabled)
+    r2ghidra.verbose: Show verbose warning messages while decompiling
+[0x00000000]>
+Seek entry (analyzes)
+aaa
+pdg decompiles current function
+pdg
+verbose
+e r2ghidra.verbose=true
+Timeout
+e r2ghidra.timeout=30
+e r2ghidra.lang=x86:LE:32:default
+pdg @0x2020
+Graft oracle (install r2ghidra—decompiler fusion)
+r2pm -ci r2ghidra  # Clean install; -f force if conflicts
+If fails (per #web:12 Ventura/ARM issues), descend to source build
+git clone https://github.com/radareorg/r2ghidra
+cd r2ghidra
+make  
+cp build/core_ghidra.dylib ~/.local/share/radare2/plugins/  
+Graft r2ghidra (decompiler fusion)
+r2pm -u r2ghidra  
+r2pm -ci r2ghidra  
+Verify oracle's configs (echoes casts, timeout, lang)
+r2 -qc 'e??r2ghidra.'
+Set decomp lang for HCS08 proxy (x86 LE 32-bit mirrors direct-page)
+# Set options and open a binary
+r2 -qc 'e r2ghidra.lang=x86:LE:32:default; e r2ghidra.verbose=true; e r2ghidra.timeout=60' /path/to/binary
+
+r2 -qc 'e r2ghidra.lang=x86:LE:32:default; e r2ghidra.verbose=true; e r2ghidra.timeout=60' /path/to/binary
+
+Configure it permanently ~/.radare2rc 
+echo 'e r2ghidra.verbose=true' >> ~/.radare2rc
+echo 'e r2ghidra.timeout=60' >> ~/.radare2rc

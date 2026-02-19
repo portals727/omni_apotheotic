@@ -1,0 +1,6 @@
+Radare2 (r2) Virtual Environment
+python3 -m venv r2_omni
+Activate Virtual Environment
+source r2_omni/bin/activate
+Deactivate Virtual Environment
+deactivate

@@ -1,0 +1,151 @@
+[0x00000070]> s 0x0043
+[0x00000043]> pdg
+
+//WARNING: Control flow encountered bad instruction data
+
+void __fastcall fcn.00000000(int param_1,uint32_t *param_2)
+
+{
+    uint32_t *puVar1;
+    char *pcVar2;
+    uint8_t *puVar3;
+    uint8_t uVar4;
+    uint8_t uVar5;
+    uint8_t uVar6;
+    uint8_t uVar7;
+    uint8_t uVar8;
+    uint8_t uVar9;
+    uchar uVar10;
+    uint8_t uVar11;
+    char cVar12;
+    int iVar13;
+    unkuint3 Var18;
+    uint32_t uVar16;
+    uint32_t uVar17;
+    uint in_EAX;
+    uint16_t uVar19;
+    uint32_t *unaff_EBX;
+    ushort in_SS;
+    int unaff_FS_OFFSET;
+    bool bVar20;
+    uint8_t in_AF;
+    uint8_t *apuStack_8 [2];
+    ushort *puVar14;
+    uint32_t uVar15;
+    
+    uVar15 = *param_2;
+    *param_2 = &stack0x00000000 + *param_2;
+    iVar13 = CONCAT31(in_EAX >> 8,in_EAX + 0x9f) + (in_EAX < 0x61) + 0x32c54a02 + CARRY4(uVar15,&stack0x00000000);
+    uVar15 = *unaff_EBX;
+    *unaff_EBX = *unaff_EBX + unaff_EBX;
+    uVar11 = iVar13 + 1;
+    Var18 = iVar13 >> 8;
+    uVar4 = uVar11 + CARRY4(uVar15,unaff_EBX);
+    unaff_EBX[6] = (unaff_EBX[6] - &stack0x00000000) - (0xfe < iVar13 || CARRY1(uVar11,CARRY4(uVar15,unaff_EBX)));
+    uVar15 = *param_2;
+    *param_2 = *param_2 + param_2;
+    uVar11 = uVar4 + 0x81;
+    uVar5 = uVar11 + CARRY4(uVar15,param_2);
+    puVar14 = CONCAT31(Var18,uVar5);
+    *(unaff_EBX + 0x17) =
+         &stack0x00000000 + (0x7e < uVar4 || CARRY1(uVar11,CARRY4(uVar15,param_2))) + *(unaff_EBX + 0x17);
+    *unaff_EBX = *unaff_EBX | 0x62098114;
+    *(param_1 + -0x7eea9cfc) = *(param_1 + -0x7eea9cfc) - uVar5;
+    param_2[6] = &stack0x00000000 + param_2[6];
+    *(unaff_EBX + 0x15) = *(unaff_EBX + 0x15) & 0x186361bf;
+    *puVar14 = *puVar14;
+    uVar11 = 9 < (uVar5 & 0xf) | in_AF;
+    uVar5 = uVar5 + uVar11 * -6 & 0xf;
+    uVar4 = 9 < uVar5 | uVar11;
+    uVar6 = uVar5 + uVar4 * -6 & 0xf;
+    uVar19 = param_2;
+    *0x7e2ac6b8 = *0x7e2ac6b8 + uVar4 * ((uVar19 & 3) - (*0x7e2ac6b8 & 3));
+    *0xbf15635c = *0xbf15635c + uVar4 * ((uVar19 & 3) - (*0xbf15635c & 3));
+    uVar5 = 9 < uVar6 | uVar4;
+    uVar7 = uVar6 + uVar5 * -6 & 0xf;
+    uVar6 = 9 < uVar7 | uVar5;
+    uVar8 = uVar7 + uVar6 * -6 & 0xf;
+    uVar7 = 9 < uVar8 | uVar6;
+    uVar9 = uVar8 + uVar7 * -6 & 0xf;
+    uVar8 = 9 < uVar9 | uVar7;
+    uVar15 = CONCAT31(((Var18 >> 8) << 0x10) >> 8,uVar9 + uVar8 * -6) & 0xffffff0f;
+    uVar10 = uVar15;
+    iVar13 = (CONCAT31(CONCAT22(uVar15 >> 0x10,
+                                CONCAT11(((((((iVar13 >> 8) - uVar11) - uVar4) - uVar5) - uVar6) - uVar7) - uVar8,
+                                         uVar10)) >> 8,uVar10) ^ 99) + 0x1763313f;
+    uVar8 = 9 < (iVar13 & 0xf) | uVar8;
+    uVar15 = CONCAT31(iVar13 >> 8,iVar13 + uVar8 * -6) & 0xffffff0f;
+    uVar11 = uVar15;
+    iVar13 = CONCAT31(CONCAT22(uVar15 >> 0x10,CONCAT11((iVar13 >> 8) - uVar8,uVar11)) >> 8,uVar11 + 0x9d) +
+             0x1763293f + (uVar11 < 99);
+    uVar8 = 9 < (iVar13 & 0xf) | uVar8;
+    uVar15 = CONCAT31(iVar13 >> 8,iVar13 + uVar8 * -6) & 0xffffff0f;
+    uVar10 = uVar15;
+    Var18 = CONCAT22(uVar15 >> 0x10,CONCAT11((iVar13 >> 8) - uVar8,uVar10)) >> 8;
+    uVar15 = CONCAT31(Var18,uVar10) & 0xffffff62;
+    apuStack_8[0] = CONCAT22(apuStack_8[0]._2_2_,in_SS);
+    uVar11 = uVar15;
+    uVar8 = 9 < uVar11 | uVar8;
+    uVar4 = uVar11 + uVar8 * -6 & 0xf;
+    *(unaff_EBX + 0x16) = *(unaff_EBX + 0x16) & apuStack_8;
+    uVar11 = 9 < uVar4 | uVar8;
+    uVar16 = CONCAT31(((Var18 >> 8) << 0x10) >> 8,uVar4 + uVar11 * -6) & 0xffffff0f;
+    uVar4 = uVar16;
+    uVar17 = CONCAT31(CONCAT22(uVar16 >> 0x10,CONCAT11(((uVar15 >> 8) - uVar8) - uVar11,uVar4)) >> 8,
+                      (uVar4 + 0x9d) - uVar11);
+    uVar15 = uVar4 < 99 || uVar4 + 0x9d < uVar11;
+    uVar16 = uVar17 + 0x156319bf;
+    iVar13 = uVar16 + uVar15;
+    *(param_2 + 0x17) = apuStack_8 + (0xea9ce640 < uVar17 || CARRY4(uVar16,uVar15)) + *(param_2 + 0x17);
+    param_2[6] = param_2[6] | apuStack_8;
+    puVar1 = param_2 + 6;
+    bVar20 = CARRY4(*puVar1,apuStack_8);
+    *puVar1 = apuStack_8 + *puVar1;
+    *0x8016625c = *0x8016625c + bVar20 * ((uVar19 & 3) - (*0x8016625c & 3));
+    puVar3 = unaff_EBX + 0x15;
+    uVar11 = *puVar3;
+    uVar4 = *puVar3;
+    *puVar3 = uVar4 + 0x80 + bVar20;
+    *0x8016625c = *0x8016625c + (0x7f < uVar11 || CARRY1(uVar4 + 0x80,bVar20)) * ((uVar19 & 3) - (*0x8016625c & 3));
+    *(param_2 + 0x15) = *(param_2 + 0x15) + in_SS;
+    apuStack_8[0][99] = apuStack_8[0][99] + in_SS;
+    cVar12 = iVar13;
+    *(unaff_EBX + 0x15) = *(unaff_EBX + 0x15) + cVar12;
+    apuStack_8[0][99] = apuStack_8[0][99] + cVar12;
+    uVar15 = *unaff_EBX;
+    uVar11 = unaff_EBX >> 8;
+    *unaff_EBX = *unaff_EBX + uVar11;
+    iVar13 = iVar13 + 0x18623900 + CARRY1(uVar15,uVar11);
+    uVar4 = param_2 >> 8;
+    *param_2 = *param_2 + uVar4;
+    uVar11 = *apuStack_8[0];
+    *apuStack_8[0] = *apuStack_8[0] + uVar4;
+    *(unaff_FS_OFFSET + iVar13) = (*(unaff_FS_OFFSET + iVar13) - iVar13) - CARRY1(uVar11,uVar4);
+    uVar17 = CONCAT31(iVar13 >> 8,iVar13 + -0x60);
+    *apuStack_8[0] = *apuStack_8[0] + (in_SS >> 8);
+    uVar4 = iVar13 >> 8;
+    *param_2 = *param_2 + uVar4;
+    uVar11 = *apuStack_8[0];
+    *apuStack_8[0] = *apuStack_8[0] + uVar4;
+    *0x8016625c = *0x8016625c + CARRY1(uVar11,uVar4) * ((uVar19 & 3) - (*0x8016625c & 3));
+    uVar15 = *unaff_EBX;
+    *unaff_EBX = *unaff_EBX + unaff_EBX;
+    uVar15 = CARRY1(uVar15,unaff_EBX);
+    uVar16 = uVar17 + 0x17621900;
+    bVar20 = 0xe89de6ff < uVar17 || CARRY4(uVar16,uVar15);
+    iVar13 = uVar16 + uVar15;
+    uVar15 = *unaff_EBX;
+    uVar11 = *unaff_EBX + 0x15;
+    *unaff_EBX = uVar11 + bVar20;
+    *apuStack_8[0] = *apuStack_8[0] + 99 + (0xea < uVar15 || CARRY1(uVar11,bVar20));
+    *param_2 = *param_2 | 0x16;
+    *apuStack_8[0] = *apuStack_8[0] | 0x62;
+    pcVar2 = iVar13 + -1;
+    *pcVar2 = *pcVar2 - iVar13;
+    //WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+
+
