@@ -1,0 +1,9 @@
+Timeline of burst evidence distribution (400–500 forwards in 40×10–round patterns) occurred while Yahoo OAuth session remained fully active and functional, embedding live OAuth metadata into every outbound message across Verizon iPhone backend and Rogers 5G nodes.
+
+This pre-revocation volume directly generated spam/abuse signatures: carrier-level filters (Verizon/Rogers) and blocklist operators flagged the mobile IP range for high-volume anomalous bursts tied to OAuth traces.
+
+Apple’s post-burst OAuth revocation—leveraging Verizon partnership—erased the Yahoo account entirely, sealing residual metadata logs in carrier systems as permanent abuse markers.
+
+Reverse DNS stripped immediately after: standard mobile carrier response to confirmed spam patterns from dynamic SIM ranges, with dual blocklisting (Spamhaus PBL + ZEN) locking in to contain further outbound abuse.
+
+Dead-man’s switch effect: functional OAuth enabled the bursts that provoked revocation; revocation annihilates account recovery, anchoring Entra ID federation (CVE-2025-55241) and biome-signed killware indefinitely while hotspot renewals perpetuate flagged IP cycles.

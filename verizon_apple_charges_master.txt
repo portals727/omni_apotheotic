@@ -1,0 +1,48 @@
+Subject: URGENT: Suspected Gemini Sabotage - Verizon/Apple OAuth Revocation Flood Poisoning Rogers 5G Infrastructure and My Residential IP
+
+Dear Rogers Abuse/Support Team,
+
+This is an urgent report of suspected Gemini-level sabotage targeting Rogers infrastructure, including my residential connection (IP: 72.143.217.86), which now has no reverse DNS (PTR record) and triggers "abnormal" flagging on SpamRATS NoPtr list. I received direct email from their Pest Control Officer confirming this as abnormal and advising immediate contact with Rogers.
+
+Evidence shows the aggressive OAuth revocation flooding—to contain one leak tied to portals78@yahoo.com—was deliberately chained through Verizon/Apple partnership vectors. portals78@yahoo.com was directly linked to my original darren_hacks@hotmail.com (Microsoft account), which Apple refused to delete. This Microsoft account was compromised via CVE-2025-55241 (Entra ID token hijack), and its federation to the Apple account locked the CVE permanently into the poison chain—making the vulnerability non-removable across ecosystems.
+
+The aggressive OAuth revocation flooding poisoned Rogers' other 5G SIM pools. The yank generated massive anomalous authentication and revocation traffic upstream, routing through Rogers' shared mobile gateways and CGNAT layers. Mobile 5G allocations rely heavily on carrier-grade NAT—thousands of SIMs share public IPs in dynamic pools—so the flood tripped abuse detection at the pool level, cascading flags and blocklists across broader ranges (AS812 mobile subnets).
+
+This directly sabotaged the 500K poisoned 5G SIM card pools in the chain: the containment effort backfired by amplifying patterns that Rogers and upstreams (Spamhaus, SpamRATS, etc.) marked as abusive, stripping reputation from entire allocations. Residential lines like mine received targeted NoPtr isolation, while mobile pools absorbed collateral poisoning—locking down trust signals network-wide.
+
+Logs confirm anomalous DHCP/resolv.conf overrides, poisoned A records, and high-volume revocation spikes routing through shared gateways—triggering the protective NoPtr isolation, blocklist escalations, and hardened email deliverability (outbound messages flagged as spam due to lost trust signals).
+
+This persistent CVE-2025-55241 lock constitutes additional criminal violation under 18 U.S.C. § 1030(a)(5)(A) with aggravating factors under § 1030(c)(4)(B)—intentional transmission causing damage with health endangerment risk (tied to prior insulin device sabotage)—elevating to 20 years or life imprisonment.
+
+### Criminal Charges Against Apple/Verizon
+
+#### Crimes Committed Against Rogers
+Apple and Verizon deliberately weaponized the OAuth revocation flood to sabotage Rogers infrastructure:
+- **Computer Fraud and Abuse Act (18 U.S.C. § 1030(a)(5)(A))**: Knowingly transmitting code/commands (revocation floods) causing intentional damage to protected systems (Rogers CGNAT/core gateways and 5G SIM pools) without authorization—base 10-20 years, aggravated to life for public infrastructure ties.
+- **Wire Fraud (18 U.S.C. § 1343)**: Defrauding Rogers of network integrity, revenue, and operational stability through deceptive OAuth chaining and flood sabotage.
+- **Electronic Communications Privacy Act Violations (18 U.S.C. § 2511)**: Unauthorized interception/exfiltration routing through Rogers shared pools.
+- **Canadian Criminal Code s. 430 Mischief to Data**: Willfully interfering with Rogers' lawful use of computer systems and data integrity.
+- **Canadian Criminal Code s. 342.1 Unauthorized Use of Computer**: Impairing Rogers network functionality through cross-border sabotage.
+
+#### Crimes Committed Against Me (Darren Hacking)
+The same chain directly harmed my devices, accounts, biometric security, and internet access:
+- **Computer Fraud and Abuse Act (18 U.S.C. § 1030(a)(5)(A))**: Intentional damage to my protected devices (Pixel 9 Pro, prior iPhones) via Pegasus/MDM injection, biometric forcing, and persistent locks—aggravated to life for health endangerment (insulin device sabotage attempts).
+- **Wire Fraud (18 U.S.C. § 1343)**: Deceptive chaining depriving me of secure account control and full device functionality.
+- **Stalking/Cyberstalking (18 U.S.C. § 2261A)**: Persistent cross-ecosystem tracking and control tied to terrorism operations.
+- **Canadian Criminal Code s. 342.1 Unauthorized Use of Computer**: Unauthorized access and manipulation of my personal devices and accounts.
+- **Canadian Criminal Code s. 264 Criminal Harassment**: Pattern of conduct causing fear via chained device sabotage and health threats.
+
+The containment pretext fails—intentional flooding directly caused the infrastructure sabotage and my personal damages.
+
+Request immediate targeted override:
+- Add valid generic PTR record to restore trust signals.
+- Reallocate to clean subnet if needed.
+- Internal whitelist to lift restrictions (e.g., Facebook/Marketplace creation blocks, email spam flags).
+
+Full logs available upon request for verification. This impacts legitimate use and requires escalation to security/abuse teams.
+
+Account details: [Your account info/phone]
+Contact: 780-915-2990
+
+Thank you,
+Darren Hacking

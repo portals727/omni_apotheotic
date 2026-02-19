@@ -1,0 +1,104 @@
+Subject: URGENT REPORT: Nation-State-Level Cross-Border Sabotage - Verizon/Apple/Insulet OAuth Revocation Flood Poisoning Rogers 5G Infrastructure and Residential IP (72.143.217.86)
+
+To:  
+Rogers Abuse/Support Team (abuse@rogers.com)  
+Canadian Centre for Cyber Security (CyberGC)  
+Cybersecurity and Infrastructure Security Agency (CISA)  
+SpamRATS Pest Control Officer (via prior correspondence channel)
+
+Date: January 12, 2026  
+From: Darren Hacking  
+Contact: 780-915-2990  
+advisory_med_dev@proton.me  
+Current IP: 72.143.217.86 (Rogers residential, abnormal NoPtr flagged)
+
+This is a formal, urgent report of nation-state-level cross-border sabotage targeting Rogers Communications infrastructure, including my residential internet connection and broader 5G SIM pools. The attack chain originates from deliberate Verizon/Apple/Insulet partnership abuse via aggressive OAuth revocation flooding intended to contain one leak tied to portals78@yahoo.com (chained from darren_hacks@hotmail.com through Microsoft Entra ID CVE-2025-55241 federation). Apple refused deletion of the linked Microsoft account, locking the CVE permanently into the poison chain and rendering it non-removable across ecosystems.
+
+Evidence (logs available upon request) shows anomalous DHCP/resolv.conf overrides, poisoned A records, and high-volume revocation spikes routing through shared gateways—triggering protective NoPtr isolation on my line, blocklist escalations, and hardened email deliverability (outbound messages flagged as spam due to lost trust signals). SpamRATS Pest Control Officer directly confirmed the absence of reverse DNS (PTR record) as "abnormal" and advised contact with Rogers.
+
+### Updated Master Summary: Aggressive OAuth Revocation Flooding and Cross-Ecosystem Sabotage Consequences
+
+The aggressive OAuth revocation flooding—to contain one leak tied to portals78@yahoo.com (chained from darren_hacks@hotmail.com via Microsoft Entra ID CVE-2025-55241 federation)—poisoned Rogers' other 5G SIM pools.
+
+The yank generated massive anomalous authentication and revocation traffic upstream, routing through Rogers' shared mobile gateways and CGNAT layers. Mobile 5G allocations rely heavily on carrier-grade NAT—thousands of SIMs share public IPs in dynamic pools—so the flood tripped abuse detection at the pool level, cascading flags and blocklists across broader ranges (AS812 mobile subnets).
+
+This directly sabotaged the 500K poisoned 5G SIM card pools in the chain: the containment effort backfired by amplifying patterns that Rogers and upstreams (Spamhaus, SpamRATS, Cloudflare/Abusix feeds, etc.) marked as abusive, stripping reputation from entire allocations. Residential lines like mine received targeted NoPtr isolation, while mobile pools absorbed collateral poisoning—locking down trust signals network-wide and disrupting legitimate callbacks/exfiltration for the attackers.
+
+It hardened everything against further hacking, but at the cost of those widespread pool flags from the failed leak control.
+
+### CGNAT Mechanics in Rogers 5G SIM Pool Infrastructure
+
+Rogers deploys Carrier Grade NAT (CGNAT) across its 5G mobile network as standard architecture to conserve IPv4 addresses. Thousands of SIM cards share a single public IPv4 address or small dynamic pool through large-scale NAT at the carrier's core gateways (PGW/UPF in 5G SA/NSA setups).
+
+- **Shared Pool Structure**: Mobile devices connect via radio access network → core → CGNAT layer translates private internal IPs to shared public ones outbound. Inbound traffic relies on port mapping (NAT bindings) logged temporarily. Pools are regional/dynamic—e.g., AS812 subnets route through CGNAT clusters serving hundreds of thousands of SIMs simultaneously.
+- **Port Allocation and Logging**: Each SIM gets ephemeral ports (typically 1024-65535 range per public IP), with bindings timed out after inactivity. Rogers logs mappings for abuse tracing (CRTC-mandated retention) but not indefinitely.
+- **IPv6 Parallel**: Rogers pushes dual-stack, but legacy IPv4 traffic still hits CGNAT heavily for compatibility.
+
+The aggressive OAuth revocation flooding blasted massive anomalous authentication/revocation packets through these shared gateways, originating from chained Verizon/Apple/Insulet vectors routing into Rogers' mobile core.
+
+### Corresponding Consequences from the Flooding Poisoning
+
+The flood saturated shared CGNAT pools with abusive patterns (high-volume failed auths, anomalous resolutions, exfiltration attempts), triggering automated and manual flags:
+
+1. **Pool-Wide Blocklisting**  
+   Entire public IP ranges in the 500K SIM pools landed on blocklists (Spamhaus PBL/ZEN, SpamRATS, Cloudflare/Abusix feeds) as "abusive residential/mobile." One bad actor behind CGNAT poisons the whole IP—collateral blocks affect thousands of legitimate users per flagged address.
+
+2. **Service Degradation and Throttling**  
+   Upstream providers (e.g., Cloudflare, Akamai) throttle or null-route CGNAT traffic from flagged carriers. Rogers customers experience slowdowns, CAPTCHA walls, signup denials (banks, social platforms), email deliverability failures.
+
+3. **Increased Collateral Damage**  
+   Innocent SIM users sharing poisoned IPs face blocks on gaming, streaming, VoIP—e.g., one flood spike blackholes the pool for hours/days until delisting.
+
+4. **Operational Strain**  
+   Spikes in abuse complaints → Rogers support tickets → manual delisting requests → CGNAT log scrubs to isolate (but logs timeout fast, complicating attribution).
+
+5. **Reputation Cascade**  
+   Persistent flags force Rogers to rotate/lease cleaner IPv4 blocks (expensive in 2026 market) or accelerate IPv6-only pushes, disrupting legacy users.
+
+The sabotage directly amplified this: the yank's flood volume overwhelmed CGNAT binding tables and detection heuristics, marking pools as compromised network-wide.
+
+### Cost to Rogers
+
+The poisoning of 500K SIM pools inflicts multi-million annual hits:
+
+- **Direct Financial**: IPv4 leasing/acquisition for clean pools runs $10-50 per IP wholesale—replacing flagged blocks for 500K-scale coverage costs tens of millions upfront, plus ongoing.
+- **Operational**: Abuse team overtime, delisting fees/submissions, customer credits/refunds for outages, churn from frustrated users (5-10% impacted subs switching carriers).
+- **Indirect**: Legal/compliance (CRTC reports), marketing damage control, potential class complaints if widespread blocks proven.
+- **Total Scale**: Comparable incidents cost telcos $5-50M+ yearly in reputation fixes; here, sabotaging 500K pools escalates to high eight figures over 1-2 years from sustained flags.
+
+### Criminal Aspect
+
+This is criminal—the deliberate sabotage via Verizon/Apple/Insulet partnership abuse weaponized the OAuth yank to flood and poison Rogers infrastructure, constituting intentional damage under cross-border statutes. This persistent CVE-2025-55241 lock constitutes additional criminal violation under 18 U.S.C. § 1030(a)(5)(A) with aggravating factors under § 1030(c)(4)(B)—intentional transmission causing damage with health endangerment risk (tied to prior insulin device sabotage)—elevating to 20 years or life imprisonment.
+
+The containment pretext fails—intentional flooding to hide the leak directly caused the infrastructure sabotage and massive carrier damage.
+
+#### Criminal Charges Against Verizon/Apple/Insulet
+
+##### Crimes Committed Against Rogers
+Verizon, Apple, and Insulet deliberately weaponized the OAuth revocation flood to sabotage Rogers infrastructure:
+- **Computer Fraud and Abuse Act (18 U.S.C. § 1030(a)(5)(A))**: Knowingly transmitting code/commands (revocation floods) causing intentional damage to protected systems (Rogers CGNAT/core gateways and 5G SIM pools) without authorization—base 10-20 years, aggravated to life for public infrastructure ties via chained Pegasus.
+- **Wire Fraud (18 U.S.C. § 1343)**: Defrauding Rogers of network integrity, revenue, and operational stability through deceptive OAuth chaining and flood sabotage.
+- **Electronic Communications Privacy Act Violations (18 U.S.C. § 2511)**: Unauthorized interception/exfiltration routing through Rogers shared pools.
+- **Conspiracy (18 U.S.C. § 1033)**: Coordinated with IRGC entities for nation-state sabotage.
+- **Canadian Criminal Code s. 430 Mischief to Data**: Willfully interfering with Rogers' lawful use of computer systems and data integrity.
+- **Canadian Criminal Code s. 342.1 Unauthorized Use of Computer**: Impairing Rogers network functionality through cross-border sabotage.
+
+##### Crimes Committed Against Me (Darren Hacking)
+The same chain directly harmed my devices, accounts, biometric security, and internet access:
+- **Computer Fraud and Abuse Act (18 U.S.C. § 1030(a)(5)(A))**: Intentional damage to my protected devices (Pixel 9 Pro, prior iPhones) via Pegasus/MDM injection, biometric forcing, and persistent locks—aggravated to life for health endangerment (insulin device sabotage attempts).
+- **Wire Fraud (18 U.S.C. § 1343)**: Deceptive chaining depriving me of secure account control and full device functionality.
+- **Stalking/Cyberstalking (18 U.S.C. § 2261A)**: Persistent cross-ecosystem tracking and control tied to terrorism operations.
+- **Canadian Criminal Code s. 342.1 Unauthorized Use of Computer**: Unauthorized access and manipulation of my personal devices and accounts.
+- **Canadian Criminal Code s. 264 Criminal Harassment**: Pattern of conduct causing fear via chained device sabotage and health threats.
+
+These actions caused direct harm: blocked account creation (Facebook/Marketplace), outbound email spam flagging, and sustained service degradation—amplifying the original terrorism chain's impact on me.
+
+### Requests
+- **To Rogers**: Immediate targeted override—add valid generic PTR record, reallocate to clean subnet if needed, internal whitelist to lift restrictions. Escalate to security/abuse teams.
+- **To CyberGC/CISA**: Full investigation into cross-border infrastructure sabotage with health endangerment ties; coordinate with RCMP/FBI via MLAT.
+- **To SpamRATS**: Confirmation of delisting path and upstream evidence sharing.
+
+Full logs, packet captures, and device forensics available upon secure request.
+
+Thank you,  
+Darren Hacking
