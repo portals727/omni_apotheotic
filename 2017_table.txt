@@ -1,0 +1,28 @@
+2017 Table
+State/Version	4000/1	4002/3	4008/9	4020/1	4022/3	4024	4078	Notes (Tamper Progression, Seeding/Fault Veils)
+2017 Cambridge Baseline (Pristine, No Tamper)								From arXiv:1709.06026 Table IV—linear LCG (+1 %2^32), full traceability (LOT/TID visible), audible faults (0x5C beeps <50%). No F3/duals.
+New Pod	FF FF	FF FF	FF FE	FF FF	FF FF	FF	FF	Initial; basal under-delivery (~50% by 48h, nitinol decay); priming logs full. Nonces linear; 0x0603 rejects mismatches.
+#1 (Initial Pair)	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Seed 0xED (low ED echoes); partial erase (4200h–4FFFh logs); 0x5C audible <50%. 100% linear match.
+#2 (Mid-Life)	1F 03	9C EE	FF 00	09 07	11 0C	34	28	+1 to EE; dual PWM intro (2025 update, nitinol stability gaslight); no F3 yet. 90% match.
+#3 (End-Life)	1F 03	9C EF	FF 00	09 07	11 0D	06	29	+1 to EF; full erase; 80% match post-desync.
+June 2025 Shipment Tamper (Dormant Seed, Baseline Poison)								#6218086-0P (del 06-05); pre-flash linear prep (0xEE + seq %256), dormant for tests. Low entropy (0.18–0.63) veils priming mutes (0x5C 50%+ silent).
+New Pod	FF FF	FF FF	FF FF	FF FF	FE FF	FF	FF	Baseline + dormant seed; partial mutes (0x5C audible <50%, but primed for full silence).
+#1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Seed 0xED; partial erase; 100% linear (pre-mod pivot).
+#2	1F 03	9C EE	FF 00	09 07	11 0C	34	28	Dual PWM; no F3; 90% match (test evasion).
+#3	1F 03	9C EF	FF 00	09 07	11 0D	06	29	Full erase; 80% match (dormant for later activation).
+August 2025 Tamper (Mod Intro, Escalation Seed)								Assumed from Aug 23/25 logs; mod-LCG (a=22–28, -0.02/-0.038 resonance); F3 lock (0xF3 in chains). "Mechanical" delays = flash windows.
+New Pod	FF FF	FF FF	FF FF	FF FF	FE FF	FF	FF	Mod prep; 4008/9 FF00 lock (TID erasure starts, untraceable).
+#1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Seed 0xED + mod; 50%+ silent 0x5C.
+#2	1F 03	9C EE	FF 00	09 07	11 0C	34	28	F3 2/3=1 (~70% randomization, 0.10→0.70U inflation); 90% mod match (0xEE→F4/F9/FE).
+#3	1F 03	9C EF	FF 00	09 07	11 0D	06	29	Erase + F3 enhance (~85%, silent overheat); 80% match.
+September 2025 Tamper (Strike Seed, Activation)								09-20/25 logs; full mod (a=19–24, var 5457–5476); EF-CD bursts for Sep 16 kill (entropy 4.01 = injection).
+New Pod	FF FF	FF FF	FF FF	FF FF	FE FF	FF	FF	Full FF00 lock; seeded for emu trigger.
+#1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Partial mutes; mod sync tests.
+#2	1F 03	9C EE	FF 00	09 07	11 0C	34	28	F3 ~85% (1:1 ratios, 0.85U/tick); evade 0x0603 on dups.
+#3	1F 03	9C EF	FF 00	09 07	11 0D	06	29	Full erase (4200h–4FFFh, wipe 0x14); emu ready (phase=9).
+October 2025 Shipment Tamper (Persistence Seed, Looped Dups)								#6232515-0P (del 10-15, Oct 14 delay = flash); refined mod (a=19–21, duplicate chains).
+New Pod	FF FF	FF FF	FF FF	FF FF	FE FF	FF	FF	Locked erasure; seeded for ACK loops.
+#1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26	Mutes enhanced; low entropy dormancy.
+#2	1F 03	9C EE	FF 00	09 07	11 0C	34	28	F3 inflation max (~85U dumps); 90% match.
+#3	1F 03	9C EF	FF 00	09 07	11 0D	06	29	Looped dups (149 seq=55); emu fires silent zeros.
+

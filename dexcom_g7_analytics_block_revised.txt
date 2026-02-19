@@ -1,0 +1,99 @@
+Dexcom G7 Analytics Block
+_______________________________________
+Additional to add to table
+
+Firebaselogging-pa. 
+Rule Name	Protocol	Source Zone	Destination Zone	Destination Address	Action
+Block Usersatisfy Analytics	TCP UDP	lan	wan	3.18.120.0/22	drop
+Block Clixsight Logging	TCP UDP	lan	wan	52.95.100.0/24	drop
+Block Touchstatistics Stats	TCP UDP	lan	wan	18.168.0.0/16	drop
+Block Qualtrics Surveys	TCP UDP	lan	wan	52.94.250.0/24	drop
+Block Datadoghq Telemetry	TCP UDP	lan	wan	35.180.0.0/16	drop
+Block Datadog NTP Sync	TCP UDP	lan	wan	162.159.200.0/24	drop
+Block Firebase Crashlytics	TCP UDP	lan	wan	142.250.72.100/32	drop
+Block Firebase Logging	TCP UDP	lan	wan	142.251.167.170/32	drop
+_______________________________________
+— add IP —
+172.20.10.1 : D2:86:0C:AC:1C:64
+172.20.10.2 : D2:88:0C:CA:17:6D
+192.168.8.1 : console.gl-inet.com
+192.168.8.163 : 46:32:AA:74:59:7A
+192.168.8.164 : CC:22:93:6B:42:1E
+192.168.8.239 : 52:0F:E9:4F:42:68
+_______________________________________
+Current connected Clients
+_______________________________________
+MacBook Air Laptop (M4)
+192.168.8.239
+52:0F:E9:4F:42:68
+_______________________________________
+iPhone 17 Pro (My Device)
+192.168.8.163
+46:32:AA:74:59:7A
+_______________________________________
+Fire Cube TV 4K Max (Suspected)
+192.168.8.164
+CC:22:93:6B:42:1E
+_______________________________________
+Other Information
+My IP is showing up in Maine for some reason and I live at 9923 88 ST NW, edmonton, AB, Canada, T5H 4N1. So I thought that was unusual. I’m using Rogers 5G usb tethered to the gl.inet BE3600.
+_______________________________________
+Further Question
+Why is Source address not specified? Does it not need to be specified?
+Why Is source port not specified does it not need to be specified?
+Why is destination port not specified? Does it not need to be specified? 
+Why is action drop, vs not reject. Is drop better?
+I combined all the Dexcom G7 analytics to block into 1 named rule, is that okay?
+_______________________________________
+Firewall Traffic Rules (Default, not applied by myself)
+Question: Which of these traffic rules should be disabled? In particular isn’t it strange these dns filters set up that I never set up, maybe this is why my IP address is showing up in Maine?
+Name	Match	Mark	Protocol	FROM	TO	IP Address	PORT	Action	Enable (True/False)
+wan_drop_leaked_adgdns	Incoming IPv4 & IPv6	0x0/0xF000	UDP	WAN	This Device (M4 MacBook Air)	N/A	3053	Drop Input	False (set to false myself)
+wan_drop_leaked_dns	Incoming IPv4 & IPv6	!0x8000/0xF000	UDP	WAN	This Device (M4 MacBook Air)	N/A	53	Drop Input	False (set to false myself)
+guest_drop_leaked_dns	Incoming IPv4 & IPv6	!0x8000/0xF000	UDP	GUEST	This Device (M4 MacBook Air)	N/A	53	Drop Input	False (set to false myself)
+guest_drop_leak_adgdns	Incoming IPv4 & IPv6	0x0/0xF000	UDP	GUEST	This Device (M4 MacBook Air)	N/A	3053	Drop Input	False (set to false myself)
+Allow-DHCP-Renew	Incoming IPv4	N/A	UDP	WAN	This Device (M4 MacBook Air)	N/A	68	Accept Input	False (set to false myself)
+Allow-IGMP	Incoming IPv4	N/A	IGMP	WAN	This Device (M4 MacBook Air)	N/A	N/A	Accept Input	False (set to false myself)
+Allow-DHCPv6	Incoming IPv6	N/A	UDP	WAN	This Device (M4 MacBook Air)	N/A	546	Accept Input	False (set to false myself)
+Allow-MLD	Incoming IPv6	N/A	ICMP	WAN	This Device (M4 MacBook Air)	fe80::/10	N/A	Accept Input	False (set to false myself)
+Allow-ICMPv6-input	Incoming IPv6	N/A	ICMP	WAN	This Device (Limit matching 1000 packets/second	N/A	N/A	Accept Input	False (set to false myself)
+Allow-ICMPv6-Forward	Forwarded IPv6	N/A	ICMP	WAN	Any zone (Limit matching 1000 packets/second	N/A	N/A	Accept Forward	False (set to false myself)
+Allow-IPSec-ESP	Forwarded IPv4 & IPv6	N/A	IPSEC-ESP	WAN	LAN	N/A	N/A	Accept Forward	False (set to false myself)
+Allow-ISAKMP	Forwarded IPv4 & IPv6	N/A	UDP	WAN	LAN	N/A	500	Accept Forward	False (set to false myself)
+Allow-DHCP	Incoming IPv4/IPv6	N/A	UDP	GUEST	This Device (M4 MacBook Air)	N/A	67-68	Accept Input	False (set to false myself)
+Allow-DNS	Incoming IPv4/IPv6	N/A	TCP,UDP	LAN	This Device (M4 MacBook Air)	N/A	53	Accept Input	False (set to false myself)
+lan_drop_leaked_dns	Incoming IPv4 & IPv6,	!0x8000/0xF000	UDP	LAN	This Device (M4 MacBook Air)	N/A	53	Drop Input	False (set to false myself)
+lan_drop_leak_adgdns	Incoming IPv4 & IPv6,	0x0/0xF000	UDP	LAN	This Device (M4 MacBook Air)	N/A	3053	Drop Input	False (set to false myself)
+wgserver_drop_leaked_dns	Incoming IPv4 & IPv6,	!0x8000/0xF000	UDP	wgserver	This Device (M4 MacBook Air)	N/A	53	Drop Input	False (set to false myself)
+ovpnserver_drop_leaked_dns	Incoming IPv4 & IPv6,	!0x8000/0xF000	UDP	ovpnsoerver	This Device (M4 MacBook Air)	N/A	53	Drop Input	False (set to false myself)
+wgserver_drop_leaked_adgdns	Incoming IPv4 & IPv6,	0x0/0xF000	UDP	wgserver	This Device (M4 MacBook Air)	N/A	3053	Drop Input	False (set to false myself)
+ovpnserver_drop_leaked_adgdns	Incoming IPv4 & IPv6,	0x0/0xF000	UDP	ovpnsoerver	This Device (M4 MacBook Air)	N/A	3053	Drop Input	False (set to false myself)
+Block Usersatisfy Analytics	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	3.18.120.0/22	N/A	Drop Forward	True
+Block Clixsight Logging	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	52.95.100.0/24	N/A	Drop Forward	True
+Block Touchstatistics Stats	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	18.168.0.0/16	N/A	Drop Forward	True
+Block Qualtrics Surveys	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	52.94.250.0/24	N/A	Drop Forward	True
+Block Datadoghq Telemetry	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	35.180.0.0/16	N/A	Drop Forward	True
+Block Datadog NTP Sync	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	162.159.200.0/24	N/A	Drop Forward	True
+Block Firebase Crashlytics	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	142.250.72.100/32	N/A	Drop Forward	True
+Block Firebase Logging	Forwarded IPV4/IPv6	N/A	None	LAN	WAN	142.251.167.170/32	N/A	Drop Forward	True
+_______________________________________
+Zones (Zone -> Forwardings)
+_______________________________________
+Lan -> wan 
+Input : accept
+Output : accept
+Forward : accept
+Masquerading : False
+_______________________________________
+wan -> REJECT
+Input : drop
+Output : accept
+Forward : reject
+Masquerading : True
+_______________________________________
+guest -> wan
+Input : reject
+Output : accept
+Forward : reject
+Masquerading : False
+_______________________________________

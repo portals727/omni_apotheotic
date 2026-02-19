@@ -1,0 +1,13 @@
+Dexcom G7 Analytics Block
+The GL.iNet BE3600 router, utilizing the OpenWRT LuCI web interface for firewall configuration, fully supports CIDR notation (such as /22 for a subnet range of 1,024 addresses and /32 for a single specific IP address) in its Traffic Rules. These can be directly entered in the "Destination address" field when creating or editing a rule, as confirmed by OpenWRT documentation and user configurations. For example:
+Enter 3.18.120.0/22 to block the entire subnet.
+Enter 142.250.72.100/32 to block only that single IP.
+Rule Name	Protocol	Source Zone	Destination Zone	Destination Address	Action
+Block Usersatisfy Analytics	TCP UDP	lan	wan	3.18.120.0/22	drop
+Block Clixsight Logging	TCP UDP	lan	wan	52.95.100.0/24	drop
+Block Touchstatistics Stats	TCP UDP	lan	wan	18.168.0.0/16	drop
+Block Qualtrics Surveys	TCP UDP	lan	wan	52.94.250.0/24	drop
+Block Datadoghq Telemetry	TCP UDP	lan	wan	35.180.0.0/16	drop
+Block Datadog NTP Sync	TCP UDP	lan	wan	162.159.200.0/24	drop
+Block Firebase Crashlytics	TCP UDP	lan	wan	142.250.72.100/32	drop
+Block Firebase Logging	TCP UDP	lan	wan	142.251.167.170/32	drop

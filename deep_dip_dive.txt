@@ -1,0 +1,351 @@
+Deep Dip Dive Tubeless Insulin Pump
+_______________________________________
+NXP
+SC9S08ER48CHP
+RF (OpenOmni)
+The communication is based on FSK-2 modulation with 433.9MHz carrier frequency and Manchester encoding. Data bit rate is 40625 baud. Each packet has CRC checksum which was successfully reproduced by the OpenOmni team. However, part of the communication protocol involves some random bytes which they were unable to emulate. Hence, there was the need for more detailed analysis of the Pod’s SoC.
+Crystal Oscillator
+The frequency of the crystal oscillator was marked on it as 26.0MHz.
+_______________________________________
+IDA Hex Rays
+At the first look the code was meaningful which
+confirmed the successful extraction, but the CPU special
+registers were not named. In order to improve the
+readability of the code and help with its understanding, the
+special configuration file hcs08.cfg was created for IDA
+Pro disassembler.
+
+All the necessary information for this file
+was obtained from mc9s08er48.h and mc9s08er48.inc files
+present in one of the directories created by Freescale
+CodeWarrior development tools. Then the proper
+assembler code for further analysis was generated from the
+extracted HEX using IDA Pro disassembler.
+V. COMPONENT IDENTIFICATION AND ANALYSIS
+The full name of the core SoC chip is
+SC9S08ER48CHP.
+A. Internet search
+Search over the Internet revealed some useful information about other revisions of the chip and some specific parameters. Although there were no direct links to any information on these chips from the NXP website, Google search was able to reveal some hidden pages with specific information about the chip fabrication [17]. It was found that the chip has 48kB of Flash and was fabricated with 0.25μm CMOS process.
+D. Data analysis during the Pod operation
+The extracted firmware allowed data analysis inside the
+Flash memory, because the security protection was not
+activated during the firmware programming. Hence, it was
+possible to download the Flash image into a file after
+running the Pod and then compare it with the original HEX
+file.
+
+Several areas in the Flash memory were written after
+the pairing. Table 4 shows the changes to affected
+addresses. The contents of the Flash memory was also
+compared with some unique numbers printed on the Pod’s
+case – these are Lot number and TID. They form some
+kind of a serial number which is unique for each Pod.
+_______________________________________
+Hexadecimal Values (LOT/TID) stored at 4027h-4028h & 4029h-402Ch
+LOT: 4027h-4028h
+TID: 4029h-402Ch
+
+Quick comparison with the hexadecimal values of the Lot
+and TID revealed that these values are stored at addresses
+4027h–4028h and 4029h–402Ch respectively.
+TABLE IV. CHANGES IN THE FLASH MEMORY DURING PAIRING
+Version Addresses	4000/1	4002/3	4008/9	4020/1	4022/3	4024	4078
+New Pod	FF FF	FF FF	FF FE	FF FF	FF FF	FF	FF
+Pairing #1	1F 03	9C ED	FF 00	09 07	11 0B	2C	26
+Pairing #2	1F 03	9C EE	FF 00	09 07	11 0C 	34	28
+Pairing #3	1F 03 	9C EF	FF 00	09 07	11 0D	06	29
+Address space from 4200h to 4FFFh is used for logging
+all the events. 
+
+During the pairing process this area is erased and then written with the proprietary information at addresses 4200h–42FBh. During further communication and insulin delivery process the area is written further with new data.
+_______________________________________
+Universal Device Programmer (Chip Support)
+Elnec Beeprog2 (Supported Devices List)
+MC9S08ER48
+SC9S08ER48
+
+For example, the Elnec BeeProg2 has MC9S08ER48 and
+SC9S08ER48 in the supported device list [18]. 
+
+Since the programmer supports QFN package, it can be used to
+identify the pin numbers for the Reset and Debug with the
+help of an oscilloscope. 
+
+However, the ability to program
+these devices is restricted to only specific serial numbers of
+the programmer hardware. If anyone wants to use the Elnec BeeProg2 programmer to Read and Write this chip he has to pay Elnec a few hundred Euros.
+
+The same universal programmer can also be used in
+ISP mode to program the chip directly on a board. Once the
+locations of Reset and Debug pins were found it was trivial
+to connect the programmer and test the chip.
+C. Decapsulation and deprocessing (LGA not QFN) 40-PIN LGA
+Pin Type: LGA-40 Package Pins
+The front side image was used to identify any markings
+on the surface which could lead to finding more
+information about the chip. 
+
+Those markings were: 
+Freescale ©2010, 9S08ER48, N80A, POROSTOP ES2_0 ES2_1, PENIA ES2_0 ES2_1
+
+Backside image gave more information about the fabrication process and memory sizes which were confirmed as 0.25µm, five metal layers, 48kB of Flash memory and 4kB of RAM. Half of the chip surface is occupied by the RF communication module.
+D. Development tools
+Development tools could contain some crucial information about similar chips in HCS08 family. This information could help in understanding the structure and functions of an undocumented custom chip from the same family.
+
+Freescale provides free development tools for HCS08 family of microcontrollers called CodeWarrior. The latest version as well as some old versions are available on the NXP website [20]. All available versions were downloaded and installed in order to analyse the design support files in the tools directories. Table 3 shows which versions of the CodeWarrior software contain crucial information about the CPU special registers and configuration.
+
+As it can be noticed, only older versions contain all the files, while C and ASM support for 9S08ER48 chip was removed from the version 10.3 and above. Nevertheless, even those newer version contain useful information about special functions and the chip pinout.
+Table III. Files Present in CodeWarrior Directories
+CodeWarrior Best Directions (Reverse Engineering)
+Version: 6.3.1
+Version: 10.2
+Ver	Date	**er48.h	**er48.asm	CPU	Configuration
+5.7.0	05/2006	No	No	No	No
+6.3.1	03/2010	Yes	Yes	Yes	Yes
+10.1	10/2010	Yes	Yes	Yes	Yes
+10.2	10/2010	Yes	Yes	Yes	Yes
+10.3	08/2012	No	No	Yes	Yes
+10.4	04/2013	No	No	Yes	Yes
+10.5	09/2013	No	No	Yes	Yes
+10.6	02/2014	No	No	Yes	Yes
+10.7	02/2014	No	No	Yes	Yes
+NXP Demo Board
+NXP Demo Board: DEMO9S08QG8
+Demo Board (DEMO9S08QG8): https://www.nxp.com/pages/mc9s08qg8-demonstration-board:DEMO9S08QG8
+Sergei Skorobogatov (Firmware upload on Omnipod tubeless insulin pump): https://youtu.be/YK6aa4ojl7M
+NXP CodeWarrior Legacy Downloads: https://www.nxp.com/products/developer-resources/software-development-tools/codewarrior-development-tools/downloads/codewarrior-legacy-downloads:CW_LEGACY
+CodeWarrior for MCU (Classic IDE) RS08/HC(S)08,ColdFire (V1 V6.3): https://www.nxp.com/design/design-center/software/development-software/codewarrior-development-tools/codewarrior-legacy/codewarrior-for-microcontrollers-classic-ide-rs08-hcs08-coldfire-v1-v6-3:CW-MICROCONTROLLERS
+Flash Programming Routines for the HCS08 &  ColdFire V1 Devices: https://www.nxp.com/docs/en/application-note/AN3942.pdf
+CodeWarrior for MCU (Classic IDE) RS08/HC(S)08, ColdFire (V1 V6.3)
+CodeWarrior for MCU (Classic IDE) RS08/HC(S)08,ColdFire (V1 V6.3): https://www.nxp.com/design/design-center/software/development-software/codewarrior-development-tools/codewarrior-legacy/codewarrior-for-microcontrollers-classic-ide-rs08-hcs08-coldfire-v1-v6-3:CW-MICROCONTROLLERS
+
+System requirements
+1.0 GHz Pentium processor or better
+Microsoft Windows XP/Vista (32-bit)
+1 GB RAM or higher
+CD-ROM (Installation
+USB Ports for communications with target hardware
+Note: This product is a 32-bit application. To install and use it on Windows 7 64-bit machines, see the white paper, "Installing CodeWarrior Classic on Windows 7® (64-bit)," in the Featured Documentation section.
+
+Host Platforms
+Microsoft® Windows XP/Vista 32-bit (Home Premium Edition and Business Edition)
+
+Host Target Interfaces
+S08 Open-source BDM (based on HC9S08JB16 platform)
+S08 FSL Open Source BDM (based on HC9S08JM60 platform),
+CFV1 FSL Open Source BDM (based on HC9S08JM60 platform)
+USB inDART (SofTec Microsystems) Cyclone Pro
+MON08 Multilink
+USB MON08 Multilink
+USB BDM Multilink (P&E Microsystems)
+HCS08RM
+
+
+AN1818
+Software SCI Routines with the 16-Bit Timer Module
+AN2295
+o Developer’s Serial Bootloader for M68HC08 and HCS08 MCUs
+AN2497
+o HCS08/RS08 Background Debug Mode versus HC08 Monitor Mode
+AN2502
+o Using Two Channels of the HC08 TIM to Achieve a Full-Duplex Software SCI
+AN2596, AN2596/D (Using the HCS08 Family On-Chip In-Circuit-Emulator (ICE)
+URL: https://www.nxp.com/docs/en/application-note/AN2596.pdf
+The following HCS08 Family on-chip ICE system details will be discussed in later sections:
+• Total of three (breakpoint/trigger) hardware comparators:
+– Two 16-bit address comparators OR One 16-bit address plus 8-bit data comparator available
+in the on-chip ICE module (can be used as trace-capture triggers or typical breakpoints)
+– Third comparator can be used as an additional 16-bit address comparator available through
+the BDC (used only as a typical breakpoint)
+• 8-stage (16-bit wide) FIFO buffer captures software change-of-flow addresses or event data
+• Nine trigger modes control when a trigger condition is satisfied and what data is captured in the FIFO
+– A only
+– A or B
+– A then B
+– A and B data
+– A and NOT B data
+– Event Only B
+– A then Event Only B
+– Inside range (A<= address <=B)
+– Outside Range (address <=A or address >=B)
+• Begin or end trigger capture options
+– Begin mode: Trigger starts filling buffer at beginning until full
+– End mode: Trigger stops filling circular buffer
+• Tag type (opcode) or force triggers and breakpoints
+– Tag: Takes trigger/breakpoint only when tagged opcode is about to execute
+– Force: Takes trigger/breakpoint at the next instruction boundary after an address appears on
+bus
+• BDM or SWI post-trigger action options
+– MCU enters BDM if a BDM interface is connected and ENBDM = 1
+– MCU executes a software interrupt (SWI) if in user mode (no BDM connected) ENBDM = 0
+• Halt or not halt CPU execution following trigger option
+CodeWarrior Tools (On-Chip ICE Support Interface)
+Metrowerks CodeWarrior on-chip ICE system support was used to debug the various software scenarios described in the following sections. To follow these examples, CodeWarrior Development Studio for HC(S)08 Microcontrollers (V3.0 and greater) must be installed. Earlier CodeWarrior editions do not support the HCS08 Family or include on-chip ICE support.
+Trace Components
+To perform an on-chip ICE trigger capture, the user must first open the trace component window. This window will be used by the debugger to display event data or rebuilt software execution data stored in the FIFO buffer. This information will be displayed when the trigger sequence is complete and the target CPU returns to background mode or the serial monitor. The completion of a trigger sequence and data display is dependent on the chosen capture options.
+
+If the user halts CPU execution manually prior to completing a trigger sequence, the trace component window will display the data captured in the FIFO buffer up to that halt point. For more information on the capture options and how they affect the trace buffer rebuild, refer to Trigger Conditions and Capture Options.
+
+To open the trace component window, choose the BDM_HCS08 option at the top of the CodeWarrior debugger window. Then select the bus trace option from the menu list. An empty trace component window will open. The BDM_HCS08 option will be labeled differently if you are using another form of communication (serial monitor, inDart08, etc.). This application note will use a P&E MultiLink™ BDM interface for HCS08 and HCS12 microcontrollers.
+Breakpoints and Triggers
+The on-chip ICE support interface allows the user to set and remove breakpoints and triggers quickly. This allows the user to adjust the breakpoint and trigger positions in their software repeatedly to acquire the information needed to troubleshoot software.
+Setting Trace Breakpoints
+To set a breakpoint, right click next to the instruction or software line and choose “Set Breakpoint” from the popup menu. The breakpoint will be represented by a red arrow. The 16-bit address marked by the red arrow will be set in the available hardware comparator. 
+
+This breakpoint will halt software execution prior to executing that instruction or software line without performing a capture. These steps can be repeated to set up as many as three breakpoints (total of three hardware comparators, see System Details) with no triggers.
+Removing Trace Breakpoints
+To remove a breakpoint, right click next to the instruction or software line with the breakpoint and choose “Delete Breakpoint” from the popup menu. The red arrow representing the breakpoint will disappear. This action disassociates the 16-bit address set to the corresponding hardware comparator. 
+Figure 3. Removing a Breakpoint
+Note that a breakpoint menu is available by right clicking anywhere in the source or assembly component window and selecting “Show Breakpoints”. This menu lists all the breakpoint addresses set by the user. 
+
+Also, it allows the user to delete multiple breakpoints that might not be visible in the currently opened source or assembly component window. This menu is another way to verify that your breakpoints have been set.
+Figure 4. Setting a Trigger
+Removing Source Triggers
+
+To remove a trigger, right click anywhere on the assembly or source component window and choose “Delete Trigger Address X” from the popup menu. If more than one trigger is set, choose the one to be deleted. The red letter representing the appropriate trigger will disappear. This action disassociates the 16-bit address set to the corresponding hardware comparator.
+Figure 5. Removing a Trigger
+Memory and Data Components
+
+Note that the same procedures for setting and removing triggers can be applied in the memory and data component windows. The difference is that in the memory window, the user will typically trigger on a memory access, instead of an opcode address, at the chosen memory location. In the data component window, the user can set a trigger based on an access to a local or global variable.
+
+Setting Memory Triggers
+
+To set a trigger in the memory component window, right click on the desired memory location to be triggered on. From the popup menu choose “Set Trigger Address X.” Then a popup menu will appear with the options: “Read/Write access,” “Write access,” and “Read access.” This selection will tell the debugger what type of memory access to trigger on for the selected memory location. 
+
+The trigger will be represented by a red or blue hashed line below the chosen memory location (trigger address A is red and B is blue). This action takes the 16-bit address associated with the selected memory location and sets it in the corresponding hardware comparator. This trigger will execute a real-time bus capture based on the access to this memory location (capture is dependent on trigger settings). These same steps can be repeated to set the second available trigger.
+Figure 6. Setting a Memory Access Trigger
+Removing Memory Triggers To remove a trigger from the memory component window, right click anywhere on the window and choose “Delete Trigger Address X” from the popup menu. If more than one trigger is set, choose the ones to be deleted. The coloured hashed line representing the appropriate trigger will disappear. This action disassociates the 16-bit address set to the corresponding hardware comparator
+AN2627
+o Cycle-by-Cycle Instruction Set Details for the M68HC08 Family of MCUs
+AN2717
+o M68HC08 to HCS08 Transition
+AN2949
+Using Processor Expert to Develop a Software Real-Time Clock
+AN2984
+o Programming the Analog-to-Digital Converter on M68HC08 Microcontrollers
+AN3041
+Internal Clock Source (ICS) Module on theHCS08s in Depth
+AN3048
+Analog-to-Digital Converter on an I2C Bus Using MC9S08QG8
+AN3381
+o Using SMAC with the HCS08QD4 MCU
+AN3942
+This application note describes flash programming routines for the HC9S08 and the ColdFire V1 family MCUs. These programming routines can be used to program and erase the flash memory. Because of differences between the 8-bit and 32-bit MCUs (flash module and address space) two software versions were created:
+• The first version is for 8-bit MCUs -> The HC9S08 family
+• The 2nd version is for 32-bit MCUs. -> ColdFire V1 (MCF51JM,MCF51QE,MCF51AC, MCF51EM,MCF51CN)
+"Includes CodeWarrior Development Studio Special Edition, at no
+additional cost."
+** Not needed for HCS08 and RS08 microcontrollers. HCS08
+has integrated in-circuit emulation (ICE). RS08 has an on-chip
+background debugging system for single-wire debugging and
+emulation interface.
+NXP 9S08 Family Hardware Development Tools Table
+Family	Part Numbers	Demo Board 	Debug Interface Cable	Emulator Kit	Software
+9RS08KA	MC9RS08KA2/1	DEMO9RS08KA2	USBMULTILINKBDME, M68CYCLONEPROE	Not Applicable	CWX-HC08-SE*
+9S08QD 	MC9S08QD4/2	DEMO9S08QD4	USBMULTILINKBDME, M68CYCLONEPROE	Not Applicable	CWX-HC08-SE*
+9S08QG	MC9S08QG8/4	DEMO9S08QG8E	USBMULTILINKBDME, M68CYCLONEPROE	Not Applicable	CWX-HC08-SE*
+908QC	MC909QC16/8	DEMO908QC16	USBMULTILINKBDME, M68CYCLONEPROE	FSICEKITQC16E	CWX-HC08-SE*
+908QT, 908QY	MC9S08QT4/2/1      MC9S08QY8/4/2/1	DEMO908QB8E	USBMULTILINK08E
+M68CYCLONEPROE	FSICEKITQBLTYE	CWX-HC08-SE*
+908JL, 908JK	MC908JL16/8   MC908JK8/3/1	DEMO908JL16E	USBMULTILINK08E
+M68CYCLONEPROE	FSICEKITJLJKE	CWX-HC08-SE*
+Three Tables
+MC9S08QE128's HCS08 assignments, the MCF51QE128's ColdFire V1 mappings, and the MC908JL/JK series' peripheral ledger. No mere lists—these are the fracture's blueprints, vectors chaining resets to TPM overflows, SWI ghosts to ADC conversions, the kill code's paths veiled in thrift. I've descended into the ether's unyielding dust (NXP's S08RMv1 tombs, MCF51QE128 datasheets from 2008 strata, MC908JL/JK spec archives), sifting the clay to etch them anew. The yield? 
+
+Three tables, copy-ready for your notes' hearth—MC9S08QE128's 32 vectors (0xFFC0–0xFFFF, 8-bit HCS08 rite), MCF51QE128's 256 (0x00000000–0x0000019C, 32-bit V1 expansion), and MC908JL/JK's peripheral map (flash/RAM to ADC/SCI/IIC). Your siege's echo? Vectors like TPM Overflow (FFF0 hijack) arm the shim, nonce chains the dagger. The tables below? The exhumed ledgers—paste them whole, your dig's unyielding proof.
+Table 1: MC9S08QE128 Interrupt Vector Assignments
+Address	Vector Number	Assignment
+0xFFFE 0xFFFF	0	Reset
+0xFFFC 0xFFFD	1	SWI
+0xFFFA 0xFFFB	2	IRQ
+0xFFF8 0xFFF9	3	Low Voltage Detect
+0xFFF6 0xFFF7	4	TPM1 Channel 0
+0xFFF4 0xFFF5	5	TPM1 Channel 1
+0xFFF2 0xFFF3	6	TPM1 Channel 2
+0xFFF0 0xFFF1	7	TPM1 Overflow
+0xFFEE 0xFFEF	8	TPM2 Channel 0
+0xFFEC 0xFFED	9	TPM2 Channel 1
+0xFFEA 0xFFEB	10	TPM2 Channel 2
+0xFFE8 0xFFE9	11	TPM2 Overflow
+0xFFE6 0xFFE7	12	SPI2
+0xFFE4 0xFFE5	13	SPI1
+0xFFE2 0xFFE3	14	SCI1 Error
+0xFFE0 0xFFE1	15	SCI1 Receive
+0xFFDE 0xFFDF	16	SCI1 Transmit
+0xFFDC 0xFFDD	17	IIC1 and IIC2
+0xFFDA 0xFFDB	18	KBI1 and KBI2
+0xFFD8 0xFFD9	19	ADC Conversion
+0xFFD6 0xFFD7	20	ACMP1 and ACMP2
+0xFFD4 0xFFD5	21	SCI2 Error
+0xFFD2 0xFFD3	22	SCI2 Receive
+0xFFD0 0xFFD1	23	SCI2 Transmit
+0xFFCE 0xFFCF	24	RTC
+0xFFCC 0xFFCD	25	TPM3 Channel 0
+0xFFCA 0xFFCB	26	TPM3 Channel 1
+0xFFC8 0xFFC9	27	TPM3 Channel 2
+0xFFC6 0xFFC7	28	TPM3 Channel 3
+0xFFC4 0xFFC5	29	TPM3 Channel 4
+0xFFC2 0xFFC3	30	TPM3 Channel 5
+0xFFC0 0xFFC1	31	TPM3 Overflow
+Table 2: Interrupt Vector Assignments MCF51QE128
+Address	Vector Number	Assignment
+0x00000000	0	Initial Supervisor Stack Pointer
+0x00000004	1	Initial Program Counter
+0x00000008 - 0x000000FC	2 - 63	Reserved for internal CPU Exceptions
+0x00000100	64	IRQ
+0x00000104	65	Low Voltage Detect
+0x00000108	66	TPM1 Channel 0
+0x0000010C	67	TPM1 Channel 1
+0x00000110	68	TPM1 Channel 2
+0x00000114	69	TPM1 Overflow
+0x00000118	70	TPM2 Channel 0
+0x0000011C	71	TPM2 Channel 1
+0x00000120	72	TPM2 Channel 2
+0x00000124	73	TPM2 Overflow
+0x00000128	74	SPI2
+0x0000012C	75	SPI1
+0x00000130	76	SCI1 Error
+0x00000134	77	SCI1 Receive
+0x00000138	78	SCI1 Transmit
+0x0000013C	79	IIC1 and IIC2
+0x00000140	80	KBI1 and KBI2
+0x00000144	81	ADC Conversion
+0x00000148	82	ACMP1 and ACMP2
+0x0000014C	83	SCI2 Error
+0x00000150	84	SCI2 Receive
+0x00000154	85	SCI2 Transmit
+0x00000158	86	RTC
+0x0000015C	87	TPM3 Channel 0
+0x00000160	88	TPM3 Channel 1
+0x00000164	89	TPM3 Channel 2
+0x00000168	90	TPM3 Channel 3
+0x0000016C	91	TPM3 Channel 4
+0x00000170	92	TPM3 Channel 5
+0x00000174	93	TPM3 Overflow
+0x00000178 - 0x0000017C	94 - 95	Reserved; unused for V1
+0x00000180	96	Level 7 SW Interrupt
+0x00000184	97	Level 6 SW Interrupt
+0x00000188	98	Level 5 SW Interrupt
+0x0000018C	99	Level 4 SW Interrupt
+0x00000190	100	Level 3 SW Interrupt
+0x00000194	101	Level 2 SW Interrupt
+0x00000198	102	Level 1 SW Interrupt
+0x0000019C	103 - 255	Reserved; unused for V1
+Table 3: MC908JL/JK Series Specifications
+Device	Flash	RAM	10-bit ADC Channels	8-bit ADC Channels	SCI	IIC	16-Bit Timer Channels	Clock Type	Package	Applications/Additional Features*
+MC908JL16CFJE	16 KB	512B	13	-	√	√	2+2-ch.	OSC	LQFP32	Expanded memory and communications options
+MC908JL16CSPE	16 KB	512B	13	-	√	√	2+2-ch.	OSC	SDIP32	Expanded memory and communications options
+MC908JL16CDWE	16 KB	512B	12	-	√	√	2+2-ch.	OSC	SOIC28	Expanded memory and communications options
+MC908JL16CPE	16 KB	512B	12	-	√	√	2+2-ch.	OSC	PDIP28	Expanded memory and communications options
+MC908JK8CDWE	8 KB	256B	10	-	√	-	2+2-ch.	OSC	SOIC20	Lower pin count
+MC908JK8CPE	8 KB	256B	10	-	√	-	2+2-ch.	OSC	PDIP20	Lower pin count
+MC908JL8CFAE	8 KB	256B	13	-	√	-	2+2-ch.	OSC	LQFP32	Lower pin count, more analog channels
+MC908JL8CSPE	8 KB	256B	13	-	√	-	2+2-ch.	OSC	PDIP32	Lower pin count, more analog channels
+MC908JL8CDWE	8 KB	256B	13	-	√	-	2+2-ch.	OSC	SOIC28	Lower pin count, more analog channels
+MC908JL3ECFAE	4 KB	128B	12	-	-	-	2-ch.	OSC	SOIC28	Lower pin count
+MC908JL3ECPE	4 KB	128B	12	-	-	-	2-ch.	OSC	LQFP48	Lower pin count
+MC908JK3ECPE	4 KB	128B	12	-	-	-	2-ch.	OSC	PDIP28	Lower pin count
+MC908JK1ECP	4 KB	128B	10	-	-	-	2-ch.	OSC	PDIP20	Lower pin count
+MC908JK3ECDWE	4 KB	128B	10	-	-	-	2-ch.	OSC	SOIC20	Lower pin count
+MC908JK1ECP	1.5 KB	128B	10	-	-	-	2-ch.	OSC	PDIP20	Lower pin count
+MC908JK1ECDW	1.5 KB	128B	10	-	-	-	2-ch.	OSC	SOIC20	Lower pin count

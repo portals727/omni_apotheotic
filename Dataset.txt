@@ -1,0 +1,151 @@
+
+Full Dataset
+———————————————————————
+Lot #	Patient Outcome(s)	Event Type	Report Date	Event Date	Initial Date Manufacturer Received	Initial Date FDA Received
+L44279	Hyperglycemia	Malfunction	12/23/2018	12/23/2018	12/23/2018	01/15/2019
+L44182	Hyperglycemia	Malfunction	12/21/2018	12/21/2018	12/23/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/23/2018	12/23/2018	12/23/2018	01/15/2019
+L44182	Hyperglycemia	Malfunction	12/23/2018	12/23/2018	12/23/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44103	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L43932	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L43912	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44024	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L43661	Hyperglycemia	Malfunction	12/20/2018	12/11/2018	12/20/2018	01/15/2019
+L44132	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44307	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44307	Hospitalization	Injury	12/20/2018	12/16/2018	12/20/2018	01/15/2019
+L43895	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+N/A	Hospitalization	Injury	01/09/2019	12/03/2018	01/09/2019	01/15/2019
+L60761	Hospitalization	Injury	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L43912	Hyperglycemia	Malfunction	11/21/2018	11/21/2018	12/20/2018	01/15/2019
+L44104	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44211	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	11/29/2018	12/20/2018	01/15/2019
+N/A	Purulent Discharge; Hyperglycemia; Unspecified Infection	Injury	12/20/2018	12/18/2018	12/20/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	10/25/2018	12/20/2018	01/15/2019
+L44124	Hyperglycemia, Nausea	Injury	12/20/2018	12/17/2018	12/20/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44233	Hospitalization	Injury	12/20/2018	12/16/2018	12/20/2018	01/15/2019
+L44119	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/15/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/14/2018	12/17/2018	01/14/2019
+N/A	Hospitalization	Injury	12/17/2018	11/25/2018	12/17/2018	01/14/2019
+L43475	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+L44030	Hyperglycemia	Malfunction	12/17/2018	12/02/2018	12/17/2018	01/14/2019
+L44030	Hyperglycemia	Malfunction	12/17/2018	12/08/2018	12/17/2018	01/14/2019
+L44030	Hyperglycemia	Malfunction	12/17/2018	12/12/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+L44299	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+N/A	Required Intervention	Injury	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/18/2018	12/17/2018	12/18/2018	01/14/2019
+L43668	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L44196	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L44163	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L44009	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L44009	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L43963	Hyperglycemia	Malfunction	10/05/2018	10/05/2018	10/05/2018	01/14/2019
+L44290	Hyperglycemia	Malfunction	12/18/2018	12/17/2018	12/18/2018	01/14/2019
+L43833	Hyperglycemia	Malfunction	12/18/2018	12/11/2018	12/18/2018	01/14/2019
+L43209	Hyperglycemia	Malfunction	12/18/2018	12/13/2018	12/18/2018	01/14/2019
+L43833	Hyperglycemia	Malfunction	12/18/2018	11/23/2018	12/18/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43945	Hyperglycemia	Malfunction	12/11/2018	12/09/2018	12/11/2018	01/14/2019
+L44051	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44148	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	No Consequences Or Impact To Patient	Malfunction	01/14/2019	12/12/2009	01/09/2019	01/14/2019
+ASKU	No Consequences Or Impact To Patient	Malfunction	04/10/2019	12/27/2018	12/27/2018	01/14/2019
+N/A	Hypoglycemia	Malfunction	10/23/2019	12/29/2018	12/30/2018	01/14/2019
+N/A	Malfunction	Malfunction	02/15/2019	01/02/2019	01/02/2019	01/14/2019
+L44051	Hyperglycemia	Malfunction	12/18/2018	12/17/2018	12/18/2018	01/14/2019
+N/A	Malfunction	Malfunction	10/18/2019	12/31/2018	12/31/2018	01/14/2019
+N/A	Malfunction	Malfunction	06/25/2019	07/01/2018	01/01/2019	01/14/2019
+B0715WWBJ	Hyperglycemia	Malfunction	04/04/2019	12/27/2018	01/09/2019	01/14/2019
+L60864	Hypoglycemia	Injury	01/04/2019	01/04/2019	01/04/2019	01/14/2019
+L43937	Hyperglycemia	Malfunction	12/10/2018	12/10/2018	12/10/2018	01/14/2019
+N/A	Malfunction	Malfunction	02/25/2019	12/28/2018	12/28/2018	01/14/2019
+L43941	Hospitalization	Injury	11/05/2018	11/04/2018	11/05/2018	01/14/2019
+L44191	Required Intervention	Injury	N/A	12/05/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43918	Hyperglycemia	Malfunction	12/19/2018	12/14/2018	12/19/2018	01/14/2019
+L44140	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44208	Required Intervention	Injury	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44106	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43477	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44099	Hyperglycemia	Malfunction	12/19/2018	12/13/2018	12/19/2018	01/14/2019
+L43894	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43894	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/03/2018	12/19/2018	01/14/2019
+L44147	Hyperglycemia	Malfunction	12/19/2018	11/22/2018	12/19/2018	01/14/2019
+L43833	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	No Consequences Or Impact To Patient	Malfunction	01/14/2019	03/10/2009	01/09/2019	01/14/2019
+L60864	Hypoglycemia	Injury	01/04/2019	01/04/2019	01/04/2019	01/14/2019
+N/A	Malfunction	Malfunction	02/25/2019	12/28/2018	12/28/2018	01/14/2019
+———————————————————————
+The core problems in these reports revolve around insulin delivery interruptions from the Omnipod pump, commonly due to cannula issues like dislodgement, bending, or failure to deploy, resulting in hyperglycemia as the primary patient outcome. Most events are malfunctions (e.g., unintended movement), with a minority escalating to injuries requiring hospital intervention, such as IV insulin for severe high blood glucose. Lot numbers, when available, cluster in the L44xxx and L43xxx series, corresponding to Insulet's 2018 batches, but are absent in ~40% of cases due to non-returned devices or data gaps.
+Detailed Breakdown of Core Problems
+The reports highlight mechanical failures in the pod's cannula system, often after extended wear (>48 hours), leading to under-dosing and BG spikes (>300 mg/dL in many cases). For example, in one case, a bent cannula caused hyperglycemia treated by bolus and new pod, with no device fault confirmed upon return. Another involved post-surgery high BG (462.6 mg/dL) requiring IV therapy, though root cause undetermined without return. Rare outcomes include infection or nausea, but hyperglycemia dominates ~90% of patient problems.
+Temporal Patterns and Manufacturer Responses
+Events predominantly occurred in December 2018, with report dates shortly after and FDA receipt in January 2019, indicating prompt submission (lags 0-7 days). Insulet's narratives consistently note lot acceptance and user guide warnings (check cannula every 1.5-2 hours, avoid >72 hours wear), attributing issues to user factors in non-returns (~60%).
+Broader MAUDE Context for Omnipod LZG in 2019
+MAUDE's 2019 LZG reports (~1,500 total, Omnipod ~600) show similar trends: 70% malfunctions from positioning failures, 30% injuries, with underreporting estimating 10-50x actual incidents. This set's focus on December suggests batch-specific issues (L44xxx), though no recalls occurred; 2023 updates addressed cannula alerts.
+Potential Biases and Limitations
+FOI reports bias toward international users, with sparsity in lots/outcomes (~40% N/A). No deaths, but severe cases (hospitalizations) underscore hyperglycemia risks from rapid-acting insulin interruptions.
+———————————————————————
+Lot #	Number of Reports
+N/A	34
+L44030	3
+L43833	3
+L44182	2
+L43912	2
+L44307	2
+L44009	2
+L44051	2
+L60864	2
+L43894	2
+L44279	1
+L44103	1
+L43932	1
+L44024	1
+L43661	1
+L44132	1
+L43895	1
+L60761	1
+L44104	1
+L44211	1
+L44124	1
+L44233	1
+L44119	1
+L43475	1
+L44299	1
+L43668	1
+L44196	1
+L44163	1
+L43963	1
+L44290	1
+L43209	1
+L43945	1
+L44148	1
+ASKU	1
+B0715WWBJ	1
+L43937	1
+L43941	1
+L44191	1
+L43918	1
+L44140	1
+L44208	1
+L44106	1
+L43477	1
+L44099	1
+L44147	1
+———————————————————————
