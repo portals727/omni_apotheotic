@@ -1,0 +1,103 @@
+OpenOmni (Github):https://github.com/openaps/openomni
+rtlomni:https://github.com/openaps/openomni/tree/master/rtlomni#installation-for-transmitting-only-raspberry-pi
+ps2/omnipod_rf: https://github.com/ps2/omnipod_rf
+openomni (Slack): https://omniapsslack.azurewebsites.net
+Packet Captures:https://github.com/openaps/openomni/wiki/Packet-Captures
+OpenOmni (Message Types):https://github.com/openaps/openomni/wiki/Message-Types#commands
+RTL-SDR (RTL2832U) DVB-T Tuner Dongles:https://www.rtl-sdr.com/buy-rtl-sdr-dvb-t-dongles/
+Pod Progress State:https://github.com/openaps/openomni/wiki/Pod-Progress-State
+SDR Demodulation: https://github.com/jgaeddert/liquid-dsp/
+62 Fault after repetitive get status after 1 day 19 hours:https://github.com/openaps/openomni/wiki/62-Fault-after-repetitive-get-status-after-1-day-19-hours
+Change Pod now packets:https://github.com/openaps/openomni/wiki/Change-Pod-now-packets
+All 0x19 Commands:https://github.com/openaps/openomni/wiki/All-0x19-commands
+———————————————————————
+Hardware - rtlomni is a software to sniff RF packets using a RTLSDR dongle in order to analysis Omnipod protocol.
+Amazon: V3 R860 RTL2832U 1PPM TCXO HF Bias Tee SMA Software Defined Radio with Dipole Antenna Kit (Silver)
+———————————————————————
+RTL-SDR (RTL2832U) DVB-T Tuner Dongles:https://www.rtl-sdr.com/buy-rtl-sdr-dvb-t-dongles/
+———————————————————————
+* <1 PPM temperature compensated oscillator (TCXO) – Accurate tuning and almost zero temperature drift (2 PPM max. initial offset, 0.5-1 PPM temperature drift)
+* SMA female antenna port – Generic dongles use the less common MCX or PAL antenna ports. SMA is more common, so more adapters and antennas are available for it. It is also more durable and has lower RF insertion losses.
+* 4.5V USB powered bias tee - This allows the RTL-SDR to power low noise amplifiers (like the LNA4ALL, HABAMP, RTL-SDR Blog ADS-B LNA) and active antennas through the coax cable. Can be enabled in software (see V3 / V4 users guide).
+* HF Direct Sampling Mode (V3) or HF Upconversion (V4) - Listen to 500 kHz - 28.8 MHz with direct sampling on the V3 model, or upconversion of the V4 model. There is a built-in 25 MHz low pass filter, but additional HF filters may be required for optimal performance (e.g. to attenuate strong MW AM).
+* Aluminium case and passive cooling - These units come stock with an aluminium case and passive cooling via a silicon thermal pad. This stops reception failing due to heat when used above ~1.5 GHz.
+* (V4 Models) - Improved front-end filtering. The V4 model is less prone to being saturated by strong broadcast stations.
+* Improved Antennas - We provide an excellent dipole antenna starter kit for newbies. Use the included mounts and extension cable to mount the dipole in good position for optimal reception. Receives terrestrial and VHF satellite signals.
+———————————————————————
+RTL-SDR BLOG V3
+
+———————————————————————
+RTL-SDR BLOG V4
+
+Ebay (RTL-SDR BLOG V4): Ebay (RTL-SDR BLOG V4)
+
+———————————————————————
+rtlomni Mac/Terminal
+brew install rtl-sdr
+brew install liquid-dsp
+———————————————————————
+Download (Unzip *DELETED*):https://www.dropbox.com/s/38jdw8p39v4je1p/rtlomni.tar.gz?dl=0
+
+s/38jdw8p39v4je1p/rtlomni.tar.gz?dl=0
+———————————————————————
+Use terminal app to change into that directory…command will depend on where it is stored. Example: cd rtlomni if it’s in the user root
+./recordiq.sh
+USAGE: CMD-C (Stop Recording)
+———————————————————————
+Debian Installation
+sudo apt-get install autoconf git
+
+git clone https://github.com/jgaeddert/liquid-dsp/
+cd liquid-dsp
+./bootstrap.sh # <- only if you cloned the Git repo
+./configure
+make
+sudo make install
+sudo ldconfig
+
+git clone https://github.com/openaps/openomni.git
+cd openomni/rtlomni
+make
+
+#Install rtl-sdr driver and utilities (rtl_test, rtl_sdr ...)
+sudo apt-get install rtl-sdr
+———————————————————————
+Installation for transmitting (Only Raspberry Pi)
+git clone https://github.com/F5OEO/rpitx
+cd rpitx
+git checkout dev
+./install.sh
+Launching rtlomni for Analysis - Outputs messages from RF Sample File included in the folder
+./rtlomni
+———————————————————————
+Live message recording (Script)
+./recordiq.sh
+———————————————————————
+Launching rtlomni for transmitting (simulating a PDM)
+* Modify "txtest.sh" with your PDM parameters, specially address
+./txtest.sh
+———————————————————————
+Pulse Logging Trio Dev Branch Integration
+
+Terminal: cd /Users/admin/Downloads/BuildTrio/Trio_dev-250917-0015/Trio && git pull origin dev --recurse-submodules.
+Xcode: Clean Build Folder (Product > Clean), add 
+———————————————————————
+OmniPodErosManager.swift 
+// In OmniPodErosManager.swift, on pulseComplete:
+#if DEBUG_OMPIPOD_EROS
+let packetLog = "RF Pulse: cmd=0x\(command.rawValue.hex), pulses=\(count), freq=433.92MHz, timestamp=\(Date().timeIntervalSince1970), ack=\(ackCode)"
+iCloudPulseLogger.shared.logPulse(packetLog) // From prior code
+#endif
+———————————————————————
+Implementation	Placement	Log Detail Level	Sync Method	Overhead	Best For
+Provided Snippet	pulseComplete completion	RF cmd/pulses/ACK	iCloud append	Low	Continuous bench testing
+Built-in EventHistory	DoseDeliveryResponse	High-level units	Local DB	None	Quick app audits
+OSLog + Console	Manager init/delegates	Timestamps/errors	USB stream	Minimal	Real-time Mac debugging
+OpenOmni Python	RF packet hooks	Full hex dumps	File/CSV	Medium	Offline RF analysis
+Nightscout Extension	Basal/bolus events	Aggregated	HTTP API	Network	Cloud sharing/graphs
+———————————————————————
+Configuration and Initial Test (5 minutes):
+Edit txtest.sh (in rtlomni): Set PDM address (hex from your Eros PDM), lot/serial.
+cd ~/openomni/rtlomni
+sudo ./txtest.sh # Transmits test bolus; monitor pod for beep/response
+———————————————————————
