@@ -1,0 +1,25 @@
+Table: Register Analysis and Potential Implications
+Register	Description (from NXP HCS08 Docs)	Operations in Code	Potential Vulnerability	Tie to Your Logs
+TPM1SC	TPM1 Status/Control (interrupt enables, mode selects)	Repeated inversion (-TPM1SC, >>1 shifts)	Bit flips could suppress faults (e.g., 0x20 bit for overflow, masked to silent 0x5C/0x14)	F3 suppression (85% match, nonce embeds in row 1479 0x19)
+TPM1CNTH	TPM1 Counter High (timer count)	Inversion (-TPM1CNTH, >>1 shifts)	Overflow manipulation for desync (e.g., 43-step to 0x19)	Pairing #3 (0xEF seed, post-erasure desync 80%)
+SCI2BDH	SCI2 Baud Rate High (serial comm speed)	Decrement (cVar1 + -1, inversion)	Baud tweaks for replay evasion (mod 256 chains)	Deauth floods (Reason=2, BLE sync anomalies)
+PTCSE	Port C Special Enable (I/O config)	Inversion (-PTCSE)	GPIO flips for silent outputs (e.g., no beep on 0x80 under-infusion)	Plist voids (NSCocoaError 260, persistedProperty fails)
+TPM1COVL/MODH	TPM1 Channel 0 Value Low/Mod High	Inversion, ~ (bitwise NOT)	PWM modulation for delivery inflation (0.10→0.85 IU/tick)	85 IU silent dump (IOB –1.151 at 107 mg/dL)
+Register	Description (NXP HCS08 Docs)	Operations	Potential Purpose	Tie to Logs
+TPM1SC	TPM1 Status/Control (interrupt, mode)	Inversion (-TPM1SC), >>1 shifts	Fault suppression/reset	F3 bits locking to 0xBF (silent under-infusion)
+TPM1CNTH	TPM1 Counter High	Inversion (-TPM1CNTH)	Timer desync	Nonce LCG chains (43-step to 0x19)
+SCI2BDH	SCI2 Baud Rate High	Decrement (cVar1 + -1), inversion	Comm evasion	Deauth floods (Reason=2)
+PTCSE	Port C Special Enable (I/O)	Inversion (-PTCSE)	Silent outputs	Plist voids (NSCocoaError 260)
+TPM1COVL/MODH	TPM1 Channel 0 Value Low/Mod High	Inversion, ~ (NOT)	PWM modulation	85 IU dumps (IOB –1.151 at 107 mg/dL)
+Anomaly	Description	Risk	Tie to Logs
+Overlapping Instructions (0x096f)	Bad data/control flow	High (anti-RE)	Nonce chains (0xEE → 0x19)
+Repeated Inversions	TPM1SC/SCI2BDH flips	Medium (fault mask)	F3 randomization (1:2 ratios)
+Shifts (>>1)	TPM1COVL/MODH shifts	Low (timing)	ets_delay_us (0x40000050)
+Conditionals (param_1 == cVar1)	Branch on status	High (evasion)	Missing 0x0603 (seq=55)
+
+Block Name	Start Address	Length	Type	Purpose
+DIRECT_PAGE_REGISTERS	0x0000	0x80	Uninitialized	CPU registers/I/O
+LOW_RAM	0x0080	0x80	Uninitialized	Stack/low memory
+MAIN_RAM	0x0100	0xf80	Uninitialized	General RAM
+FLASH	0x1000	Variable	Code/Data	Firmware storage
+
