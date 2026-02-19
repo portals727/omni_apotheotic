@@ -1,0 +1,22 @@
+1: DNS Quad 9 (9.9.9.9-IPv4) 
+9.9.9.9
+2: DNS Quad 9 (112.112-IPv4)
+149.112.112.112
+3: DNS Quad 9 (9.9.9.11-IPv4) 
+9.9.9.11
+4: DNS (JupitrDNS-IPv4)
+155.248.232.226
+5: Cloudflare Malware Blocking & Security (1.1.1.2 - IPv4, DoT)
+1.1.1.2
+6: Cloudflare Malware Blocking & Security Backup (1.0.0.2 - IPv4, DoT)
+1.0.0.2
+
+
+
+
+
+
+
+
+
+

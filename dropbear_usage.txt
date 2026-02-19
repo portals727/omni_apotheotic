@@ -1,0 +1,11 @@
+DropBear
+_______________________________________
+Change port to 3333
+uci set dropbear.@dropbear[0].Port='3333'
+Disable password authentication (key-only)
+uci set dropbear.@dropbear[0].PasswordAuth='off'
+uci set dropbear.@dropbear[0].RootPasswordAuth='off'
+Bind to LAN interface only (most secure!)
+uci set dropbear.@dropbear[0].Interface='lan'
+Commit changes
+uci commit dropbear

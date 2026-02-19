@@ -1,0 +1,132 @@
+1. Remove the Corrupted dnsmasq-full (bash)
+opkg remove dnsmasq-full --force-removal-of-dependent-packages
+2. Download and Install Fresh dnsmasq-full
+bash
+cd /tmp
+wget
+wget https://downloads.openwrt.org/releases/23.05.5/packages/aarch64_cortex-a53/base/dnsmasq-full_2.90-2_aarch64_cortex-a53.ipk
+opkg
+opkg install dnsmasq-full_2.90-2_aarch64_cortex-a53.ipk
+3. Configure dnsmasq for WireGuard + Quad9
+vi /etc/config/dhcp
+```
+
+Add or modify the dnsmasq section:
+```
+config dnsmasq
+    option domainneeded '1'
+    option localise_queries '1'
+    option rebind_protection '1'
+    option rebind_localhost '1'
+    option local '/lan/'
+    option domain 'lan'
+    option expandhosts '1'
+    option authoritative '1'
+    option readethers '1'
+    option leasefile '/tmp/dhcp.leases'
+    option localservice '1'
+    option ednspacket_max '1232'
+    option filter_aaaa '0'
+    option filter_a '0'
+    list server '9.9.9.9'
+    list server '149.112.112.112'
+    option noresolv '1'
+4. Configure WireGuard Interface DNS
+vi /etc/config/network
+```
+
+Find your WireGuard interface section and ensure it looks like this:
+```
+config interface 'wg0'
+    option proto 'wireguard'
+    option private_key 'YOUR_PRIVATE_KEY'
+    list addresses 'YOUR_WG_IP/32'
+    option mtu '1420'
+    list dns '9.9.9.9'
+    list dns '149.112.112.112'
+    option peerdns '0'
+
+config wireguard_wg0
+    option public_key 'SERVER_PUBLIC_KEY'
+    option endpoint_host 'YOUR_WG_SERVER'
+    option endpoint_port 'YOUR_WG_PORT'
+    option route_allowed_ips '1'
+    list allowed_ips '0.0.0.0/0'
+    list allowed_ips '::/0'
+    option persistent_keepalive '25'
+5. Configure Firewall for WireGuard
+vi /etc/config/firewall
+```
+
+Add WireGuard zone and forwarding:
+```
+config zone
+    option name 'wg'
+    option input 'REJECT'
+    option output 'ACCEPT'
+    option forward 'REJECT'
+    option masq '1'
+    option mtu_fix '1'
+    list network 'wg0'
+
+config forwarding
+    option src 'lan'
+    option dest 'wg'
+
+config rule
+    option name 'Allow-WireGuard'
+    option src 'wan'
+    option dest_port 'YOUR_WG_PORT'
+    option proto 'udp'
+    option target 'ACCEPT'
+6. Prevent DNS Leaks
+vi /etc/dnsmasq.conf
+```
+
+Add these lines:
+```
+# Force all DNS through Quad9
+server=9.9.9.9
+server=149.112.112.112
+no-resolv
+no-poll
+
+# Bind only to LAN interface
+interface=br-lan
+bind-interfaces
+
+# Cache settings
+cache-size=10000
+neg-ttl=3600
+
+# DNSSEC validation
+conf-file=/usr/share/dnsmasq/dhcparams.conf
+dnssec
+trust-anchor=.,20326,8,2,E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D
+7. Restart Services
+/etc/init.d/dnsmasq restart
+/etc/init.d/network restart
+/etc/init.d/firewall restart
+8. Verify DNS is Working Through WireGuard
+nslookup google.com
+Check if you're using Quad9
+nslookup -type=txt whoami.ds.akahelp.net
+Test for DNS leaks
+wget -qO- https://www.dnsleaktest.com | grep -i "dns"
+
+visit: https://dnsleaktest.com 
+9. Verify WireGuard Connection
+wg show 
+
+ifconfig wg0
+
+ping -c 4 9.9.9.9
+Check dnsmasq status
+/etc/init.d/dnsmasq status
+
+logread | grep dnsmasq
+Force DNS through iptables
+iptables -t nat -A PREROUTING -i br-lan -p udp --dport 53 -j DNAT --to 9.9.9.9
+
+iptables -t nat -A PREROUTING -i br-lan -p tcp --dport 53 -j DNAT --to 9.9.9.9
+Check routing

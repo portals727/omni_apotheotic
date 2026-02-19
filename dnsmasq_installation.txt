@@ -1,0 +1,69 @@
+dnsmasq (Installation Methods)
+_______________________________________
+Snapshot (4.8.3) dnsmasq-full & Dependencies Table 
+GL.iNet Version	Package	File Name	URL	Size	SHA256 (if available)	Dependencies (Direct)
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	dnsmasq-full	dnsmasq-full_2.90-r4_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/dnsmasq-full_2.90-r4_aarch64_cortex-a53.ipk	200.4 KB	N/A (check Packages file)	libc, libubus, libnettle8, libnetfilter-conntrack3, nftables-json, libgmp10, ipset, libidn2-0, libblobmsg-json, libjson-c5
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libc	libc_1.2.4-4_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libc_1.2.4-4_aarch64_cortex-a53.ipk	(Size not extracted; check repository)	N/A	None (base library)
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libubus	libubus_2025.10.17~60e04048-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libubus_2025.10.17~60e04048-r1_aarch64_cortex-a53.ipk	12.9 KB	N/A	libblobmsg-json
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libnettle8	libnettle8_3.9.1-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libnettle8_3.9.1-r1_aarch64_cortex-a53.ipk	347.8 KB	N/A	libgmp10
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libnetfilter-conntrack3	libnetfilter-conntrack3_1.0.9-r2_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libnetfilter-conntrack3_1.0.9-r2_aarch64_cortex-a53.ipk	39.4 KB	N/A	libnfnetlink0
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	nftables-json	nftables-json_1.1.1-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/nftables-json_1.1.1-r1_aarch64_cortex-a53.ipk	314.3 KB	N/A	libnftnl11, jansson4
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libgmp10	libgmp10_6.3.0-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libgmp10_6.3.0-r1_aarch64_cortex-a53.ipk	217.7 KB	N/A	libc
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	ipset	ipset_7.21-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/ipset_7.21-r1_aarch64_cortex-a53.ipk	2.3 KB	N/A	libc, libmnl0
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libidn2-0	libidn2-0_2.3.7-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libidn2-0_2.3.7-r1_aarch64_cortex-a53.ipk	(Size not extracted; check repository)	N/A	libc, libunistring
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libblobmsg-json	libblobmsg-json_2025.07.23~49056d17-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libblobmsg-json_2025.07.23~49056d17-r1_aarch64_cortex-a53.ipk	4.9 KB	N/A	libjson-c5
+4.8.3 (Snapshots - assuming latest as of Dec 2025)	libjson-c5	libjson-c5_0.18-r1_aarch64_cortex-a53.ipk	https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libjson-c5_0.18-r1_aarch64_cortex-a53.ipk	31.5 KB	N/A	libc
+Dependencies
+libgmp
+libnettl
+libnettle8
+libnetfilter-conntrack
+libnetfilter-conntrack3
+ipset
+libgmp
+libidn2
+libubus
+libblobmsg-json
+libjson-c
+libuci
+libip4tc
+libip6tc
+libxtables
+Check if dnsmasq service running
+ps | grep "[d]nsmasq"
+📦 Package Location & Dependencies
+The dnsmasq-full package for your router is located in the OpenWrt snapshot repository
+Package URL
+https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/dnsmasq-full-2.91-r2.apk
+Likely Dependencies
+The exact dependencies for the APK package in snapshots are not listed in the repository index. However, based on historical dnsmasq-full requirements, you will likely need the following packages (APK names may differ from older opkg names)
+Note
+The snapshot repository uses the APK package manager (not opkg)
+
+You can verify this on your router by running which apk. If apk is present, use the commands below.
+🔧 Installation Instructions
+Method 1: Online Installation (Router has internet)
+If your router can temporarily connect to the internet (e.g., via Ethernet or as a Wi-Fi client), use the apk command
+bash
+Update the package list
+apk update
+
+Install dnsmasq-full dependencies automatically
+apk add dnsmasq-full
+Method 2: Offline Manual Installation (No internet)
+If the router has no internet access, you must manually download the packages on another computer and transfer them to the router.
+Go to the base directory
+https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/
+Download dnsmasq-full-2.91-r2.apk
+Crucially, you must also download all dependency packages listed above. 
+Transfer packages to the router
+Use SCP (e.g., scp *.apk root@192.168.8.1:/tmp/) or copy them to a USB drive and mount it on the router.
+SCP
+scp *.apk root@192.168.8.1:/tmp/
+Install on the router
+Navigate to the directory containing the .apk files
+cd /tmp
+
+Install all packages 
+apk add --allow-untrusted *.apk
+

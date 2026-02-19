@@ -1,0 +1,14 @@
+DNS (Terminal Commands)
+_______________________________________
+DNS (dscacheutil)
+dscacheutil -flushcache
+DNS Options table
+Setting	Location	Purpose	Recommendation	Geo Impact
+Custom DNS Servers	Network > DNS	Sets primary/secondary	Use Canadian (64.71.255.198)	Prevents US inference
+Allow Custom DNS to Override VPN DNS	Network > DNS	Prioritizes custom over VPN	Disable	Fixes mismatches
+Rebind Protection	Network > DNS	Blocks private IP responses	Enable	Mitigates poisoning
+DNS Mode	Network > DNS	Auto/Custom/Proxy	Auto for ISP	Aligns to Rogers
+SSH Mechanics on BE3600
+SSH on the BE3600 uses Dropbear, a lightweight server in OpenWrt, listening on port 22 by default. It's pre-enabled, but access requires the router's admin password for root. If disabled (rare, via custom firmware), re-enable via LuCI or UCI commands. 
+
+Default IP is 192.168.8.1, but changeable in Network > Interfaces. For security, disable password auth after adding keys to mitigate brute-force attacks.

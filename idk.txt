@@ -1,0 +1,14 @@
+DNS QUAD-9 (9.9.9.9) DNS Query
+_______________________________________
+Terminal
+scutil --dns | grep 'nameserver\[[0-9]*\]'
+Quad9 Confirmation
+https://on.quad9.net/
+Check for DNS leaks
+wget -qO- https://1.1.1.1/cdn-cgi/trace | grep warp
+Quad9 (9.9.9.9) nslookup
+nslookup quad9.net 9.9.9.9
+dig Quad (9.9.9.9 A)
+dig @9.9.9.9 A quad9.net
+DNS Leak Test
+https://www.dnsleaktest.com/
