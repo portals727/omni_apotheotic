@@ -1,0 +1,14 @@
+08-19-2025-17H-32M.bin (Pod Activation)
+_______________________________________
+$39, X
+AND Memory with Accumulator
+N - - - Z - 4: A ∧ M → A
+JSR $3536
+Absolute Jump to Subroutine
+6: PC + 2↓, [PC + 1] → PCL, [PC + 2] → PCH
+JSR $3136
+Absolute Jump to Subroutine
+--------- 6: PC + 2↓, [PC + 1] → PCL, [PC + 2] → PCH
+JSR $3237
+Absolute Jump to Subroutine
+6: PC + 2↓, [PC + 1] → PCL, [PC + 2] → PCH
