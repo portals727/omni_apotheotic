@@ -1,0 +1,18 @@
+C2C3 Groups
+#	Category	Address Range	Examples
+1	Boot & Reset Functions	0x40000000-0x400000BC	rtc_get_reset_reason, software_reset, ets_set_user_start
+2	UART & Console I/O	0x40000064-0x400000B8	uart_tx_one_char, uart_rx_one_char, Uart_Init
+3	Compression & Cryptography	0x400000C0-0x40000108	mz_adler32, mz_crc32, tdefl_compress, tinfl_decompress
+4	SPI Flash Operations	0x4000010C-0x4000034C	esp_rom_spiflash_read/write, spi_flash_erase_chip, esp_flash_read_id
+5	Cache Management	0x400004B0-0x4000057C	Cache_Enable_ICache, Cache_Invalidate_ICache_All
+6	GPIO & System Control	0x40000580-0x400005DC	gpio_matrix_in/out, ets_get_cpu_frequency
+7	Cryptographic Hardware	0x40000610-0x400006CC	md5_vector, ets_sha_enable, ets_aes_setkey
+8	eFuse & Secure Boot	0x400006D0-0x40000760	ets_efuse_read, ets_secure_boot_verify_bootloader
+9	Bluetooth Controller	0x400008DC-0x400015AC	HCI Commands: hci_le_set_phy_cmd_handler; Link Layer: ll_connection_update_ind_handler; Security: r_aes_ccm_continue, r_ecc_gen_new_public_key; RF Control: r_bt_rf_coex_cfg_set
+10	WiFi Stack	0x400015B0-0x400018A8	lmacTxFrame, ppProcessTxQ, wDev_ProcessRxSucData
+11	IEEE 802.11 Networking	0x40001820-0x400018A8	ieee80211_ampdu_reorder, wifi_get_macaddr
+12	Coexistence	0x400018AC-0x400018F8	coex_bt_request, coex_wifi_release
+13	PHY/RF Control	0x400018FC-0x40001B28	rom_bb_bss_cbw40_dig, rom_set_tx_gain_table
+14	Compiler Runtime	0x40000764-0x400008C8	Math functions: __adddf3, __muldf3; Memory operations: __bswapsi2
+15	Standard Library	0x40000350-0x4000047C	memcpy, memset, strlen, printf
+
