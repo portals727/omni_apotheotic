@@ -1,0 +1,12 @@
+Ghidra JDK 21 Install
+_______________________________________
+Ghidra Path
+/opt/homebrew/bin/ghidraRun
+Install JDK 21
+brew install --cask temurin
+Install Ghidra (Brew)
+brew install ghidra
+Ghidra [Run Command]
+ghidraRun
+Ghidra [Commands]
+brew info ghidra

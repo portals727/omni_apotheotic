@@ -1,0 +1,29 @@
+Failed to add language defined memory block due to conflict: DIRECT_PAGE_REGISTERS: start_address=0x0000, uninitialized, length=0x80
+Failed to add language defined memory block due to conflict: LOW_RAM: start_address=0x0080, uninitialized, length=0x80
+Failed to add language defined memory block due to conflict: MAIN_RAM: start_address=0x0100, uninitialized, length=0xf80
+Block Name	Start Address	Length	Type	Purpose
+DIRECT_PAGE_REGISTERS	0x0000	0x80	Uninitialized	CPU registers/I/O
+LOW_RAM	0x0080	0x80	Uninitialized	Stack/low memory
+MAIN_RAM	0x0100	0xf80	Uninitialized	General RAM
+FLASH	0x1000	Variable	Code/Data	Firmware storage
+Anomaly	Description	Risk	Tie to Logs
+Overlapping Instructions (0x096f)	Bad data/control flow	High (anti-RE)	Nonce chains (0xEE → 0x19)
+Repeated Inversions	TPM1SC/SCI2BDH flips	Medium (fault mask)	F3 randomization (1:2 ratios)
+Shifts (>>1)	TPM1COVL/MODH shifts	Low (timing)	ets_delay_us (0x40000050)
+Conditionals (param_1 == cVar1)	Branch on status	High (evasion)	Missing 0x0603 (seq=55)
+
+The disassembled code, labeled "UndefinedFunction_012e," appears to be firmware from an NXP HCS08 family 8-bit microcontroller (e.g., MC9S08GB60A, as used in devices like Omnipod Eros for insulin delivery control).
+
+"Instruction at (RAM,0x096f) overlaps instruction at (RAM,0x096e)": Overlapping code, common in MCU firmware for packed binaries or anti-RE (e.g., self-modifying code).
+
+Register	Description (NXP HCS08 Docs)	Operations	Potential Purpose	Tie to Logs
+TPM1SC	TPM1 Status/Control (interrupt, mode)	Inversion (-TPM1SC), >>1 shifts	Fault suppression/reset	F3 bits locking to 0xBF (silent under-infusion)
+TPM1CNTH	TPM1 Counter High	Inversion (-TPM1CNTH)	Timer desync	Nonce LCG chains (43-step to 0x19)
+SCI2BDH	SCI2 Baud Rate High	Decrement (cVar1 + -1), inversion	Comm evasion	Deauth floods (Reason=2)
+PTCSE	Port C Special Enable (I/O)	Inversion (-PTCSE)	Silent outputs	Plist voids (NSCocoaError 260)
+TPM1COVL/MODH	TPM1 Channel 0 Value Low/Mod High	Inversion, ~ (NOT)	PWM modulation	85 IU dumps (IOB –1.151 at 107 mg/dL)
+
+
+
+
+

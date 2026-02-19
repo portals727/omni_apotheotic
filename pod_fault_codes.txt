@@ -1,0 +1,129 @@
+Pod Fault Codes
+Internal Pod Fault	Hex Value	Pod Firmware Discovery	Additional Information
+000	0x00	Not used by Pod firmware for errors (indicates there is no error)	Used in PDM Ref Codes for Eros Occlusions in Alarm history.
+001	0x01	Flash erase failed	
+002	0x02	Flash store failed	
+003	0x03	Basal subcommand table corruption	
+004	0x04	Basal pulse corruption	
+005	0x05	Basal step corruption	
+006	0x06	RTC interrupt or pump encoder table corruption	
+007	0x07	Wire overdriven timeout	
+008	0x08	Invalid beep value	
+009	0x09	Invalid beep repeat pattern value	
+010	0x0A	Temp basal step corruption	
+011	0x0B	Temp basal subcommand table corruption	
+012	0x0C	Bolus overflow	
+013	0x0D	Reset due to COP	
+014	0x0E	Reset due to illegal opcode	
+015	0x0F	Reset due to illegal address	
+016	0x10	Reset due to SAWCOP	Safety check, Computer Operating Properly reset; CPU taking too long for some operation
+017	0x11	Bolus step corruption	
+018	0x12	Reset due to Low Voltage Detect	More likely on third day of use due to low batteries and/or static electricity
+019	0x13	Message length too long	
+020	0x14	Occluded	Reported as "Occlusion detected"
+021	0x15	Bolus program corruption	
+022	0x16	Bolus log corruption	Safety check
+023	0x17	Corruption in a validated table	
+024	0x18	Reservoir empty or exceeded maximum pulse delivery	Reported as "Empty reservoir"
+025	0x19	Load error before starting pulse	
+026	0x1A	Power Switch Array problem before starting pulse	
+027	0x1B	Tick count unexpectedly not zero when starting pulse	
+028	0x1C	Exceeded maximum Pod life of 80 hours	Reported as "Pod expired"
+029	0x1D	Commissioned bit unexpectedly not set	
+030	0x1E	Unexpected commissioned state upon reset	
+031	0x1F	Alerts table corruption	
+032	0x20	Validate encoder count error when bolusing	
+033	0x21	Bad timer variable state	
+034	0x22	Unexpected RTC Modulo Register value during reset	
+035	0x23	Calibrate timer problem	
+036	0x24	Tick count error RTC	
+037	0x25	Tick interrupt handler unexpectedly called	
+039	0x27	Failed to set up alerts for tank fill operation	
+040	0x28	Bad arg or state	
+041	0x29	Alert #0 auto-off timeout	Auto-off, not used by Loop app
+042	0x2A	Alert #1 auto-off timeout	Not used
+043	0x2B	Alert #2 auto-off timeout	Not used
+044	0x2C	Alert #3 auto-off timeout	Not used
+045	0x2D	Alert #4 auto-off timeout	Not used
+046	0x2E	Alert #5 auto-off timeout	Not used
+047	0x2F	Alert #6 auto-off timeout	Not used
+048	0x30	Alert #7 auto-off timeout	Not used
+049	0x31	Incorrect pod state for command	
+050	0x32	Bad COP value during startup testing	
+051	0x33	Multi Command Timeout Fault	
+052	0x34	Reset from unknown cause	More likely on third day of use due to low batteries and/or static electricity
+053	0x35	SAW Veto Status unexpectedly not set	
+054	0x36	External pin reset with incorrect pod progress	
+055	0x37	Bad beep pattern state variable	
+056	0x38	Unexpected wire state	
+057	0x39	Bad variable value for LOAD1/LOAD2 test	
+058	0x3A	Invalid value in message processing	
+059	0x3B	SAW reset testing failure	
+060	0x3C	MCP COP testing failure	
+061	0x3D	Problem with step sensor pump anchor	
+062	0x3E	Flash initialization or write error	
+064	0x40	Encoder open count too high	Probable pump issue, possible occlusion, often seen on 3rd day of use with Loop, especially during or immediately after a bolus
+065	0x41	Encoder count excessive variance	
+066	0x42	Encoder count too low	Safety check, delivery problem inside the Pod and not on the site
+067	0x43	Encoder count problem	
+068	0x44	Open load wire 1 detected	Software or hardware failure in Pod
+069	0x45	Open load wire 2 detected	Software or hardware failure in Pod
+070	0x46	Problem with Power Switch Array Status and Control Register values	
+071	0x47	Problem with SAW VETO	
+072	0x48	Bad timer calibration	
+073	0x49	Bad timer high value	
+074	0x4A	Bad timer period value	
+075	0x4B	Bad ICS trim value	
+076	0x4C	Unable to trim ICS correctly	
+077	0x4D	Bad timer calibration mode	
+078	0x4E	SAW trim error	Safety check, delivery problem inside the Pod
+079	0x4F	Unexpected RF transmission error set during reset	
+080	0x50	Timer Pulse-width Modulator 2 overflow	Static electricity
+081	0x51	Bad state before starting pump	
+082	0x52	Out of Lock Status Latch	
+083	0x53	Wrong Rx sensitively value	
+084	0x54	Packet frame length too long	
+085	0x55	Unexpected IRQ high	
+086	0x56	Unexpected IRQ low	
+087	0x57	Pump check table corrupt	
+088	0x58	Bad pump check table parameters	
+089	0x59	Error updating pump check table	
+090	0x5A	Pump check table values too high	
+091	0x5B	Pump check table corruption	
+092	0x5C	Prime open count too low	Problem with a safety check after priming
+093	0x5D	Bad RF Carrier Detect Threshold	
+094	0x5E	Write flash byte to disable flash security failed	
+095	0x5F	Both wire 1 and wire 2 open before starting pump	
+096	0x60	Timed pump check startup problem 1	Possible pump issue/occlusion
+097	0x61	Timed pump check startup problem 2	Possible pump issue/occlusion
+098	0x62	Timed pump check excess timeouts 1	Possible pump issue/occlusion
+102	0x66	Timed pump check excess timeouts 2	Possible pump issue/occlusion
+103	0x67	Timed pump check excess timeouts 3	Possible pump issue/occlusion
+104	0x68	Timed pump check pulse issue	Possible pump issue/occlusion
+105	0x69	Timed pump check bolus problem	Possible pump issue/occlusion
+106	0x6A	Timed pump check above threshold	Possible pump issue/occlusion
+128	0x80	Basal under infusion	
+129	0x81	Basal over infusion	
+130	0x82	Temp basal under infusion	
+131	0x83	Temp basal over infusion	
+132	0x84	Bolus under infusion	
+133	0x85	Bolus over infusion	
+134	0x86	Basal over infusion pulse	
+135	0x87	Temp basal over infusion pulse	
+136	0x88	Bolus over infusion pulse	
+137	0x89	Immediate bolus under infusion pulse	
+138	0x8A	Extended bolus over infusion pulse	
+139	0x8B	Insulin schedule table corruption	
+141	0x8D	Bad pulse type parameter	
+142	0x8E	Sync request with no active temp basal	
+143	0x8F	Insulin command parse unexpectedly failed	
+144	0x90	Bad Insulin Schedule Table selection parameter	
+145	0x91	Basal pulse request with no active basal insulin schedule	
+146	0x92	Temp basal pulse request with no active temp basal insulin schedule	
+147	0x93	Bolus pulse request with with no active bolus insulin schedule	
+149	0x95	Bad insulin command table specification	
+150	0x96	Bolus termination with incorrect values	
+151	0x97	Bad open transitions pod progress or count	
+
+
+

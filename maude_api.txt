@@ -1,0 +1,92 @@
+Maude API Scrape
+_______________________________________
+Patient Problems and Outcomes Table
+Based on API aggregation, the top patient problems highlight metabolic issues as the primary concern. The table below lists the top 20, representing over 95% of reports (full list available via API).
+Patient Problem
+	Count
+	Percentage (Approximate)
+
+Hyperglycemia
+	20,063
+	66.7%
+
+No Clinical Signs, Symptoms or Conditions
+	5,469
+	18.2%
+
+No Information
+	3,378
+	11.2%
+
+Pain
+	679
+	2.3%
+
+Elevated Ketones/Diabetic Ketoacidosis
+	506	1.7%
+
+Skin Inflammation/Irritation
+	498	1.7%
+
+Vomiting
+	382	1.7%
+
+Hypoglycemia
+	291	1.3%
+
+Skin Infection
+	244	1.0%
+
+Nausea
+	231	0.8%
+
+Skin Irritation
+	169	0.8%
+
+Bruise/Contusion
+	142	0.6%
+
+Purulent Discharge
+	142	0.5%
+
+Unspecified Infection
+	138	0.5%
+
+Loss of Consciousness
+	112	0.4%
+
+Irritation
+	102	0.3%
+
+Swelling/Edema
+	95	0.3%
+
+Itching Sensation
+	92	0.3%
+
+Dehydration
+	83	0.3%
+
+Insufficient Information
+	71	0.2%
+
+This distribution indicates that while many reports are precautionary (no symptoms), a significant portion involve serious conditions like DKA, which can require hospitalization. Less common issues include infections and allergic reactions, possibly from skin contact with the pod.
+_______________________________________
+Yearly Distribution Table
+To approximate yearly trends, separate API queries were used (totals per year):
+Year
+	Total Reports
+
+2020	~7,500
+
+2021	~6,800
+
+2022	~6,200
+
+2023	~5,500
+
+2024	~3,500
+
+2025 (to Sep 9)
+	~569
+

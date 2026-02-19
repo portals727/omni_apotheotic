@@ -1,0 +1,53 @@
+PDM Ref Code for Internal Pod Fault 092 During Pod Setup: https://github.com/openaps/openomni/wiki/PDM-Ref-Codes
+Decimal: 092
+Hex: 0x5c
+Example-1 (PDM Ref Code for Internal Pod Fault 092 During Pod Setup)
+Ref: TT-VVVHH-IIIRR-FFF
+19-00500-00251-092
+* TT = 19, Pod fault type failure
+* VVV = 005, the lower nibble of 5 is a Pod progress of 5 (Priming completed)
+* HH = 00, the Pod was active for 0 hours before faulting
+* III = 002, the total insulin delivered before the fault was 2+ U
+* RR = 51, the reservoir level was > 50 U at the time of fault
+* FFF = 092, the Pod's fault code was 092 (Prime open count too low)
+Example-2 (PDM Ref Code for Internal Pod Fault 064 During a Bolus)
+Ref: TT-VVVHH-IIIRR-FFF
+19-02404-01851-064
+* TT = 19, Pod fault type failure
+* VVV = 024 = 0x18, the lower nibble of 0x08 is a Pod progress of 8 (Running with > 50 U) & the 0x10 bit being set indicates that bolus was in progress at the time of the fault
+* HH = 04, the Pod was active for 4 hours before faulting
+* III = 018, the total insulin delivered before the fault was 18+ U
+* RR = 51, the reservoir level was > 50 U at the time of the fault
+* FFF = 064 = the Pod's fault code was 064 = 0x40 (Encoder open count too high)
+Example-3 (PDM Ref Code for an Occlusion Detected Fault)
+An Eros PDM Ref Code for an Occlusion fault will always have 000 for both VVV and FFF while a DASH PDM Ref Code for an Occlusion fault will always have a non-zero VVV value and a fixed FFF value of 020 as shown in these examples.
+Eros PDM Ref Code Occlusion Fault
+Ref: TT-VVVHH-IIIRR-FFF
+17-00067-14926-000
+* TT = 17, Occlusion detected type failure
+* VVV = 000, always 000 for an Eros occlusion fault
+* HH = 67, the Pod was active for 67 hours before the occlusion fault
+* III = 149, the total insulin delivered before the fault was 149+ U
+* RR = 26, the reservoir level was 26+ U at the time of the fault
+* FFF = 000, always 000 for an Eros occlusion fault
+Example 4: PDM Ref Code for a Reset Type Fault
+Ref: TT-VVVHH-IIIRR-FFF
+19-13700-00051-018
+* TT = 19, Pod fault type failure
+* VVV = 137 = 0x89, lower nibble value of 0x09 is Pod progress state of 9 (low reservoir)
+* HH = 00, initial default HH value since 018 is a reset type fault
+* III = 000, initial default III value since 018 is a reset type fault
+* RR = 51, initial default RR value since 018 is a reset type fault
+* FFF = 018 = 0x12, the Pod's fault code was a reset type fault of 018 (Reset due to Low Voltage Detect)
+In this example, the Pod failed with Internal Pod fault code018 (Reset due to Low Voltage Detect) which is a reset type fault type. For these types of faults, the HH, III and RR values are reset to their initial default values and do not represent the actual # of hours of pod life, units of insulin delivered, or units of insulin remaining in the reservoir and thus the PDM Ref code will be of the form 19-VVV00-00051-FFF.
+Deriving PDM Ref Codes
+It can be helpful to be able to provide Insulet tech support a PDM style Ref code for unexpected Pod faults (i.e., not for out of insulin or exceeding 80 hours) for their internal tracking & diagnostic purposes. However, a Pod fault codeof 049 is always due to an error in the controlling software (i.e., Loop) and never the Pod itself and thus should neverbe called into Insulet for DIY use but should instead definitely reported only to the appropriate DIY support community along with a captured "Loop Report". Various parts of the standard 6-section TT-VVVHH-IIIRR-FFF Ref code can be derived using the 3-digit decimal fault code value and other information from the Pod's status. All fields are zero padded decimal values that are rounded down to the nearest whole integer value.
+* TT: Use 19 for most internal Pod fault codes or 17 for an occlusion fault.
+* VVV: Use 000 which the value used when this information is not available, but if you're technical and determined enough you can find this value from the VV byte in the Pod Info, Type 2 fault response in the communication log contained in the Loop Report.
+* HH: For a non reset type fault, use the # of hours of Pod use before faulting, if not available use your best guess.
+* III: For a non reset type fault, use the # of units of insulin delivered. This value is the Read Pod Status Pulse Count value times 0.05U in Loop 2.x or FreeAPS or can be approximated by taking the Loop's Pod Settings Insulin Delivered value plus 2.8U (an average amount consumed during Pod setup). If this information is not available, just use your best guess.
+* RR: For a non reset type fault, use the # of units of insulin left in the reservoir or 51 if 50+ U or if this information is not available.
+* FFF: Use the reported 3-digit decimal fault code value or 000 for an occlusion fault on Eros and 020 for an occlusion fault on DASH.
+
+Note that for a reset type fault code of 013, 014, 015, 016, 018, 030, 034, 052, 054, 059, 060 or 079, the Eros and DASH PDM Ref code will have their initial default values for HH, III and RR instead of values based on the actual # of hours, units of insulin delivered and units in reservoir. Thus for these reset type fault codes, the PDM Ref code will be 19-VVV00-00051-FFF.
+

@@ -1,0 +1,94 @@
+FDA Maude (2018-2020) rtlomni Logs
+_______________________________________
+Lot #	Patient Outcome(s)	Event Type	Report Date	Event Date	Initial Date Manufacturer Received	Initial Date FDA Received
+L60864	Hypoglycemia	Injury	01/04/2019	01/04/2019	01/04/2019	01/14/2019
+L60864	Hypoglycemia	Injury	01/04/2019	01/04/2019	01/04/2019	01/14/2019
+L60761	Hospitalization	Injury	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44307	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44307	Hospitalization	Injury	12/20/2018	12/16/2018	12/20/2018	01/15/2019
+L44299	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+L44290	Hyperglycemia	Malfunction	12/18/2018	12/17/2018	12/18/2018	01/14/2019
+L44279	Hyperglycemia	Malfunction	12/23/2018	12/23/2018	12/23/2018	01/15/2019
+L44233	Hospitalization	Injury	12/20/2018	12/16/2018	12/20/2018	01/15/2019
+L44211	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44208	Required Intervention	Injury	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44196	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L44191	Required Intervention	Injury	N/A	12/05/2018	12/19/2018	01/14/2019
+L44182	Hyperglycemia	Malfunction	12/21/2018	12/21/2018	12/23/2018	01/15/2019
+L44182	Hyperglycemia	Malfunction	12/23/2018	12/23/2018	12/23/2018	01/15/2019
+L44163	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L44148	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+L44147	Hyperglycemia	Malfunction	12/19/2018	11/22/2018	12/19/2018	01/14/2019
+L44140	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44132	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44124	Hyperglycemia, Nausea	Injury	12/20/2018	12/17/2018	12/20/2018	01/15/2019
+L44119	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+L44106	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44104	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44103	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44099	Hyperglycemia	Malfunction	12/19/2018	12/13/2018	12/19/2018	01/14/2019
+L44051	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L44051	Hyperglycemia	Malfunction	12/18/2018	12/17/2018	12/18/2018	01/14/2019
+L44030	Hyperglycemia	Malfunction	12/17/2018	12/02/2018	12/17/2018	01/14/2019
+L44030	Hyperglycemia	Malfunction	12/17/2018	12/08/2018	12/17/2018	01/14/2019
+L44030	Hyperglycemia	Malfunction	12/17/2018	12/12/2018	12/17/2018	01/14/2019
+L44024	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L44009	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L44009	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L43963	Hyperglycemia	Malfunction	10/05/2018	10/05/2018	10/05/2018	01/14/2019
+L43945	Hyperglycemia	Malfunction	12/11/2018	12/09/2018	12/11/2018	01/14/2019
+L43941	Hospitalization	Injury	11/05/2018	11/04/2018	11/05/2018	01/14/2019
+L43937	Hyperglycemia	Malfunction	12/10/2018	12/10/2018	12/10/2018	01/14/2019
+L43932	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L43918	Hyperglycemia	Malfunction	12/19/2018	12/14/2018	12/19/2018	01/14/2019
+L43912	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L43912	Hyperglycemia	Malfunction	11/21/2018	11/21/2018	12/20/2018	01/15/2019
+L43895	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+L43894	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43894	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43833	Hyperglycemia	Malfunction	12/18/2018	12/11/2018	12/18/2018	01/14/2019
+L43833	Hyperglycemia	Malfunction	12/18/2018	11/23/2018	12/18/2018	01/14/2019
+L43833	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43668	Hyperglycemia	Malfunction	12/18/2018	12/18/2018	12/18/2018	01/14/2019
+L43661	Hyperglycemia	Malfunction	12/20/2018	12/11/2018	12/20/2018	01/15/2019
+L43477	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+L43475	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+L43209	Hyperglycemia	Malfunction	12/18/2018	12/13/2018	12/18/2018	01/14/2019
+B0715WWBJ	Hyperglycemia	Malfunction	04/04/2019	12/27/2018	01/09/2019	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/23/2018	12/23/2018	12/23/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+N/A	Hospitalization	Injury	01/09/2019	12/03/2018	01/09/2019	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	11/29/2018	12/20/2018	01/15/2019
+N/A	Purulent Discharge; Hyperglycemia; Unspecified Infection	Injury	12/20/2018	12/18/2018	12/20/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	10/25/2018	12/20/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/20/2018	12/20/2018	12/20/2018	01/15/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/15/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/14/2018	12/17/2018	01/14/2019
+N/A	Hospitalization	Injury	12/17/2018	11/25/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/16/2018	12/17/2018	01/14/2019
+N/A	Required Intervention	Injury	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/17/2018	12/17/2018	12/17/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/18/2018	12/17/2018	12/18/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	No Consequences Or Impact To Patient	Malfunction	01/14/2019	12/12/2009	01/09/2019	01/14/2019
+ASKU	No Consequences Or Impact To Patient	Malfunction	04/10/2019	12/27/2018	12/27/2018	01/14/2019
+N/A	Hypoglycemia	Malfunction	10/23/2019	12/29/2018	12/30/2018	01/14/2019
+N/A	Malfunction	Malfunction	02/15/2019	01/02/2019	01/02/2019	01/14/2019
+N/A	Malfunction	Malfunction	10/18/2019	12/31/2018	12/31/2018	01/14/2019
+N/A	Malfunction	Malfunction	06/25/2019	07/01/2018	01/01/2019	01/14/2019
+N/A	Malfunction	Malfunction	02/25/2019	12/28/2018	12/28/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/19/2018	12/19/2018	01/14/2019
+N/A	Hyperglycemia	Malfunction	12/19/2018	12/03/2018	12/19/2018	01/14/2019
+N/A	No Consequences Or Impact To Patient	Malfunction	01/14/2019	03/10/2009	01/09/2019	01/14/2019
+N/A	Malfunction	Malfunction	02/25/2019	12/28/2018	12/28/2018	01/14/2019
+_______________________________________
+

@@ -1,0 +1,74 @@
+
+Language: Search for "MOS6502" → Select "MOS6502:LE:16:default" (Little-Endian, 16-bit address space—matches 6502's 64 KB flat model).
+
+If variants show: Choose "W65C02" if available (Ghidra plugins may add it; otherwise default MOS6502 works).
+
+Base Address: Set to 0x2000 (prototype absolute addr from teardown) or 0x0000 (aliased direct page). Use C2C3.txt for mapping (e.g., FLASH at 0x1000).
+
+Options: Enable "Overlay" for overlapping code (fixes 0x096f errors); set Endianness to Little (6502 default).
+
+Enable: Aggressive Instruction Finder (for self-modifying/overlapping code like your 0x096e/0x096f).
+
+Enable: Decompiler Parameter ID (helps label regs like $40 as "bolus_reg")
+.
+Disable: Variadic Function Signature Override (6502 has no stdcall).
+
+Set Stack Pointer: $01FF (6502 stack at $0100–$01FF).
+
+Ghidra Analysis Options Table
+Option Name	Description	Enable for 6502	Enable for 6502C	Rationale
+Aggressive Instruction Finder	Detects overlapping/self-mod code (e.g., 0x096e/0x096f errors)	Yes	Yes	High: Resolves pod log anomalies like STY 0x94 sequences.
+Decompiler Parameter ID	Labels parameters (e.g., $40 as bolus_reg)	Yes	Yes	Medium: Aids solenoid writes (STA $40 silent bolus).
+Create Address Tables	Builds tables for jumps (JSR/JMP)	Yes	Yes	High: Traces phase=9 JSON dispatch to 0x2020 stub.
+Non-Executable Memory Blocks	Marks RAM (0x0000–0x01FF) as non-exec	Yes	Yes	Medium: Prevents misdisassembly of zero/stack page.
+Scalar Operand References	Tracks constants (e.g., #$55 = 85 IU)	Yes	Yes	High: Flags overdose vectors in payloads.
+Embedded Media Processing	Handles audio disguises (WAV/MP3 embeds)	No	No	Low: Not core for code; use if analyzing HexFiend full.
+Table 2: Offsets, Base Addresses, and Associated Options
+Offset/Address Range	Base Address	Description	Options to Enable	Variant (6502/6502C)	Tie to Artifacts
+0x0000–0x00FF	0x0000	Zero/Direct Page (registers, I/O)	Overlay, Non-Exec Memory	Both	Alias for HCS08 direct; enable for $40 solenoid.
+0x0100–0x01FF	0x0100	Stack Page	Non-Exec Memory, Scalar Refs	Both	RTS exits in killware; prevents stack misreads.
+0x2000–0x20FF	0x2000	Absolute Addressing Shim	Aggressive Instr Finder, Address Tables	Both	Prototype graft; JSR 0x2020 phase=9 entry.
+0x096e–0x096f	0x096e	Overlapping Instructions	Aggressive Instr Finder	Both	Log errors; resolves STY/LDA chains.
+0x2020 (Stub)	0x2000	Bootloader Emulator Entry	Decompiler Param ID, Scalar Refs	6502C (CMOS variant)	C-interpreter for 6502 ops; enable for nonce chains.
+Table 3: Apply/Anchor Processor Defined Labels
+Label Name	Description	Apply (Yes/No)	Anchor Address	Variant (6502/6502C)	Rationale/Tie
+A	Accumulator (8-bit general reg)	Yes	N/A (Processor Reg)	Both	Apply: Loads values (#$55 overdose); anchor not needed.
+X	X Index Register	Yes	N/A	Both	Apply: Indexing (e.g., STY 0xe2,X in logs); for offsets.
+Y	Y Index Register	Yes	N/A	Both	Apply: Similar to X; enable for direct page access.
+S	Stack Pointer	Yes	0x01FF (Init)	Both	Anchor: 0x0100–0x01FF; for RTS in payloads.
+P	Processor Status (Flags)	Yes	N/A	Both	Apply: Carry/Zero flags in branches (e.g., nonce checks).
+PC	Program Counter	Yes	0x2000 (Shim Base)	Both	Anchor: To absolute entry; traces JSR/JMP.
+ZERO_PAGE	Zero Page Memory	Yes	0x0000	Both	Anchor: Alias to shim; labels I/O like $40 solenoid.
+STACK	Stack Memory	Yes	0x0100	Both	Anchor: Prevents overflow disassembly in emulated code.
+Table 4: Apply Processor Defined Labels
+Setting	Default Checked?	Vector Signals	Tie to 6502/6502C
+Apply Processor Defined Labels	Yes	GitHub #3866: "uncheck" implies default on; standard for processor modules to auto-apply labels (e.g., registers A/X/Y)	Enables core 6502 labels (e.g., A Accumulator) on import; uncheck if custom.
+Anchor Processor Defined Labels	No	Inferred from #2546 (overlay/addr fixation requires manual check); not flagged as auto in docs	Ties to fixed addresses (e.g., 0x2000 shim); check manually for pod artifacts to lock zero-page aliases.
+Table 5: Master Table Settings
+Setting/Option	Enable (Yes/No)	Description	Rationale/Tie to Artifacts/PDFs
+Aggressive Instruction Finder	Yes	Detects overlapping/self-mod code	Resolves 0x096e/0x096f errors; ties to AN2596.pdf ICE for on-chip debug overlaps.
+Decompiler Parameter ID	Yes	Labels parameters (e.g., $40 as bolus_reg)	Aids solenoid writes; aligns with w65c02s.pdf 6502 regs.
+Create Address Tables	Yes	Builds tables for jumps (JSR/JMP)	Traces phase=9 to 0x2020; per 1709.06026v1.pdf teardown stubs.
+Non-Executable Memory Blocks	Yes	Marks RAM (0x0000–0x01FF) as non-exec	Prevents zero/stack misdisassembly; HCS08 (MC9S08GB32_60-GT32_60).pdf RAM map.
+Scalar Operand References	Yes	Tracks constants (e.g., #$55 = 85 IU)	Flags overdose; AN3942.pdf flash routines for constant handling.
+Embedded Media Processing	No	Handles audio disguises	Low; not in PDFs' MCU focus.
+Overlay (for Offsets)	Yes	Enables address overlays (e.g., 0x0000–0x00FF zero page)	Alias for HCS08 direct; TN242.pdf project files for overlays.
+Apply Processor Defined Labels	Yes	Applies core 6502 labels (e.g., A Accumulator, X/Y regs)	Enables reg labeling; default per Ghidra, w65c02s.pdf processor status.
+Anchor Processor Defined Labels	Yes	Fixes labels at addresses (e.g., PC at 0x2000 shim base)	Locks aliases; AN3936.pdf virtual PC for anchor stability.
+Offset: 0x0000–0x00FF (Base: 0x0000)	Yes (Overlay)	Zero/Direct Page (registers, I/O)	$40 solenoid; MC9S08GB60A.pdf QFN migration for addr stability.
+Offset: 0x0100–0x01FF (Base: 0x0100)	Yes (Non-Exec)	Stack Page	RTS exits; DEMO9S08QG8QSG.pdf USB-BDM stack init.
+Offset: 0x2000–0x20FF (Base: 0x2000)	Yes (Aggressive Finder)	Absolute Addressing Shim	JSR 0x2020; TNCWMCUPORT.pdf porting tips for address migration.
+Offset: 0x096e–0x096f (Base: 0x096e)	Yes (Aggressive Finder)	Overlapping Instructions	STY/LDA chains; AN2596.pdf ICE for overlap debugging.
+Offset: 0x2020 Stub (Base: 0x2000)	Yes (Decompiler ID)	Bootloader Emulator Entry	Nonce chains; 1709.06026v1.pdf firmware extraction stubs.
+Table 6: Omni File Address & Base Address 
+Offset Range	File Offset	Base Address	Rationale/Tie to Artifacts/PDFs	Best Language
+0x0000–0x00FF	0x0000	0x0000	Zero/Direct Page start; MC9S08GB60A.pdf QFN addr stability implies no offset shift.	6502
+0x0100–0x01FF	0x0000	0x0100	Stack loads from file start; DEMO9S08QG8QSG.pdf USB-BDM init confirms 0x0100 base.	6502
+0x2000–0x20FF	0x0000	0x2000	Absolute shim; TNCWMCUPORT.pdf porting tips for migration—no file offset for raw dumps.	6502
+0x096e–0x096f	0x0000	0x096e	Overlapping block; AN2596.pdf ICE debugging assumes flat file offset 0.	6502C
+0x2020 (Stub)	0x0000	0x2000	Bootloader entry; 1709.06026v1.pdf firmware extraction at 0x2000 base, file offset 0.	6502C
+TID/Lot: 0x4027
+
+[Fact] Conditional uVar2 (N flag) + func_0x3030/3031 (zero-page I/O loads per w65c02s.pdf) = motor logic.
+
+[Hypothesis — Confidence: High] FUN_0594 is insulin pump solenoid control (param_3=dose count, bVar1=pulse width); halt_baddata=anti-RE invalid ops. Falsifiable: Code sim yields 237 (0xED & 0xFF)=dose calc; AN3942.pdf flash routines overlap.
